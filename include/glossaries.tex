@@ -1,0 +1,1043 @@
+ %\clearpage
+%\chapter{List of glossaries}
+%\makeglossaries
+%\makenoidxglossaries
+%\printglossary
+%\printnoidxglossary
+%\newglossary*{acronym}{Acronym}
+%\newglossary{acronym}{1i}{1o}{Acronym}
+%\newacronym{wsn}{WSN}{wireless sensor network}
+%\newacronym{pdf}{PDF}{probability density function}
+\newacronym{cdf}{CDF}{Cumulative Density Function}
+%\newacronym{mvn}{MVN}{multivariate normal}
+%\newacronym{ridp}{Rand-idp}{Reconstruction solution using spatial and temporal correlation under random transmission}
+\newcommand{\Axor}{A_\textnormal{{xor}}} % Size of a xor in math mode
+\newcommand{\Aand}{A_\textnormal{{and}}} % Size of an and in math mode
+\newcommand{\Amux}{A_\textnormal{{mux}}} % Size of an xor in math mode
+\newcommand{\Aff}{A_\textnormal{{ff}}} % Size of an xor in math mode
+\newcommand{\Txor}{T_\textnormal{{xor}}} % Size of a xor in math mode
+\newcommand{\Tand}{T_\textnormal{{and}}} % Size of an and in math mode
+\newcommand{\Tmux}{T_\textnormal{{mux}}} % Size of an xor in math mode
+\newcommand{\ldceil}[1]{\lceil\log_2{\left({#1}\right)}\rceil}
+\newcommand{\T}{{{S}}}
+\newcommand{\cf}{{\delta}}
+\newcommand{\PerM}{\mathbf{I}_\pi} % Definition of the Permutation matrix (I because der of Identity matrix)
+\newcommand{\AssM}{\mathbf{I}_\sigma} % Definition of the assignment matrix (aus dem deutschen wikipedia "vozeichenbehaftete permutatiosnmatrix)
+\newcommand{\AssOpt}{\mathbf{{I}_{\sigma,\textnormal{power-opt}}}} % Power-optimal assignment
+\newcommand{\PerMCacOpt}{\mathbf{I}_{\pi,\textnormal{perf-opt}}}  % perf/CAC-opt assignment
+\newcommand{\PerMTCOpt}{\mathbf{I}_{\pi,\textnormal{$\mathit{TC}$-opt}}} %Power+Perf.-opt assignment
+
+% mean probability entry for the capacitance model
+\newcommand{\meanP}{\bar{p}}
+
+%----------------symbols------------------- %
+\newglossary{math}{2i}{2o}{General mathematical symbols and specific operators}
+
+%% \newglossaryentry{gf2}
+%% { type=math, 
+%%   name={\ensuremath{\mathbb{F}_2}},
+%%   description={binary Galois field 2},
+%%   %sort={F_2}
+%% }
+
+\newglossaryentry{log2}
+{ type=math, 
+	name={\ensuremath{\log_2(x)}},
+	description={binary (base 2) logarithm of $x$},
+	sort={log_2}
+}
+
+
+
+
+\newglossaryentry{bn}
+{ type=math, 
+	name={\ensuremath{\mathbb{N}}},
+	description={set of  natural numbers: \{0,1,2,3,\dots \}},
+	%sort={N}
+}
+
+
+
+%% \newglossaryentry{bb}
+%% { type=math,
+%%   name={\ensuremath{\mathbb{B}}},
+%%   description={set of  binary numbers: \{0,1\}},
+%%   %sort={B}
+%% }
+
+%% \newglossaryentry{bb_vec}
+%% { type=math,
+%%   name={\ensuremath{\mathbb{B}^n}},
+%%   description={vector of $n$   binary numbers},
+%%   %sort={B_n}
+%% }
+
+%% \newglossaryentry{bnm}
+%% { type=math,
+%%   name={\ensuremath{\mathbb{B}^{n\times m}}},
+%%   description={matrix with $n$ rows and $m$ columns of binary numbers},
+%%   %sort={B_nm}
+%% }
+
+%% \newglossaryentry{must_satisfy}
+%% { type=math,
+%%   name={\ensuremath{\stackrel{{ !}}{=}}},
+%%   description={demanded equality},
+%%   %sort={OPERATOR: demanded equality}
+%% }
+
+
+
+%% \newglossaryentry{defined}
+%% { type=math,
+%%   name={\ensuremath{\stackrel{{\textnormal{def}}}{=} }},
+%%   description={defined as being equal to},
+%%   %sort={OPERATOR: defined as being equal to}
+%% }
+
+
+%% \newglossaryentry{frobenius}
+%% { type=math,
+%%   name={\ensuremath{\langle \matr{M}_1, \matr{M}_2 \rangle }},
+%%   description={Frobenius inner product of the matrices $\matr{M}_1$ and $\matr{M}_2$},
+%%   %sort={OPERATOR: frobenius} 
+%% }
+
+%% \newglossaryentry{hadamard}
+%% { type=math,
+%%   name={\ensuremath{\matr{M}_1\circ \matr{M}_2}},
+%%   description={Hadamard-product of the of  $\matr{M}_1$ and $\matr{M}_2$},
+%%   %sort={OPERATOR: Hadamard}
+%% }
+
+\newglossaryentry{boolean_xor}
+{ type=math,
+	name={\ensuremath{\oplus}},
+	description={Boolean \gls{xor} operator },
+	%sort={OPERATOR: bit-wise boolean negation}
+}
+
+
+%% \newglossaryentry{max_matr}
+%% { type=math, 
+%%   name={\ensuremath{\max(\matr{M}_1, \matr{M}_2)}},
+%%   description={maximum matrix of  $\matr{M}_1$ and $\matr{M}_2$ (entry-by-entry)},
+%%   sort={F: maximum matrix}
+%% }
+
+%% \newglossaryentry{spark_matr}
+%% { type=math, 
+%%   name={\ensuremath{\spark(\matr{M})}},
+%%   description={spark of a  matrix, \textit{i.e.,} the smallest integer $i$ such that there exists a set of $i$ columns of $\matr{M}$ that are linearly dependent.},
+%%   sort={F: spark}
+%% }
+
+
+
+
+%% \newglossaryentry{proportional}
+%% { type=math,
+%%   name={\ensuremath{{\sim}}},
+%%   description={proportionality},
+%%   %sort={OA:Operator  proportionality}
+%% }
+
+
+%% \newglossaryentry{max_vector}
+%% { type=math,
+%%   name={\ensuremath{\max_{k,\,i}(\vec{V})}},
+%%   description={maximum entry of a discrete-time vector, $\vec{V}$, over all cycles},
+%%   sort={F: max vector} 
+%% }
+
+
+%% \newglossaryentry{maxdiag}
+%% { type=math,
+%%   name={\ensuremath{\maxdiag(\matr{M})}},
+%%   description={maximum diagonal entry of  $\matr{M}$},
+%%   sort={F: max diag}
+%% }
+
+
+
+%% \newglossaryentry{laplace_trans}
+%% { type=math,
+%%   name={\ensuremath{\mathcal{L}\{f(t)\}}},
+%%   description={Laplace transform of $f(t)$},
+%%   %sort={FUNCTION: Laplace transform}
+%% }
+
+\newglossaryentry{absolute_value}
+{ type=math,
+	name={\ensuremath{|X|}},
+	description={the absolute value of variable $X$},
+	%sort={FUNCTION: Operator Expectation}
+}
+
+\newglossaryentry{expected_value}
+{ type=math,
+	name={\ensuremath{\mathbb{E}\big[X\big]}},
+	description={expectation operator for a value discrete variable $X$},
+	%sort={FUNCTION: Operator Expectation}
+}
+
+\newglossaryentry{probability}
+{ type=math,
+	name={\ensuremath{Pr\big[x_i\big]}},
+	description={probability of $x_i$ being 1},
+	%sort={FUNCTION: Operator Expectation}
+}
+
+\newglossaryentry{average}
+{ type=math,
+	name={\ensuremath{\mu}},
+	description={average error},
+	%sort={$\sigma$}
+}
+
+
+\newglossaryentry{sigma}
+{ type=math,
+	name={\ensuremath{\sigma}},
+	description={standard deviation of error},
+	%sort={$\sigma$}
+}
+
+\newglossaryentry{variance}
+{ type=math,
+	name={\ensuremath{\sigma^2}},
+	description={variance of error},
+	%sort={$\sigma^2$}
+}
+
+
+\newglossaryentry{vdd}
+{ type=math,
+	name={\ensuremath{V_\textnormal{dd}}},
+	description={power-supply voltage},
+	%sort={v_dd}
+}
+
+\newglossaryentry{tclk}
+{ type=math,
+	name={\ensuremath{T_\textnormal{clk}}},
+	description={period time of the clock determining the pattern duration},
+	%sort={t_clk}
+}
+
+\newglossaryentry{fclk}
+{ type=math,
+	name={\ensuremath{f}},
+	description={frequency equal to $\nicefrac{1}{T_\textnormal{clk}}$},
+	%sort={f}
+}
+
+
+\newglossaryentry{tpd}
+{ type=math,
+	name={\ensuremath{T_\textnormal{pd}}},
+	description={50\%--50\% propagation delay},
+	%sort={t_pd}
+}
+
+
+% \newglossaryentry{expected_value_cont}
+% { type=math,
+%   name={\ensuremath{\mathbb{E}\{x\}}},
+%   description={expectation operator for a value continuous variable $x$},
+%   sort={OE:Operator Expectation Continuous}
+% }
+
+
+
+% --------------physical parameters--------------- %
+%\newglossary{geometrics}{2i}{2o}{Defined Symbols}
+
+
+
+% \newglossaryentry{Ee}
+% { type=symbols,
+%   name={\ensuremath{E_{\textnormal{e},i}}},
+%   description={extracted  energy from the driver of the $i^\textnormal{th}$ interconnect},
+%   sort={P:Clock-period}
+% }
+
+% \newglossaryentry{Ee}
+% { type=symbols,
+%   name={\ensuremath{i_{i}}},
+%   description={extracted  energy from the driver of the $i^\textnormal{th}$ interconnect},
+%   sort={P:Clock-period}
+% }
+
+
+
+
+
+%----------------symbols high level power and perforamance------------------- %
+%\newglossary{symbol}{2i}{2o}{Defined Symbols used in Multiple Chapters}
+
+%% \newglossaryentry{wl}
+%% { type=symbol,
+%%   name={\ensuremath{\nicefrac{W}{L_\textnormal{min}}}},
+%%   description={width-over-minimum-length ratio of a transistor},
+%%   sort=WL
+%% }
+
+%% \newglossaryentry{rho}
+%% { type=symbol, 
+%%   name={\ensuremath{\rho}},
+%%   description={Word-level correlation of the data},
+%%   sort={$\rho$}
+%% }
+
+
+%% \newglossaryentry{rtsv}
+%% { type=symbol,
+%%   name={\ensuremath{r_\textnormal{tsv}}},
+%%   description={\acrshort{tsv} radius},
+%%   sort={r_tsv}
+%% }
+
+
+%% \newglossaryentry{mxn}
+%% { type=symbol,
+%%   name={\ensuremath{M \times N}},
+%%   description={row and column count of the \acrshort{tsv} array},
+%%   sort={MxN}
+%% }
+
+
+%% \newglossaryentry{tox}
+%% { type=symbol,
+%%   name={\ensuremath{t_\textnormal{ox}}},
+%%   description={\acrshort{tsv} oxide thickness},
+%%   sort={t_ox}
+%% }
+
+%% \newglossaryentry{wdep}
+%% { type=symbol,
+%%   name={\ensuremath{w_{\textnormal{dep},i}}},
+%%   description={depletion-region width for \acrshort{tsv} $i$},
+%%   sort={w_dep}
+%% }
+
+
+%% \newglossaryentry{dmin}
+%% { type=symbol,
+%%   name={\ensuremath{d_\textnormal{min}}},
+%%   description={minimum \acrshort{tsv} pitch},
+%%   sort={d_min}
+%% }
+
+%% \newglossaryentry{ltsv}
+%% { type=symbol,
+%%   name={\ensuremath{l_\textnormal{tsv}}},
+%%   description={through-silicon-via length/depth},
+%%   sort={l_tsv}
+%% }
+
+
+%% \newglossaryentry{vdd}
+%% { type=symbol,
+%%   name={\ensuremath{V_\textnormal{dd}}},
+%%   description={power-supply voltage},
+%%   sort={v_dd}
+%% }
+
+%% \newglossaryentry{tclk}
+%% { type=symbol,
+%%   name={\ensuremath{T_\textnormal{clk}}},
+%%   description={period time of the clock determining the pattern duration},
+%%   sort={t_clk}
+%% }
+
+%% \newglossaryentry{fclk}
+%% { type=symbol,
+%%   name={\ensuremath{f}},
+%%   description={frequency equal to $\nicefrac{1}{T_\textnormal{clk}}$},
+%%   sort={f}
+%% }
+
+%% \newglossaryentry{c_ij}
+%% { type=symbol,
+%%   name={\ensuremath{C_{i,j}}},
+%%   description={coupling capacitance between interconnect $i$ and $j$ for $i\neq j$; self/ground capacitance of interconnect $i$ for $i=j$},
+%%     sort={c_ij}
+%% }
+
+%% \newglossaryentry{P}
+%% { type=symbol,
+%%   name={\ensuremath{P}},
+%%   description={interconnect power consumption},
+%%   sort={P}
+%% }
+
+%% \newglossaryentry{tpd}
+%% { type=symbol,
+%%   name={\ensuremath{T_\textnormal{pd}}},
+%%   description={interconnect 50\%--50\% propagation delay},
+%%   sort={t_pd}
+%% }
+
+
+%% \newglossaryentry{fs}
+%% { type=symbol,
+%%   name={\ensuremath{f_\textnormal{s}}},
+%%   description={significant frequency of the \acrshort{tsv} signals},
+%%   sort={f_s}
+%% }
+
+
+%% \newglossaryentry{binary_signal}
+%% { type=symbol,
+%%   name={\ensuremath{b_{i}}},
+%%   description={clock-cycle based bit signal ($b_i \in \mathbb{B}$)},
+%%   sort={b_i}
+%% }
+
+%% \newglossaryentry{binary_signal_switch}
+%% { type=symbol,
+%%   name={\ensuremath{\Delta b_{i}}},
+%%   description={clock-cycle based switching of $b_i$ ($\Delta b_i$  $\in \{-1,0,1\}$)},
+%%   sort={$\Delta$ b_i}
+%% }
+
+
+% \newglossaryentry{misalignment}
+% { type=symbol,
+%   name={\ensuremath{T_{\textnormal{skew},i,j}}},
+%   description={temporal misalignment/skew between the switching times of two binary signals $b_i$ and $ b_j$},
+%   sort={T_skew}
+%}
+
+%% \newglossaryentry{edge_delay}
+%% { type=symbol,
+%%   name={\ensuremath{T_{\textnormal{edge},i}}},
+%%   description={delay on the signal edges on $b_i$ compared to the rising clock edge},
+%%   sort={T_edge}
+%% }
+
+
+
+%% \newglossaryentry{effective_capacitance}
+%% { type=symbol,
+%%   name={\ensuremath{C_{\textnormal{eff},i}}},
+%%   description={clock-cycle-based effective capacitance  for interconnect $i$},
+%%   sort={c_eff}
+%% }
+
+
+%% \newglossaryentry{mean_effective_capacitance}
+%% { type=symbol,
+%%   name={\ensuremath{\bar{C}_{\textnormal{eff},i}}},
+%%   description={mean effective capacitance  for interconnect $i$},
+%%   sort={c_eff_mean}
+%% }
+
+% \newglossaryentry{hat_effective_capacitance_single}
+% { type=symbol,
+%   name={\ensuremath{\hat{C}_{\textnormal{eff},i}}},
+%   description={maximum possible effective capacitance  for interconnect $i$},
+%   sort={c_eff_max}
+% }
+
+%% \newglossaryentry{hat_effective_capacitance}
+%% { type=symbol,
+%%   name={\ensuremath{\hat{C}_{\textnormal{eff}}}},
+%%   description={maximum possible effective capacitance  for all interconnects},
+%%   sort={c_eff_max2}
+%% }
+
+
+
+
+
+%% \newglossaryentry{coup_capacitance_mw}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{mw,c}}}},
+%%   description={capacitance of adjacent metal wires },
+%%   sort={c_mw_c}
+%% }
+
+
+%% \newglossaryentry{ground_capacitance_mw}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{mw,g}}}},
+%%   description={ground capacitance of a metal wire},
+%%   sort={c_mw_g}
+%% }
+
+%% \newglossaryentry{coup_capacitance_tsv}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{n}}}},
+%%   description={coupling capacitance of  direct adjacent middle \acrshortpl{tsv}},
+%%   sort={c_n}
+%% }
+
+
+%% \newglossaryentry{coup_capacitance_tsv_diag}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{d}}}},
+%%   description={coupling capacitance of diagonal adjacent \acrshortpl{tsv}},
+%%   sort={c_d}
+%% }
+
+
+%% \newglossaryentry{self_capacitance_tsv_edge}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{e0}}}},
+%%   description={ground capacitance of an edge \acrshort{tsv} located not at a corner},
+%%   sort={c_e0}
+%% }
+
+
+%% \newglossaryentry{coupling_capacitance_tsv_edge}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{e1}}}},
+%%   description={coupling capacitance of two direct adjacent edge \acrshortpl{tsv} located not at a corner},
+%%   sort={c_e1}
+%% }
+
+%% \newglossaryentry{coupling_capacitance_tsv_edge2}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{e2}}}},
+%%   description={coupling capacitance of two indirect adjacent edge \acrshort{tsv} located not at a corner},
+%%   sort={c_e2}
+%% }
+
+
+%% \newglossaryentry{self_capacitance_tsv_corner}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{c0}}}},
+%%   description={ground capacitance of a corner \acrshort{tsv}},
+%%   sort={c_c0}
+%% }
+
+
+%% \newglossaryentry{coupling_capacitance_tsv_corner}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{c1}}}},
+%%   description={coupling capacitance of a corner \acrshort{tsv} and  a direct adjacent  \acrshort{tsv}},
+%%   sort={c_c1}
+%% }
+
+%% \newglossaryentry{coupling_capacitance_tsv_corner2}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{c2}}}},
+%%   description={coupling capacitance of a corner \acrshort{tsv} and  an indirect adjacent  \acrshort{tsv}},
+%%   sort={c_c2}
+%% }
+
+%% \newglossaryentry{p_i}
+%% { type=symbol,
+%%   name={\ensuremath{p_{i}}},
+%%   description={probability of the  $b_i$  being 1 ($\mathbb{E}\{b_i\}$)},
+%%   sort={p_i}
+%% }
+% \newglossaryentry{p_ij}
+% { type=symbol,
+%   name={\ensuremath{\meanP_{i,j}}},
+%   description={ mean  1-bit probability for  $b_i$ and $b_j$ ($\nicefrac{\left(p_i+p_j\right)}{2}$)  },
+%   sort={p_ij}
+% }
+
+% \newglossaryentry{matr_p_ij}
+% { type=symbol,
+%   name={\ensuremath{\bar{\matr{PR}}}},
+%   description={Matrix containing the $\meanP_{i,j}$ values.  },
+%   sort={N:matrix  probability bit }
+% }
+
+
+
+%% \newglossaryentry{alpha_i}
+%% { type=symbol,
+%%   name={\ensuremath{\alpha_{i}}},
+%%   description={toggle/switching activity of $b_i$  ($\mathbb{E}\{\Delta b^2_i \}$)},
+%%   sort={$\alpha$_i}
+%% }
+
+
+
+%% \newglossaryentry{alpha}
+%% { type=symbol,
+%%   name={\ensuremath{\gamma_{i,j}}},
+%%   description={toggle/switching correlation of $b_i$ and $b_j$},  %($\mathbb{E}\{\Delta b_i\Delta b_j \}$ for temporal aligned transitions, else 0)},
+%%   sort={$\gamma$_ij}
+%% }
+
+%% \newglossaryentry{driver_resistance}
+%% { type=symbol,
+%%   name={\ensuremath{{R}_{\textnormal{D}}}},
+%%   description={Driver equivalent resistance of the pull-up and pull-down path in the conductive state},
+%%   sort={R_D}
+%% }
+
+
+%% \newglossaryentry{driver_delay_offset}
+%% { type=symbol,
+%%   name={\ensuremath{T_{\text{D},0}}},
+%%   description={Driver-induced offset in the propagation delay},
+%%   sort={T_D0}
+%% }
+
+
+
+%% \newglossaryentry{delay}
+%% { type=symbol,
+%%   name={\ensuremath{\hat{T}_\textnormal{pd}}},
+%%   description={maximum 50\%--50\% interconnect propagation delay},
+%%   sort={T_pd2}
+%% }
+
+
+%% \newglossaryentry{ceff_vec}
+%% { type=symbol,
+%%   name={\ensuremath{\vec{C}_{\textnormal{eff}}}},
+%%   description={clock-cycle based vector containing the  $C_{\textnormal{eff},i}$ values},
+%%   sort={c_eff_vec}
+%% }
+
+
+
+%% \newglossaryentry{switching_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\T}},
+%%   description={switching matrix for the   $b_i$ values},
+%%   sort={S}
+%% }
+
+
+
+%% \newglossaryentry{worst_case_switching_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\T_\text{wc}}},
+%%   description={worst-case switching matrix for the   $b_i$ values},
+%%   sort={S_wc}
+%% }
+
+%% \newglossaryentry{crosstalk_factor_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\T}},
+%%   description={clock-cycle based crosstalk factor for $b_ib_j$ },
+%%   sort={$\cf_{i,j}$}
+%% }
+
+%% \newglossaryentry{permutation_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\PerM}},
+%%   description={permutation matrix},
+%%   sort={I_pi}
+%% }
+
+
+%% \newglossaryentry{set_ofpermutation_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\mathbb{S}_{\PerM,n}}},
+%%   description={set of all valid $n\times n$ permutation matrices},
+%%   sort={$\mathbb{S}_{\PerM,n}$}
+%% }
+
+
+%% \newglossaryentry{perf_opt_assignment}
+%% { type=symbol,
+%%   name={\ensuremath{\PerMCacOpt}},
+%%   description={performance-optimal net-to-\acrshort{tsv} assignment expressed as a permutation matrix},
+%%   sort={I_pi,perf-opt}
+%% }
+
+
+
+
+
+
+%% \newglossaryentry{mean_switching_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\T_\mathbb{E}}},
+%%   description={expected switching matrix for the   $b_i$ values},
+%%   sort={S_E}
+%% }
+
+%% \newglossaryentry{capacitance_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\mathbf{C}}},
+%%   description={capacitance matrix containing the $C_{i,j}$ values},
+%%   sort={C matrix}
+%% }
+
+
+%% \newglossaryentry{capacitance_ground_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\matr{C}_\textnormal{G}}},
+%%   description={capacitance matrix containing the ${C}_{\textnormal{G},i,j}$ values},
+%%   sort={C_G matrix}
+%% }
+
+
+
+
+%% \newglossaryentry{capacitance_ground}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{G},i,j}}},
+%%   description={ fitted  $C_{i,j}$ value  for $p_{i}$ and $p_{j}$ equal to 0},
+%%   sort={C_G}
+%% }
+
+
+
+%% \newglossaryentry{capacitance_random}
+%% { type=symbol,
+%%   name={\ensuremath{{C}_{\textnormal{R},i,j}}},
+%%   description={ fitted $C_{i,j}$ value  for $p_{i}$ and $p_{j}$ equal to 0.5},
+%%   sort={C_R}
+%% }
+
+
+%% \newglossaryentry{capacitance_random_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\matr{C}_\textnormal{R}}},
+%%   description={capacitance matrix containing the ${C}_{\textnormal{R},i,j}$ values},
+%%   sort={C_R matrix}
+%% }
+
+
+
+
+%% \newglossaryentry{capacitance_vdd_matrix}
+%% { type=symbol,
+%%   name={\ensuremath{\matr{\Delta C}}},
+%%   description={capacitance matrix containing the ${\Delta C}_{i,j}$ values},
+%%   sort={$\Delta$_C matrix}
+%% }
+
+%% \newglossaryentry{capacitance_delta}
+%% { type=symbol, 
+%%   name={\ensuremath{{\Delta C}_{i,j}}},
+%%   description={derivation in   $C_{i,j}$  with increasing $p_i$ and $p_j$},
+%%   sort={$\Delta$_C}
+%% }
+
+
+
+
+
+%%----------------symbols optimization techniques------------------- %
+%\newglossary{symbol}{2i}{2o}{Symbols used for the Optimization Techniques}
+% \newglossaryentry{enc}
+% { type=symbol,
+%   name={\ensuremath{\mathbf{\Gamma}}},
+%   description={encoding matrix in the Galois field 2},
+%   sort=$\Gamma$
+% }
+
+% \newglossaryentry{dec}
+% { type=symbol,
+%   name={\ensuremath{\mathbf{\Phi}}},
+%   description={decoding matrix in the Galois field 2},
+%   sort=$\Phi$
+% }
+
+
+% \newglossaryentry{encf}
+% { type=symbol,
+%   name={\ensuremath{{\Gamma}()}},
+%   description={function describing the encoding },
+%   sort=efunction-Encoding
+% }
+
+% \newglossaryentry{decf}
+% { type=symbol,
+%   name={\ensuremath{{\Phi}()}},
+%   description={function describing the decoding function},
+%   sort=efunction-decoding-function
+% }
+
+% \newglossaryentry{busfact}
+% { type=symbol,
+%   name={\ensuremath{\lambda}},
+%   description={bus factor},
+%   sort={A:bus}
+% }
+
+
+% \newglossaryentry{alfact}
+% { type=symbol,
+%   name={\ensuremath{\mathit{A}_{i,j}}},
+%   description={temporal alignment factor for signal edges on  $b_i$ and $b_j$},
+%   sort={A_ij}
+% }
+
+
+
+
+
+%%%----------------ADD ALL SYMBOLS TO BE PRINTED
+%\glsaddall[types={math,symbol}]
+\glsaddall[types={math}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------abbreviation (not shown)------------------- %
+\newglossary{abbreviation}{1i}{1o}{Abbreviation}
+
+
+
+\newglossaryentry{gnd}{
+	type=abbreviation,
+	name={GND},%
+	description={ground}%
+	first={ground~(GND)}
+}
+
+
+%----------------unit (not shown)------------------- %
+%% \newglossary{unit}{3i}{3o}{Units}
+%% \newglossaryentry{pp}{
+%% type=unit,
+%% name={\unit{pp}},%
+%% first={percentage points~(\unit{pp})},
+%% description={percentage point},%
+%% sort={U:pp}
+%% }
+
+%% \newglossaryentry{ge}{
+%% type=unit,
+%% name={\unit{GE}},%
+%% first={gate equivalents~(\unit{GE})},
+%% description={gate equivalent},
+%% sort={U:GE}
+%% }
+
+
+
+% \newglossaryentry{alfacthat}
+% { type=symbol,%   name={\ensuremath{\hat{\mathit{A}}}},
+%   description={Alignment factor for signal edges},
+%   sort=Alignment-factor
+% }
+
+%-- define new commands to add the symbols more smoothl
+\newcommand{\BB}{\gls{bb}}
+% \newcommand{\ENC}{\gls{enc}}
+% \newcommand{\ENCF}{\gls{encf}} % ENCODING AS A FUNCTION
+% \newcommand{\DEC}{\gls{dec}}  
+% \newcommand{\DECF}{\gls{decf}} % DECODING AS A FUNCTION
+\newcommand{\ENC}{\mathbf{\Gamma}}
+\newcommand{\ENCF}{{\Gamma}} % ENCODING AS A FUNCTION
+\newcommand{\DEC}{\mathbf{\Phi}}  
+\newcommand{\DECF}{{\Phi}} % DECODING AS A FUNCTION
+\newcommand{\AlFact}{\ensuremath{\mathit{A}}} % alignment factor symbol
+\newcommand{\BusFac}{\ensuremath{\lambda}} % alignment factor symbol
+\newcommand{\AlFactHat}{\hat{{A}}} % alignment factor symbol
+\newcommand{\AlFactMean}{\bar{{A}}} % alignment factor symbol
+
+% % math commadn for the last chapter covering yield enhancement
+\renewcommand{\k}{\ensuremath{m}} % unencoded bit width
+\newcommand{\n}{\ensuremath{n}} % encoded bit width % keep as always
+\newcommand{\m}{\ensuremath{p}} % errors to be corrected
+%% math commands
+\newcommand{\laplacian}[1]{\mathcal{L} \{#1 \}}
+% \newcommand{\Axor}[1]{A_\textnormal{\acrshort{xor}{#1}}} % Size of an xor in math mode
+% \newcommand{\Amux}[1]{A_\textnormal{{mux}{#1}}} % Size of an xor in math mode
+% \newcommand{\Aff}[1]{A_\textnormal{\acrshort{ff}{#1}}} % Size of an xor in math mode
+% \newcommand{\Axor}{A_\textnormal{\acrshort{xor}}} % Size of a xor in math mode
+% \newcommand{\Aand}{A_\textnormal{\acrshort{and}}} % Size of an and in math mode
+%  \newcommand{\Amux}{A_\textnormal{{MUX}}} % Size of an xor in math mode
+%  \newcommand{\Aff}{A_\textnormal{\acrshort{ff}}} % Size of an xor in math mode
+% \newcommand{\Txor}{T_\textnormal{\acrshort{xor}}} % Size of a xor in math mode
+% \newcommand{\Tand}{T_\textnormal{\acrshort{and}}} % Size of an and in math mode
+%  \newcommand{\Tmux}{T_\textnormal{{MUX}}} % Size of an xor in math mode
+% \newcommand{\Axor}{A_\textnormal{{xor}}} % Size of a xor in math mode
+% \newcommand{\Aand}{A_\textnormal{{and}}} % Size of an and in math mode
+%  \newcommand{\Amux}{A_\textnormal{{mux}}} % Size of an xor in math mode
+%  \newcommand{\Aff}{A_\textnormal{{ff}}} % Size of an xor in math mode
+% \newcommand{\Txor}{T_\textnormal{{xor}}} % Size of a xor in math mode
+% \newcommand{\Tand}{T_\textnormal{{and}}} % Size of an and in math mode
+%  \newcommand{\Tmux}{T_\textnormal{{mux}}} % Size of an xor in math mode
+%  \newcommand{\ldceil}[1]{\lceil\log_2{\left({#1}\right)}\rceil}
+% \newcommand{\T}{{\mathbf{S}}}
+% \newcommand{\cf}{{\delta}}
+% \newcommand{\PerM}{\mathbf{I_\pi}} % Definition of the Permutation matrix (I because der of Identity matrix)
+% \newcommand{\AssM}{\mathbf{I_\sigma}} % Definition of the assignment matrix (aus dem deutschen wikipedia "vozeichenbehaftete permutatiosnmatrix)
+% \newcommand{\AssOpt}{\mathbf{{I}_{\sigma\textnormal{,power-opt.}}}} % Definition of the Permutation matrix
+
+% % mean probability entry for the capacitance model
+% \newcommand{\meanP}{\mathcal{P}}
+
+
+
+\newcommand{\NC}{\ensuremath{\nicefrac{\omega_\textnormal{m}}{\omega_\textnormal{e}}}}
+
+
+
+%----------------------------------- acronym ------------------- %
+
+% common that are ignored
+\setacronymstyle{long-sm-short}
+
+
+\newacronym{ai}{AI}{Artificial Intelligence}
+
+\newacronym{pvt}{PVT}{Process Voltage Temperature}
+\newacronym{itrs}{ITRS}{International Technology Roadmap for Semiconductors}
+\newacronym{lsb}{LSB}{Least Significant Bit}
+\newacronym{lsp}{LSP}{Lower Significant Partial product}
+\newacronym{msb}{MSB}{Most Significant Bit}
+\newacronym{pp}{PP}{Partial Product}
+\newacronym{ppt}{PPT}{Partial Product Tree}
+\newacronym{etm}{ETM}{Error Tolerant Multiplier}
+\newacronym{bam}{BAM}{Broken-Array Multiplier}
+\newacronym{udm}{UDM}{UnderDesigned Multiplier}
+\newacronym{loa}{LOA}{Lower-part OR Adder}
+\newacronym{esa}{ESA}{Equally Segmented Adder}
+\newacronym{eta2}{ETAII}{Error Tolerant Adder type II}
+\newacronym{aca}{ACA}{Almost Correct Adder}
+\newacronym{gear}{GeAr}{Generic Accuracy-configurable Adder}
+\newacronym{oloca}{OLOCA}{Optimized Lower-part OR-Constant Adder}
+\newacronym{mac}{MAC}{Multiply-Accumulate Unit}
+\newacronym{nn}{NN}{Neural Network}
+\newacronym{rtl}{RTL}{Register-Transfer Level}
+\newacronym{rca}{RCA}{Ripple-Carry Adder}
+\newacronym{cla}{CLA}{Carry Lookahead Adder}
+\newacronym{csa}{CSA}{Carry-Save Adder}
+\newacronym{fa}{FA}{Full Adder}
+\newacronym{ha}{HA}{Half Adder}
+\newacronym{alu}{ALU}{Arithmetic and Logical Unit}
+\newacronym{vhdl}{VHDL}{Very high speed integrated circuit Hardware Description Language}
+\newacronym{fsm}{FSM}{Finite State Machine}
+\newacronym{ant}{ANT}{Algorithmic Noise Tolerance}
+\newacronym{std}{STD}{Standard Deviation}
+\newacronym{fft}{FFT}{Fast Fourier Transform}
+\newacronym{mae}{MAE}{Mean Absolute Error}
+\newacronym{mse}{MSE}{Mean Squared Error}
+\newacronym{smse}{SMSE}{Saturated Mean Squared Error}
+\newacronym{mrae}{MRAE}{Mean Relative Absolute Wrror}
+\newacronym{nmae}{NMSE}{Normalized Mean Squared Error}
+\newacronym{pdf}{PDF}{Probability Density Function}
+\newacronym{vlsi}{VLSI}{Very-Large-Scale Integration}
+\newacronym{eda}{EDA}{Electronic Design Automation}
+\newacronym{sta}{STA}{Static Timing Analysis}
+\newacronym{risc}{RISC}{Reduced Instruction Set Computer}
+\newacronym{vcd}{VCD}{Value Change Dump} 
+\newacronym{spice}{SPICE}{Simulation Program with Integrated Circuit Emphasis}
+\newacronym{ic}{IC}{Integrated Circuit}
+\newacronym{cad}{CAD}{Computer-Aided Design}
+\newacronym{cmos}{CMOS}{Complementary Metal-Oxide-Semiconductor}
+\newacronym{mos}{MOS}{Metal-Oxide-Semiconductor}
+\newacronym{xor}{XOR}{Logical exclusive disjunction}
+\newacronym{xnor}{XNOR}{logical exclusive non-disjunction}
+\newacronym{and}{AND}{Logical conjunction}
+\newacronym{nand}{NAND}{Logical non-conjunction}
+\newacronym{nor}{NOR}{logical non-disjunction}
+\newacronym{or}{OR}{logical disjunction}
+\newacronym{sram}{SRAM}{Static Random Access Memory}
+\newacronym{rgb}{RGB}{Red-Green-Blue}
+%\newacronym{io}{I/O}{Input/Output}
+\newacronym{dram}{DRAM}{Dynamic Random-Access Memory}
+\newacronym{fo4}{FO4}{Fan-Out of 4}
+%\newacronym{nldm}{NLDM}{Non-Linear Delay Model}
+\newacronym{dsp}{DSP}{Digital Signal Processing}
+\newacronym{pdk}{PDK}{Process Design Kit}
+\newacronym{saif}{SAIF}{Switching Activity Interchange Format} 
+%\newacronym{finfet}{FinFET}{Fin Field-Effect Transistor}
+\newacronym{mosfet}{MOSFET}{\Acrshort{mos} Field-Effect Transistor}
+\newacronym{rf}{RF}{Radio Frequency}
+\newacronym{ff}{FF}{Flip-Flop} 
+\newacronym{ram}{RAM}{Random-Access Memory}
+\newacronym{rom}{ROM}{Read-Only Memory}
+\newacronym{ssim}{SSIM}{Structural Similarity Index Measure}
+%\newacronym{fpu}{FPU}{Floating Point Unit}
+%\newacronym{er}{ER}{error rate}
+\newacronym{fifo}{FIFO}{First-In First-Out}
+\newacronym{dag}{DAG}{Directed Acyclic Graph}
+\newacronym{snr}{SNR}{Signal-to-Noise Ratio}
+\newacronym{fos}{FOS}{Frequency Over-Scaling}
+\newacronym{vos}{VOS}{Voltage Over-Scaling}
+\newacronym{simd}{SIMD}{Single Instruction, Multiple Data}
+\newacronym{sift}{SIFT}{Scale-Invariant Feature Transform}
+\newacronym{dma}{DMA}{Direct Memory Access}
+\newacronym{ppa}{PPA}{Parallel-Prefix Adder}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newacronym{snn}{SNN}{spiking neural network}
+\newacronym{cnn}{CNN}{convolutional neural network}
+\newacronym{ann}{ANN}{artificial neural network}
+\newacronym{sbs}{SbS}{Spike-by-Spike}
+\newacronym{lif}{LIF}{leaky integrate and fire}
+\newacronym{ml}{ML}{machine learning}
+\newacronym{qat}{QAT}{quantization-aware training}
+\newacronym{tf}{TF}{TensorFlow}
+\newacronym{tp}{TP}{tensor processor}
+\newacronym{shm}{SHM}{structural health monitoring}
+\newacronym{ae}{AE}{acoustic emission}
+\newacronym{soc}{SoC}{system-on-chip}
+\newacronym{cpu}{CPU}{central processing unit}
+\newacronym{fpga}{FPGA}{field-programmable gate array}
+\newacronym{hls}{HLS}{high-level synthesis}
+\newacronym{iot}{IoT}{Internet-of-Things}
+\newacronym{cps}{CPS}{cyber-physical systems}
+\newacronym{har}{HAR}{human activity recognition}
+\newacronym{hpc}{HPC}{high performance computing}
+\newacronym{asic}{ASIC}{application-specific integrated circuit}
+\newacronym{hf6}{HF6}{Hybrid-Float6}
+\newacronym{npu}{NPU}{neural processing unit}
+\newacronym{ip_sbs}{IP}{inference population}
+\newacronym{fp}{FP}{floating-point}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newacronym{mae}{MAE}{maximum-absolute error}
+
+%\newacronym{qos}{QoS}{quality-of-service}
+
+%\newacronym{rt}{RT}{register transfer}
+
+
+%\newacronym{pun}{PUN}{pull-up network}
+%\newacronym{pdn}{PDN}{pull-down network}
+%\newacronym{pdf}{PDF}{probability density function}
+
+%\newacronym{pe}{PE}{Processing Element}
+%
+%\newacronym{iu}{IU}{integer unit}
+%\newacronym{mpsoc}{MPSOC}{multiprocessor system-on-chip}
+
+%\newacronym{vsoc}{VSoC}{vision system on chip}
+%\newacronym{ip}{IP}{Intellectual Property}
+%\newacronym{tmr}{TMR}{triple modular redundancy}
+%\newacronym{lut}{LUT}{LookUp Table}
+%\newacronym{2d}{2D}{two-dimensional}
+%\newacronym{3d}{3D}{three-dimensional}
+%\newacronym{ams}{AMS}{Analog-Mixed-Signal}
+%\newacronym{ms}{MS}{Mixed-Signal}
+%\newacronym{lpc}{LP}{Low-Power}
+
+%\newacronym{nvm}{NVM}{non-volatile memory}
+%\newacronym{sa1}{SA1}{Stuck-At-1}
+%\newacronym{sa0}{SA0}{Stuck-At-0}
+\newacronym{pdp}{PDP}{Power-Delay Product}
+\newacronym{adp}{ADP}{Area-Delay Product}
+\newacronym{edp}{EDP}{Energy-Delay Product}
+\newacronym{tx}{Tx}{Transmitter}
+\newacronym{rx}{Rx}{Receiver}
+%\newacronym{adc}{ADC}{analog-to-digital converter}
+%\newacronym{dc}{DC}{direct current} 
+%\newacronym{dac}{DAC}{digital-to-analog converter}
+%\newacronym{mems}{MEMS}{micro-electro-mechanical systems}
+\newacronym{dfg}{DFG}{\emph{German Research Foundation}}
+%\newacronym{daad}{DAAD}{\emph{German Academic Exchange Service}}
+%\newacronym{bmbf}{BMBF}{\emph{German Federal Ministry of Education and Research}} 
+

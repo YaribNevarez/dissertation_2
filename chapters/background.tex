@@ -1,0 +1,184 @@
+\chapter{Background}\label{chap.background}
+\minitoc
+
+\section{Spike-by-Spike Neural Networks} 
+
+\label{sec:sbs}
+
+Technically, \gls{sbs} is a spiking neural network approach based on a
+generative probabilistic model. It iteratively finds an estimate of
+its input probability distribution $p(s)$ (i.e. the probability of
+input node $s$ to stochastically send a spike) by its latent variables
+via $r(s) = \sum_i h(i) W(s|i)$. 
+where $\vec{h}$ is an inference
+population composed of a group of neurons that compete with each
+other. An \gls{ip_sbs} sees only the spikes $s_t$ (i.e. the
+index identifying the input neuron $s$ which generated that spike at
+time $t$) produced by its input neurons, not the underlying input
+probability distribution $p(s)$ itself. By counting the spikes
+arriving at a group of \gls{sbs} neurons, $p(s)$ is estimated by
+$\hat{p}(s) = 1/T \sum_t \delta_{s,s^t}$ after $T$ spikes have been
+observed in total. The goal is to generate an internal representation
+$r(s)$ from the string of incoming spikes $s_t$ such that the negative
+logarithm of the likelihood
+$L = C - \sum_\mu \sum_s \hat{p}_\mu(s) log\left( r_\mu(s) \right)$ is
+minimized. $C$ is a constant which is independent of the internal
+representation $r_\mu(s)$ and $\mu$ denotes one input pattern from an
+ensemble of input patterns. Applying a multiplicative gradient descent
+method on $L$, an algorithm for iteratively updating $h_\mu(i)$ with
+every observed input spike $s_t$ could be derived
+\cite{ernst2007efficient}
+\begin{eqnarray} \label{eq:sbs_update}
+h_\mu^{new}(i) = \frac{1}{1+\epsilon} \left(h_\mu(i) + \epsilon \frac{h_\mu(i) W(s_t|i) }{\sum_j h_\mu(j) W(s_t|j)} \right) 
+\end{eqnarray}
+where $\epsilon$ is a parameter that also controls the strength of sparseness of the distribution of latent variables $h_\mu(i)$. Furthermore, $L$ can also be used to derive online and batch learning rules for optimizing the weights $W(s|i)$. The interested reader is referred to \cite{ernst2007efficient} for a more detailed exposition.
+
+From a practical point of view, \gls{sbs} provides a mechanism to obtain a sparse representation of input patterns. Given a set of
+	training samples $\{x_\eta\}$, it learns weights ($W$), that allow
+	to express the input patterns as a linear sparse non-negative combination
+	of features.  During inference, it provides a mechanism for expressing
+	each test input $x_\mu$ as $x_\mu \approx W\, h_\mu$ where all
+	entries are non-negative.
+	
+	The inference procedure consists in generating indices $s_t$
+	distributed according to a categorical distribution of the input pattern
+	$s_t \sim \mathrm{Categorical}(x_{\mu}(0), x_{\mu}(1), ..,
+	x_{\mu}(N-1))$. Starting with a random $h$ and executing
+	iteratively \Equ{eq:sbs_update} the \gls{sbs} algorithms finds
+	$h_{\mu}$. The fundamental concept of \gls{sbs} can be extended from vector to matrix
+	inputs. In this case, the linear operation $W\, h_\mu$ can be replaced by a
+	convolution to obtain a convolutional \gls{sbs} layer. A detailed description of the \gls{sbs} algorithm is presented in the Appendix~\ref{chap.append}
+
+\subsection{Basic Network Overview}
+
+\gls{sbs} network models can be constructed in sequential layered structures \cite{rotermund2019Backpropagation}. Each layer consists of many \gls{ip_sbs}s (represented by $\vec{h}$), while the communication between them is organized by a low bandwidth signal -- the spikes.
+
+The \gls{sbs} layer update is summarized in Algorithm~\ref{alg:sbs}. This is an iterative algorithm, where we denote the number of spikes ($N_{Spk}$) as the number of iterations. As a generative model, each iteration updates the internal representation ($H$) based on the input spikes ($S^{in}_t$). A basic \gls{sbs} network architecture for handwritten digit classification (MNIST) is shown in \fig{fig:sbs_network} and \Tab{tab:sbs_network}. Each \gls{ip_sbs} is an independent computational entity, this allows to design specialized hardware architectures that can be massively parallelized (see \fig{fig:SbS_layer}).
+
+
+\begin{algorithm}[b!]
+	\caption{SbS layer update.}\label{alg:sbs}
+	
+	\begin{algorithmic}[1]
+		\FOR {$t \leftarrow 0$ \textbf{to} $N_{Spk}-1$}
+		\FOR {$x \leftarrow 0, y \leftarrow 0$ \textbf{to} $N_X-1, N_Y - 1$}
+		\STATE $S^{out}_t(x, y) \sim Categorical( H^{}(x, y, :) ) $
+		\FOR {$\Delta_X \leftarrow 0, \Delta_Y \leftarrow 0$ \textbf{to} $K_X - 1,K_Y - 1$}
+		\STATE $spk \leftarrow S^{in}_t(x + \Delta_X , y + \Delta_Y)$
+		\FOR {$i \leftarrow 0$ \textbf{to} $N_H-1$}
+		\STATE $\Delta h(i)
+		\leftarrow H^{}(x, y,  i) \cdot W^{}(\Delta_X, \Delta_Y, spk, i)$
+		\STATE $r \leftarrow r + \Delta h(i)$
+		\ENDFOR
+		
+		\FOR {$i \leftarrow 0$ \textbf{to} $N_H-1$}
+		\STATE $H^{new}(x, y, i) \leftarrow \frac{1}{1+\epsilon} \left( H^{}(x, y, i) + \frac{\epsilon}{r} \Delta h(i) \right) $              
+		\ENDFOR
+		\ENDFOR
+		\ENDFOR
+		\ENDFOR
+	\end{algorithmic} 
+\end{algorithm}
+
+\begin{figure*}[b!]
+	\centering
+	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/sbs_network.pdf}
+	\caption{\gls{sbs} network architecture for handwritten digit classification task.}
+	\label{fig:sbs_network}
+\end{figure*}
+
+
+\begin{table}[t!]\centering
+	\caption{\gls{sbs} network architecture for handwritten digit classification task.}
+	\label{tab:sbs_network}
+	\scriptsize
+	\begin{tabular}{lrrrrrrr}\toprule
+		&\multicolumn{3}{c}{\textbf{Layer size}} & &\multicolumn{2}{c}{\textbf{Kernel size}} \\\cmidrule{2-4}\cmidrule{6-7}
+		\textbf{Layer} ($H^l$) &$N_X$ &$N_Y$ &$N_H$ & &$K_X$ &$K_Y$ \\\midrule
+		Input ($HX$) &28 &28 &2 & &- &- \\
+		Convolution ($H1$) &24 &24 &32 & &5 &5 \\
+		Pooling ($H2$) &12 &12 &32 & &2 &2 \\
+		Convolution ($H3$) &8 &8 &64 & &5 &5 \\
+		Pooling ($H4$) &4 &4 &64 & &2 &2 \\
+		Fully connected ($H5$) &1 &1 &1024 & &4 &4 \\
+		Output ($HY$) &1 &1 &10 & &1 &1 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Computational Cost}
+
+The number of \gls{mac} operations required for inference of an \gls{sbs} layer is defined by $NOPS_{MAC}=N_{Spk} N_X N_Y K_X K_Y (3 N_H + 2)$, where $N_{Spk}$ is the number of spikes (iterations), $N_X N_Y$ is the size of the layer, $K_X K_Y$ is the size of the kernel for convolution/pooling, and $N_H$ is the length of $\vec{h}$. The computational cost of \gls{sbs} network models is higher compared to equivalent \gls{cnn} models and lower compared to regular \gls{snn} models (e.g., \gls{lif}) \mbox{\cite{izhikevich2004model}}.
+
+
+\begin{figure*}[b!]
+	\centering
+	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/SbS_layer.pdf}
+	\caption{\gls{sbs} \gls{ip_sbs}s as independent computational entities, (a) illustrates an input layer with a massive amount of IPs operating as independent computational entities, (b) shows a hidden layer with an arbitrary amount of \gls{ip_sbs}s as independent computational entities, (c) exhibits a set of neurons grouped in an \gls{ip_sbs}.}
+	\label{fig:SbS_layer}
+\end{figure*}
+
+
+\subsection{Error Tolerance}
+
+To illustrate the error tolerance/resilience of \gls{sbs} networks, we present a classification performance under positive additive uniformly distributed noise as external disturbance. \fig{fig:robustnes_sbs} presents a comparison of the classification performance of an \gls{sbs} network and a standard \gls{cnn}, with the same amount of
+neurons per layer as well as the same layer structure. We trained both neural networks for handwritten digit classification on MNIST dataset \cite{lecun1998mnist} (see \cite{rotermund2019Backpropagation} for details). The figure shows the correctness for the MNIST test set with its \num[group-separator={,}]{10000} patterns in dependency of the noise level for positive additive
+uniformly distributed noise. The blue curve shows the performance for
+the \gls{cnn}, while the red curve shows the performance for
+the \gls{sbs} network with \num[group-separator={,}]{1200} spikes (iterations). Beginning
+with a noise level of 0.1, the respective performances are different
+with a p - level of at least $10^{-6}$ (tested with the Fisher exact
+test). Increasing the number of spikes per \gls{sbs} population to \num[group-separator={,}]{6000}
+(performance values shown as black stars), shows that more spikes can
+improve the performance under noise even more.
+
+\begin{figure*}[b!]
+	\centering
+	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/sbs_robustnes.pdf}
+	\caption{(a) Performance classification of \gls{sbs} NN versus equivalent \gls{cnn}, and (b) example of the first pattern in the MNIST test data set with different amounts of positive additive uniformly distributed noise.}
+	\label{fig:robustnes_sbs}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conv2D Tensor Operation}
+A convolutional layer aims to learn feature representations from an input layer. The convolution layer is made of convolution kernels that are used to compute feature maps. Each unit of a feature map is connected to a region of neighboring units on the input maps (from previous layer). Such a neighborhood of the previous layer is known as the receptive field of the unit. A new feature map can be obtained by first convolving the input maps with a learned kernel and then applying a nonlinear elementwise activation function to the convolved results. All spatial locations on the input maps share a kernel to generate a feature map. All feature maps are obtained by convolving several different kernels~\cite{gu2018recent}.
+
+
+The 2D convolution process is performed by the \emph{Conv2D} tensor operation, described in \Equ{eq:conv2D}, where $h$ is the input tensor containing the feature maps, $W$ is the convolution kernels (known as filters), and $b$ is the bias vector for the output feature maps~\cite{goodfellow2016deep}. $K\times L\times M$ is the receptive field size, $K\times L$ is the convolution kernel, and $M$ is the number of input channels/feature maps. We denote \emph{Conv} as \emph{Conv2D} operator.
+\begin{eqnarray} \label{eq:conv2D}
+Conv\left(W,h\right)_{i,j,o}=\sum_{k,l,m}^{K,L,M} h_{(i+k,j+l,m)} W_{(o,k,l,m)}+b_{o}
+\end{eqnarray}
+
+\section{Floating-point Number Representation}
+The representation of every numerical value, in any number system, is made of an integer and a fractional part. The border that delimits them is called the radix point. The fixed-point format for representing numeric values derives its name from the fact that in this format, the base point is fixed at a certain position. For integer numbers, this position is at the right of the least significant digit.
+
+In scientific computation, it is often necessary to represent very large and very small values. This is difficult to achieve using the fixed-point format because the bit size/width required to maintain both the desired precision and the desired range are very large. In such situations, \gls{fp} formats are used to represent real numbers. Each \gls{fp} number can be divided into three fields: sign $S$, exponent $E$, and mantissa $M$. Using the binary number system, it is possible to represent any \gls{fp} number as:
+
+\begin{eqnarray} \label{eq:float}
+(-1)^{S} \times 1.M \times 2^{E-B}
+\end{eqnarray}
+
+In \gls{fp} representations the exponent is biased. This bias depends on the bit size of the exponent field in the particular format. This exponent bias is defined by \Equ{eq:float_bias}, where $E_{size}$ is the exponent bit size.
+
+\begin{eqnarray} \label{eq:float_bias}
+B=2^{E_{size}-1}-1
+\end{eqnarray}
+
+There is a natural trade-off between small bit size requiring fewer hardware resources and larger bit size providing higher precision. Within a given total bit size, it is possible to assign various combinations of sizes to the exponent and mantissa fields, with wider exponents resulting in a higher range and wider mantissa resulting in better precision.
+
+The most widely used format for \gls{fp} arithmetic is the IEEE 754 standard \cite{zuras2008ieee}. The IEEE single-precision format (32-bit) is expressed by \Equ{eq:float} with $B$ = 127, 8 bits for the exponent and 23 bits for the mantissa, see \Fig{fig:floating}(a). In \gls{fp} formats, the numbers are normalized, the leading one is an implicit bit, and only the fractional part is explicitly stored in the mantissa field.
+
+\begin{figure*}[b!]
+	\centering
+	\includegraphics[width=0.5\columnwidth]{./chapters/cnn_accelerator/figures/power_breakdown/floating_point.pdf}
+	\caption{Floating-point number representation.}
+	\label{fig:floating}
+\end{figure*}
+
+Reduced bit size than those specified in the IEEE 754 standard are often sufficient to provide the desired precision. Reduced designs require fewer hardware resources enabling low-power implementations. In custom hardware designs, it is possible to customize the \gls{fp} format implemented. In later sections, we use the term E$a$M$b$ to denote \gls{fp} formats, where $a$ and $b$ are the exponent and mantissa bit size, respectively. For example, E4M1 means 4-bit exponent and 1-bit mantissa, see \Fig{fig:floating}(d).
+
+There are three special definitions in IEEE 754 standard. The first is subnormal numbers when $E=0$, then \Equ{eq:float} is modified to \Equ{eq:float_subnorm}. Infinity and not a number (NaN) are the other two special cases but are not used in our work.
+
+\begin{eqnarray} \label{eq:float_subnorm}
+(-1)^{S} \times 0.M \times 2^{1-B}
+\end{eqnarray}

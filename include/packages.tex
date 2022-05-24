@@ -1,0 +1,137 @@
+\usepackage[a-1b]{pdfx}
+\usepackage{xmpincl}
+\usepackage[inner=3.0cm,outer=2cm,top=2cm,bottom=2cm,includeheadfoot]{geometry}
+\usepackage[onehalfspacing]{setspace}
+%\setstretch{baselinestretch}
+%\linespread{1.5} % line spacing 
+ 
+\usepackage[headsepline,plainheadsepline]{scrpage2}
+\let\endgraph\endgraf        % necessary for "chapterprefix" in \documentclass call
+
+% Header and footer definition
+\clearscrheadfoot            % clear header and footer
+\ohead[\headmark]{\headmark} % chapter names at top
+\automark[section]{chapter}
+\pagestyle{scrheadings}      % choose page style
+%
+%% % try to solve the width problem in PDF/A
+%\usepackage[T1]{fontenc}
+
+\ofoot[\pagemark]{\pagemark} % page number on the upper right side
+%--------- separate abstract and content with one blank page---------- %
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+%\usepackage[backend=biber]{biblatex}
+% ------ Language and Text Options
+\usepackage[english]{babel}
+\usepackage[latin9]{inputenc}
+%\usepackage{pdflatex}
+%\usepackage{color}
+\usepackage{float}
+%\usepackage{xmpincl}
+\usepackage{hyperref}
+
+%******** complexity O()*******
+\usepackage{flushend}
+\renewcommand{\O}[1]{$\mathcal{O}(#1)$}
+
+
+%*********inline list
+\usepackage{enumerate}
+\usepackage[inline,shortlabels]{enumitem}
+
+%%********inkscape to latex*************
+%\usepackage{pstricks}
+%%\usepackage{pst-plot}
+
+%\usepackage[pdftex,
+%        pdftoolbar=true, hyperfootnotes=false,breaklinks=true,
+%        pdfpagelabels=true,
+%        bookmarks, bookmarksopen, bookmarksnumbered, bookmarksopenlevel=1,
+%        pdfauthor={Yanqiu Huang},
+%        pdfsubject={Dissertation},%
+%        pdfkeywords={WSNs, Energy efficiency, Data compression},
+%        pdftitle={Dissertation,Yanqiu Huang,Uni-Bremen,2017},
+%        pdfstartview={FitH},
+%        pdfborder={0 0 0},  %Farbe aller Linkumrandung auf Weiﬂ gesetzt
+%        plainpages=false]{hyperref}
+%\def\UrlBreaks{\do\/\do-}
+
+% this package is used to remove the double printed math symbole problem
+\usepackage{newtxtext,newtxmath}
+
+\usepackage{etoc}
+% ------ Math Packages
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+%\usepackage{amssymb}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%\usepackage{mathtools}
+\usepackage[detect-none]{siunitx}
+\usepackage[capitalize]{cleveref}
+% ------ Source Code
+\usepackage{listings}
+%\usepackage{enumerate}
+% ----- Floating Opjects
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{xcolor}
+
+%***packages for inputing the tikz pictures**********
+\newlength\figureheight 
+\newlength\figurewidth
+
+\usepackage{pgfplots}
+%******** change the tick, label size of the tikz figures********
+\pgfplotsset{every axis/.append style={
+		label style={font=\small},
+		tick label style={font=\small}  
+	}}
+	
+\usepackage{units}	
+\usepackage{color}
+	
+\usepackage{epstopdf}
+\usepackage{rotating}
+\usepackage{multirow}		% -- multirow and multicolumn
+\usepackage{booktabs}		% -- professional tables in LaTeX ,
+\usepackage{longtable}
+\usepackage{capt-of}
+%\usepackage[bf]{caption}		% -- customise Captions
+\usepackage{caption}		% -- customise Captions
+\usepackage{placeins} 		% -- FloatBarrier
+\usepackage{xspace}			% -- for a better layout of spaces
+
+
+% ------ Table of Contents
+\usepackage{minitoc}
+%\dominitoc % for minitoc, default left-bounded
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{2}
+
+% Packages for acronyms and list of symbols
+%\usepackage{acronym}
+\usepackage{makeidx}
+\usepackage[section,style=alttree, sort=use]{glossaries}
+\glssetwidest{ADCADCA}% widest name
+\renewcommand*{\glsnamefont}[1]{\textmd{#1}}
+\GlsSetQuote{+}
+\usepackage{ifthen}
+
+% *** SPECIALIZED LIST PACKAGES ***
+\usepackage[flushleft]{threeparttable}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+%\usepackage{algpseudocode}
+%\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+\newtheorem{theorem}{Theorem}
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+%------ package for list of symbols
+%\usepackage{glossaries}
+\usepackage[]{appendix}

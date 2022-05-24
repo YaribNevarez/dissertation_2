@@ -1,0 +1,59 @@
+\title {Accelerating Spike-by-Spike Neural Networks \added{on FPGA} with Hybrid Custom Floating-Point and Logarithmic Dot-Product Approximation \deleted{on FPGA}}
+
+\author{
+	\uppercase{Yarib Nevarez}\authorrefmark{1},	
+	\uppercase{David Rotermund}\authorrefmark{2},
+	\uppercase{Klaus R. Pawelzik}\authorrefmark{3},
+	\uppercase{Alberto Garcia-Ortiz}\authorrefmark{4} \IEEEmembership{Member, IEEE},
+}
+
+\address[1]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: nevarez@item.uni-bremen.de)}
+
+\address[2]{Institute for Theoretical Physics, University of Bremen, Bremen 28359, Germany (e-mail: davrot@neuro.uni-bremen.de)}
+
+\address[3]{Institute for Theoretical Physics, University of Bremen, Bremen 28359, Germany (e-mail: pawelzik@neuro.uni-bremen.de)}
+
+\address[4]{Institute of Electrodynamics and Microelectronics, University of Bremen, Bremen 28359, Germany (e-mail: agarcia@item.uni-bremen.de)}
+
+\tfootnote{This work is funded by the Consejo Nacional de Ciencia
+	y Tecnologia - CONACYT (the Mexican National Council for
+	Science and Technology)}
+
+\markboth
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+
+\corresp{Corresponding author: Yarib Nevarez (e-mail: nevarez@item.uni-bremen.de).}
+
+\begin{abstract}
+  Spiking neural networks (SNNs) represent a promising alternative to
+  conventional neural networks. In particular, the so-called
+  Spike-by-Spike (SbS) neural networks provide exceptional noise
+  robustness and reduced complexity. However, deep SbS networks
+  require a memory footprint and a computational cost unsuitable for
+  embedded applications. To address this problem, this work exploits
+  the intrinsic error resilience of neural networks to improve
+  performance and to reduce hardware complexity. More precisely,
+  we design a vector dot-product hardware unit based on approximate computing
+  with \replaced{configurable quality}{quality configurable design}
+  using hybrid custom floating-point and logarithmic number
+  representation. This approach reduces computational latency, memory
+  footprint, and power dissipation while preserving inference
+  accuracy. To demonstrate our approach, we address a design
+  exploration flow using high-level synthesis and a Xilinx SoC-FPGA.
+  \replaced{The}{As a result, the} proposed design \replaced{reduces
+    $20.5\times$ computational latency and $8\times$ weight memory
+    footprint, with}{ achieves $20.5\times$ latency enhancement,
+    $8\times$ weight memory footprint reduction, and} less than
+  $0.5\%$ of accuracy degradation on \added{a} handwritten digit
+  recognition task.
+	
+\end{abstract}
+
+\begin{keywords}
+Artificial intelligence, spiking neural networks, approximate computing, logarithmic, parameterisable floating-point, optimization, hardware accelerator, embedded systems, FPGA
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle

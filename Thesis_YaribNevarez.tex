@@ -1,0 +1,209 @@
+ %\documentclass[1.5headlines,twoside, a4paper, 11pt, automark,final,headsepline]{scrreprt}
+\documentclass[1.5headlines,twoside, openright, a4paper, 12pt, automark,final,headsepline, hidelinks]{scrbook}
+
+%%****************
+%% define medatata
+%%________________
+%\def\Title{An Example Document}
+%\def\Author{Some Name}
+%\def\Subject{An Example Document}
+%\def\Keywords{LaTeX,Example,Document}
+% 
+%%***************************************************************************
+%% \convertDate converts D:20080419103507+02'00' to 2008-04-19T10:35:07+02:00
+%%___________________________________________________________________________
+%\def\convertDate{%
+%    \getYear
+%}
+% 
+%{\catcode`\D=12
+% \gdef\getYear D:#1#2#3#4{\edef\xYear{#1#2#3#4}\getMonth}
+%}
+%\def\getMonth#1#2{\edef\xMonth{#1#2}\getDay}
+%\def\getDay#1#2{\edef\xDay{#1#2}\getHour}
+%\def\getHour#1#2{\edef\xHour{#1#2}\getMin}
+%\def\getMin#1#2{\edef\xMin{#1#2}\getSec}
+%\def\getSec#1#2{\edef\xSec{#1#2}\getTZh}
+%\def\getTZh +#1#2{\edef\xTZh{#1#2}\getTZm}
+%\def\getTZm '#1#2'{%
+%    \edef\xTZm{#1#2}%
+%    \edef\convDate{\xYear-\xMonth-\xDay T\xHour:\xMin:\xSec+\xTZh:\xTZm}%
+%}
+% 
+%\expandafter\convertDate\pdfcreationdate 
+% 
+%%**************************
+%% get pdftex version string
+%%__________________________
+%\newcount\countA
+%\countA=\pdftexversion
+%\advance \countA by -100
+%\def\pdftexVersionStr{pdfTeX-1.\the\countA.\pdftexrevision}
+% 
+% 
+%%*********
+%% XMP data
+%\usepackage{xmpincl}
+%
+%
+%\providecommand{\xmpAuthorURI}{} \providecommand{\xmpJournalnumber}{} \providecommand{\xmpVolume}{} \providecommand{\xmpIssue}{} \providecommand{\xmpCoverDisplayDate}{} \providecommand{\xmpCoverDate}{} \providecommand{\xmpJournaltitle}{} \providecommand{\xmpFirstpage}{} \providecommand{\xmpLastpage}{} \providecommand{\xmpDoi}{}
+%
+%
+%\providecommand{\xmpProducer}{LaTeX2e}
+%\providecommand{\xmpOrg}{MyOrg}
+%\providecommand{\xmpTitle}{MyTitle}
+%\providecommand{\xmpAuthor}{MyAuthor, mymail@gmail.com}
+%\providecommand{\xmpKeywords}{MyKeywords}
+%\providecommand{\xmpSubject}{MySubject}
+%\providecommand{\xmpCreatorTool}{\pdftexbanner}
+%\providecommand{\convDate}{\pdfcreationdate}
+%\makeatletter
+%
+%\includexmp{pdfa-1b}
+%\makeatother
+% 
+%%********
+%% pdfInfo
+%%________
+%\pdfinfo{%
+%    /Title    (\Title)
+%    /Author   (\Author)
+%    /Subject  (\Subject)
+%    /Keywords (\Keywords)
+%    /ModDate  (\pdfcreationdate)
+%    /Trapped  /False
+%}
+%%****************************************
+%% include the packages, commands and glossaries
+\include{./include/packages}		% -- include packages
+\include{./include/commands}		% -- define your own commands
+\include{./include/glossaries}
+\graphicspath{./figures/}		
+\allowdisplaybreaks[1]
+\makeindex
+\makenoidxglossaries
+
+% to avoid the problem'text cannot be mapped to unicode'
+\input glyphtounicode.tex
+\input glyphtounicode-cmr.tex
+\pdfgentounicode=1
+
+\usepackage[
+type={CC},
+modifier={by-nc-sa},
+version={3.0},
+]{doclicense}
+\begin{document}
+%%-----------------------------------------------------------------
+%% ----- Source Code Config------------------------
+%%-----------------------------------------------------------------
+%\lstset{      
+%					basicstyle=\ttfamily\mdseries,
+%					language = VHDL, 
+%					tabsize= 3,
+%					xleftmargin=30pt,
+%					commentstyle=\color{gray}
+%					}
+%					
+					
+					
+					
+%-----------------------------------------------------------------
+%----------------------------COVER-------------------------
+%-----------------------------------------------------------------
+
+\include{./chapters/title}
+
+%-----------------------------------------------------------------
+%----------------------------Copyright------------------------- 
+%-----------------------------------------------------------------
+
+\vspace*{\fill}  
+\thispagestyle{empty}
+\begin{center} 
+\doclicenseThis
+\end{center} 
+\cleardoublepage
+
+%-----------------------------------------------------------------
+%----------------------- Declaration ------------------------
+%-----------------------------------------------------------------
+%\include{./chapter/declaration}
+
+%-----------------------------------------------------------------
+%----------------------- Acknowledgement ------------------------
+%-----------------------------------------------------------------
+\include{./chapters/acknowledgement}
+
+%-----------------------------------------------------------------
+%----------------------- ABSTRACT ------------------------
+%-----------------------------------------------------------------
+\include{./chapters/abstract}
+%\include{./chapter/kurzfassung} % German abstract
+
+%-----------------------------------------------------------------
+%------------ TABLE OF CONTENTS ----------------
+%-----------------------------------------------------------------
+%\tableofcontents
+\pagenumbering{Roman}
+\dominitoc[n]% Initialization
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\afterpage{\blankpage}
+%-----------------------------------------------------------------
+%-----------INCLUDE YOUR SECTIONS -----------
+%-----------------------------------------------------------------
+\include{./chapters/introduction}
+\include{./chapters/background}
+\include{./chapters/accelerating_sbs}
+\include{./chapters/cnn_accelerator}
+\include{./chapters/conclusion}
+\appendix
+\include{./chapters/appendix}
+
+
+
+
+%-----------------------------------------------------------------
+%----------------------- ACRONYMS ----------------------
+%-----------------------------------------------------------------
+
+
+\chapter*{Acronyms}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\glsdescwidth{0.8\hsize}
+%\renewcommand*{\arraystretch}{0.5}% default is 1
+\printnoidxglossary[type=symbol, nonumberlist]
+\printnoidxglossary[type=acronym, nonumberlist]
+\printnoidxglossary[type=n1, nonumberlist]
+
+%-----------------------------------------------------------------
+%------------------------ LIST OF FIGURES --------------------
+%-----------------------------------------------------------------
+
+\listoffigures
+
+%-----------------------------------------------------------------
+%------------------------ LIST OF TABLES ----------------------
+%-----------------------------------------------------------------
+
+\listoftables
+
+%-----------------------------------------------------------------
+%------------------------BIBLIOGRAPHY-------------
+%-----------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+%\bibliographystyle{wmaainf}
+\bibliography{./bibliography/mybib}
+
+\end{document}
+
+
+
+
+

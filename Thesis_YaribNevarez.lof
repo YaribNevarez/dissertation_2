@@ -1,0 +1,53 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduction}{1}{chapter.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Background}{11}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \gls {sbs} network architecture for handwritten digit classification task.\relax }}{13}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \gls {sbs} \gls {ip_sbs}s as independent computational entities, (a) illustrates an input layer with a massive amount of IPs operating as independent computational entities, (b) shows a hidden layer with an arbitrary amount of \gls {ip_sbs}s as independent computational entities, (c) exhibits a set of neurons grouped in an \gls {ip_sbs}.\relax }}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces (a) Performance classification of \gls {sbs} NN versus equivalent \gls {cnn}, and (b) example of the first pattern in the MNIST test data set with different amounts of positive additive uniformly distributed noise.\relax }}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Floating-point number representation.\relax }}{16}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Accelerating Spike-by-Spike Neural Networks}{19}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dot-product hardware module with (a) standard floating-point (IEEE 754) arithmetic, (b) hybrid custom floating-point approximation, and (c) hybrid logarithmic approximation.\relax }}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces System-level overview of the embedded software architecture.\relax }}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces System-level hardware architecture with scalable number of heterogeneous PUs: \emph {Spike}, \emph {Conv}, \emph {Pool}, and \emph {FC}\relax }}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The \emph {Conv} processing unit and its six stages: (a) receive IP vector, (b) spike firing, (c) receive spike kernel, (d) update dynamics, (e) dispatch new IP vector, (f) dispatch output spike matrix.\relax }}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dot-product hardware module with standard floating-point (IEEE 754) computation, (a) exhibits the initiation interval of 10 clock cycles, (b) presents the iteration latency of 19 clock cycles, (c) shows the pairwise product block in dark-gray, and (d) illustrates the accumulation block in light-gray.\relax }}{31}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Dot-product hardware module with hybrid custom floating-point approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 13 clock cycles, (c) shows the pairwise product blocks in dark-gray, and (d) illustrates the accumulation blocks in light-gray.\relax }}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dot-product hardware module with hybrid logarithmic approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 9 clock cycles, (c) shows the pairwise product block in dark-gray, and (d) illustrates the accumulation blocks in light-gray.\relax }}{34}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Computation on embedded CPU.\relax }}{35}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces System overview of the top-level architecture with 8 processing units.\relax }}{35}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Performance of processing units with standard floating-point (IEEE 754) computation.\relax }}{36}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Performance bottleneck of cyclic computation on processing units with standard floating-point (IEEE 754) arithmetic, (a) exhibits the starting of $t_{PU}$ of \emph {Conv2} on a previous computation cycle, (b) presents $t_{CPU}$ of \emph {Conv2} on the current computation cycle, (c) shows the CPU waiting time (in gray color) for \emph {Conv2} as a busy resource (awaiting for \emph {Conv2} interruption), and (d) illustrates the $t_{f}$ from the previous computation cycle, the starting of $t_{PU}$ on the current computation cycle (\emph {Conv2} interruption on completion, and start current computation cycle).\relax }}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Noise tolerance on hardware PU with standard floating-point (IEEE 754) computation (benchmark/reference), (a) exhibits accuracy degradation applying $50\%$ of noise amplitude, and (b) illustrates convergence of inference with $400$ spikes.\relax }}{40}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces $\qopname \relax o{log}_2$-histogram of each synaptic weight matrix showing the percentage of matrix elements with given integer exponent.\relax }}{41}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Performance on processing units with hybrid custom floating-point approximation, (a) exhibits computation schedule, (b) presents cyclic computation schedule, and (c) shows the performance of \emph {Conv2} from a previous computation cycle during the preprocessing of \emph {H1\_CONV} on the current computation cycle without bottleneck.\relax }}{42}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Noise tolerance on hardware PU with custom floating-point approximation, (a) exhibits accuracy degradation applying $50\%$ of noise amplitude, and (b) illustrates convergence of inference with $400$ spikes.\relax }}{44}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Performance of processing units with hybrid logarithmic approximation, (a) exhibits computation schedule, and (b) illustrates cyclic computation schedule.\relax }}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Noise tolerance on hardware PU with hybrid logarithmic approximation, (a) exhibits accuracy degradation applying $40\%$ of noise amplitude, (b) illustrates convergence of inference with $600$ spikes.\relax }}{46}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Power dissipation breakdown of platform implementations, (a) \ref {nevarez2020accelerator} architecture with homogeneous AUs using standard floating-point arithmetic (IEEE 754), (b) reference architecture with specialized heterogeneous PUs using standard floating-point arithmetic (IEEE 754), (c) proposed architecture with hybrid custom floating-point approximation, and (d) proposed architecture with hybrid logarithmic approximation.\relax }}{47}{figure.caption.51}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Accelerating Convolutional Neural Networks}{49}{chapter.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The workflow of our approach on embedded FPGAs.\relax }}{51}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Base embedded system architecture.\relax }}{54}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Hardware architecture of the proposed tensor processor.\relax }}{54}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Dot-product hardware module with (a) standard floating-point and (b) Hybrid-Float6.\relax }}{56}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces (a) Dot-product hardware module with Hybrid-Float6 MAC, (b) bias accumulation, (c) activation and normalization.\relax }}{56}{figure.caption.58}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Hybrid-Float6 multiply-accumulate hardware design.\relax }}{57}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Design parameters for on-chip memory buffers on the TP.\relax }}{58}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Base embedded software architecture.\relax }}{61}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Experimental setup for sensor analytics on structural health monitoring, all lengths are in meters (m).\relax }}{64}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$ m, $y = 0.109$ m with noise disturbance.\relax }}{66}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces CNN-regression model for sensor analytics.\relax }}{67}{figure.caption.74}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Training results.\relax }}{68}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Performance of the model with different data representations.\relax }}{69}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.\relax }}{72}{figure.caption.85}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit [666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit [200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit [200]{MHz}$.\relax }}{74}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces 2D error distribution of three CNN-regression models.\relax }}{75}{figure.caption.90}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.\relax }}{75}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit [666]{MHz}$ and PL at $\unit [200]{MHz}$.\relax }}{76}{figure.caption.93}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Conclusion and Outlook}{79}{chapter.5}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Appendix}{81}{appendix.A}%

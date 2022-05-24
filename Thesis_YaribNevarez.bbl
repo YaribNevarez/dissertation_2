@@ -1,0 +1,709 @@
+\begin{thebibliography}{100}
+
+\bibitem{lasi2014industry}
+Heiner Lasi, Peter Fettke, Hans-Georg Kemper, Thomas Feld, and Michael
+  Hoffmann.
+\newblock Industry 4.0.
+\newblock {\em Business \& information systems engineering}, 6(4):239--242,
+  2014.
+
+\bibitem{espinoza2020estimating}
+H{\'e}ctor Espinoza, Gerhard Kling, Frank McGroarty, Mary O'Mahony, and Xenia
+  Ziouvelou.
+\newblock Estimating the impact of the internet of things on productivity in
+  europe.
+\newblock {\em Heliyon}, 6(5):e03935, 2020.
+
+\bibitem{alcacer2019scanning}
+Vitor Alc{\'a}cer and Virgilio Cruz-Machado.
+\newblock Scanning the industry 4.0: A literature review on technologies for
+  manufacturing systems.
+\newblock {\em Engineering science and technology, an international journal},
+  22(3):899--919, 2019.
+
+\bibitem{loh20201}
+Kou-Hung~Lawrence Loh.
+\newblock 1.2 fertilizing aiot from roots to leaves.
+\newblock In {\em 2020 IEEE International Solid-State Circuits
+  Conference-(ISSCC)}, pages 15--21. IEEE, 2020.
+
+\bibitem{zhang2020empowering}
+Jing Zhang and Dacheng Tao.
+\newblock Empowering things with intelligence: A survey of the progress,
+  challenges, and opportunities in artificial intelligence of things.
+\newblock {\em IEEE Internet of Things Journal}, 2020.
+
+\bibitem{chippa2013analysis}
+Vinay~K Chippa, Srimat~T Chakradhar, Kaushik Roy, and Anand Raghunathan.
+\newblock Analysis and characterization of inherent application resilience for
+  approximate computing.
+\newblock In {\em Proceedings of the 50th Annual Design Automation Conference},
+  pages 1--9, 2013.
+
+\bibitem{venkataramani2016efficient}
+Swagath Venkataramani, Kaushik Roy, and Anand Raghunathan.
+\newblock Efficient embedded learning for iot devices.
+\newblock In {\em 2016 21st Asia and South Pacific Design Automation Conference
+  (ASP-DAC)}, pages 308--311. IEEE, 2016.
+
+\bibitem{he2015spatial}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Spatial pyramid pooling in deep convolutional networks for visual
+  recognition.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  37(9):1904--1916, 2015.
+
+\bibitem{liu2016ssd}
+Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed,
+  Cheng-Yang Fu, and Alexander~C Berg.
+\newblock Ssd: Single shot multibox detector.
+\newblock In {\em European conference on computer vision}, pages 21--37.
+  Springer, 2016.
+
+\bibitem{ren2016faster}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
+\newblock Faster r-cnn: towards real-time object detection with region proposal
+  networks.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  39(6):1137--1149, 2016.
+
+\bibitem{bochkovskiy2020yolov4}
+Alexey Bochkovskiy, Chien-Yao Wang, and Hong-Yuan~Mark Liao.
+\newblock Yolov4: Optimal speed and accuracy of object detection.
+\newblock {\em arXiv preprint arXiv:2004.10934}, 2020.
+
+\bibitem{ahmad2020challenges}
+Ijaz Ahmad, Shahriar Shahabuddin, Tanesh Kumar, Erkki Harjula, Marcus Meisel,
+  Markku Juntti, Thilo Sauter, and Mika Ylianttila.
+\newblock Challenges of ai in wireless networks for iot.
+\newblock {\em arXiv preprint arXiv:2007.04705}, 2020.
+
+\bibitem{al2019artificial}
+Fadi Al-Turjman.
+\newblock {\em Artificial intelligence in IoT}.
+\newblock Springer, 2019.
+
+\bibitem{jouppi2017datacenter}
+Norman~P Jouppi, Cliff Young, Nishant Patil, David Patterson, Gaurav Agrawal,
+  Raminder Bajwa, Sarah Bates, Suresh Bhatia, Nan Boden, Al~Borchers, et~al.
+\newblock In-datacenter performance analysis of a tensor processing unit.
+\newblock In {\em Proceedings of the 44th annual international symposium on
+  computer architecture}, pages 1--12, 2017.
+
+\bibitem{amrouch2020npu}
+Hussam Amrouch, Georgios Zervakis, Sami Salamin, Hammam Kattan, Iraklis
+  Anagnostopoulos, and J{\"o}rg Henkel.
+\newblock Npu thermal management.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 39(11):3842--3855, 2020.
+
+\bibitem{gillani2020exploiting}
+Syed Ghayoor~Abbas Gillani.
+\newblock Exploiting error resilience for hardware efficiency: targeting
+  iterative and accumulation based algorithms.
+\newblock 2020.
+
+\bibitem{han2013approximate}
+Jie Han and Michael Orshansky.
+\newblock Approximate computing: An emerging paradigm for energy-efficient
+  design.
+\newblock In {\em 2013 18th IEEE European Test Symposium (ETS)}, pages 1--6.
+  IEEE, 2013.
+
+\bibitem{bouvier2019spiking}
+Maxence Bouvier, Alexandre Valentian, Thomas Mesquida, Fran{\c{c}}ois Rummens,
+  Marina Reyboz, Elisa Vianello, and Edith Beigne.
+\newblock Spiking neural networks hardware implementations and challenges: A
+  survey.
+\newblock {\em ACM Journal on Emerging Technologies in Computing Systems
+  (JETC)}, 15(2):1--35, 2019.
+
+\bibitem{courbariaux2015binaryconnect}
+Matthieu Courbariaux, Yoshua Bengio, and Jean-Pierre David.
+\newblock Binaryconnect: Training deep neural networks with binary weights
+  during propagations.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3123--3131, 2015.
+
+\bibitem{han2015deep}
+Song Han, Huizi Mao, and William~J Dally.
+\newblock Deep compression: Compressing deep neural networks with pruning,
+  trained quantization and huffman coding.
+\newblock {\em arXiv preprint arXiv:1510.00149}, 2015.
+
+\bibitem{hubara2017quantized}
+Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Ran El-Yaniv, and Yoshua
+  Bengio.
+\newblock Quantized neural networks: Training neural networks with low
+  precision weights and activations.
+\newblock {\em The Journal of Machine Learning Research}, 18(1):6869--6898,
+  2017.
+
+\bibitem{rastegari2016xnor}
+Mohammad Rastegari, Vicente Ordonez, Joseph Redmon, and Ali Farhadi.
+\newblock Xnor-net: Imagenet classification using binary convolutional neural
+  networks.
+\newblock In {\em European conference on computer vision}, pages 525--542.
+  Springer, 2016.
+
+\bibitem{lecun1989optimal}
+Yann LeCun, John Denker, and Sara Solla.
+\newblock Optimal brain damage.
+\newblock {\em Advances in neural information processing systems}, 2:598--605,
+  1989.
+
+\bibitem{hassibi1992second}
+Babak Hassibi and David Stork.
+\newblock Second order derivatives for network pruning: Optimal brain surgeon.
+\newblock {\em Advances in neural information processing systems}, 5:164--171,
+  1992.
+
+\bibitem{molchanov2016pruning}
+Pavlo Molchanov, Stephen Tyree, Tero Karras, Timo Aila, and Jan Kautz.
+\newblock Pruning convolutional neural networks for resource efficient
+  inference.
+\newblock {\em arXiv preprint arXiv:1611.06440}, 2016.
+
+\bibitem{li2016pruning}
+Hao Li, Asim Kadav, Igor Durdanovic, Hanan Samet, and Hans~Peter Graf.
+\newblock Pruning filters for efficient convnets.
+\newblock {\em arXiv preprint arXiv:1608.08710}, 2016.
+
+\bibitem{liu2018rethinking}
+Zhuang Liu, Mingjie Sun, Tinghui Zhou, Gao Huang, and Trevor Darrell.
+\newblock Rethinking the value of network pruning.
+\newblock {\em arXiv preprint arXiv:1810.05270}, 2018.
+
+\bibitem{zhang2015approxann}
+Qian Zhang, Ting Wang, Ye~Tian, Feng Yuan, and Qiang Xu.
+\newblock Approxann: An approximate computing framework for artificial neural
+  network.
+\newblock In {\em 2015 Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE)}, pages 701--706. IEEE, 2015.
+
+\bibitem{carter2010design}
+Nicholas~P Carter, Helia Naeimi, and Donald~S Gardner.
+\newblock Design techniques for cross-layer resilience.
+\newblock In {\em 2010 Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE 2010)}, pages 1023--1028. IEEE, 2010.
+
+\bibitem{lotrivc2012applicability}
+Uro{\v{s}} Lotri{\v{c}} and Patricio Buli{\'c}.
+\newblock Applicability of approximate multipliers in hardware neural networks.
+\newblock {\em Neurocomputing}, 96:57--65, 2012.
+
+\bibitem{du2014leveraging}
+Zidong Du, Krishna Palem, Avinash Lingamneni, Olivier Temam, Yunji Chen, and
+  Chengyong Wu.
+\newblock Leveraging the error resilience of machine-learning applications for
+  designing highly energy efficient accelerators.
+\newblock In {\em 2014 19th Asia and South Pacific design automation conference
+  (ASP-DAC)}, pages 201--206. IEEE, 2014.
+
+\bibitem{mrazek2016design}
+Vojtech Mrazek, Syed~Shakib Sarwar, Lukas Sekanina, Zdenek Vasicek, and Kaushik
+  Roy.
+\newblock Design of power-efficient approximate multipliers for approximate
+  artificial neural networks.
+\newblock In {\em Proceedings of the 35th International Conference on
+  Computer-Aided Design}, pages 1--7, 2016.
+
+\bibitem{sarwar2016multiplier}
+Syed~Shakib Sarwar, Swagath Venkataramani, Anand Raghunathan, and Kaushik Roy.
+\newblock Multiplier-less artificial neurons exploiting error resiliency for
+  energy-efficient neural computing.
+\newblock In {\em 2016 Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE)}, pages 145--150. IEEE, 2016.
+
+\bibitem{zervakis2021approximate}
+Georgios Zervakis, Hassaan Saadat, Hussam Amrouch, Andreas Gerstlauer, Sri
+  Parameswaran, and J{\"o}rg Henkel.
+\newblock Approximate computing for ml: State-of-the-art, challenges and
+  visions.
+\newblock In {\em Proceedings of the 26th Asia and South Pacific Design
+  Automation Conference}, pages 189--196, 2021.
+
+\bibitem{mcdonnell2011benefits}
+Mark~D McDonnell and Lawrence~M Ward.
+\newblock The benefits of noise in neural systems: bridging theory and
+  experiment.
+\newblock {\em Nature Reviews Neuroscience}, 12(7):415--425, 2011.
+
+\bibitem{ernst2007efficient}
+Udo Ernst, David Rotermund, and Klaus Pawelzik.
+\newblock Efficient computation based on stochastic spikes.
+\newblock {\em Neural computation}, 19(5):1313--1343, 2007.
+
+\bibitem{Dapello2020.06.16.154542}
+Joel Dapello, Tiago Marques, Martin Schrimpf, Franziska Geiger, David~D. Cox,
+  and James~J. DiCarlo.
+\newblock Simulating a primary visual cortex at the front of cnns improves
+  robustness to image perturbations.
+\newblock {\em bioRxiv}, 2020.
+
+\bibitem{rotermund2019Backpropagation}
+David Rotermund and Klaus~R. Pawelzik.
+\newblock Back-propagation learning in deep spike-by-spike networks.
+\newblock {\em Frontiers in Computational Neuroscience}, 13:55, 2019.
+
+\bibitem{rotermund2018massively}
+David Rotermund and Klaus~R. Pawelzik.
+\newblock Massively parallel {FPGA} hardware for spike-by-spike networks.
+\newblock {\em bioRxiv}, 2019.
+
+\bibitem{roy2019towards}
+Kaushik Roy, Akhilesh Jaiswal, and Priyadarshini Panda.
+\newblock Towards spike-based machine intelligence with neuromorphic computing.
+\newblock {\em Nature}, 575(7784):607--617, 2019.
+
+\bibitem{young2019review}
+Aaron~R Young, Mark~E Dean, James~S Plank, and Garrett~S Rose.
+\newblock A review of spiking neuromorphic hardware communication systems.
+\newblock {\em IEEE Access}, 7:135606--135620, 2019.
+
+\bibitem{TrueNorth_Trans15}
+F.~{Akopyan}, J.~{Sawada}, A.~{Cassidy}, R.~{Alvarez-Icaza}, J.~{Arthur},
+  P.~{Merolla}, N.~{Imam}, Y.~{Nakamura}, P.~{Datta}, G.~{Nam}, B.~{Taba},
+  M.~{Beakes}, B.~{Brezzo}, J.~B. {Kuang}, R.~{Manohar}, W.~P. {Risk},
+  B.~{Jackson}, and D.~S. {Modha}.
+\newblock Truenorth: Design and tool flow of a 65 mw 1 million neuron
+  programmable neurosynaptic chip.
+\newblock {\em IEEE Trans. on Computer-Aided Design of Integrated Circuits and
+  Systems}, 34(10):1537--1557, Oct 2015.
+
+\bibitem{Spinnaker_Trans13}
+E.~{Painkras}, L.~A. {Plana}, J.~{Garside}, S.~{Temple}, F.~{Galluppi},
+  C.~{Patterson}, D.~R. {Lester}, A.~D. {Brown}, and S.~B. {Furber}.
+\newblock Spinnaker: A 1-w 18-core system-on-chip for massively-parallel neural
+  network simulation.
+\newblock {\em IEEE Journal of Solid-State Circuits}, 48(8):1943--1953, Aug
+  2013.
+
+\bibitem{davies2018loihi}
+Mike Davies, Narayan Srinivasa, Tsung-Han Lin, Gautham Chinya, Yongqiang Cao,
+  Sri~Harsha Choday, Georgios Dimou, Prasad Joshi, Nabil Imam, Shweta Jain,
+  et~al.
+\newblock Loihi: A neuromorphic manycore processor with on-chip learning.
+\newblock {\em IEEE Micro}, 38(1):82--99, 2018.
+
+\bibitem{nevarez2020accelerator}
+Yarib Nevarez, Alberto Garcia-Ortiz, David Rotermund, and Klaus~R Pawelzik.
+\newblock Accelerator framework of spike-by-spike neural networks for inference
+  and incremental learning in embedded systems.
+\newblock In {\em 2020 9th International Conference on Modern Circuits and
+  Systems Technologies (MOCAST)}, pages 1--5. IEEE, 2020.
+
+\bibitem{rotermund2019recurrentsbs}
+David Rotermund and Klaus~R. Pawelzik.
+\newblock Biologically plausible learning in a deep recurrent spiking network.
+\newblock {\em bioRxiv}, 2019.
+
+\bibitem{dayan2001theoretical}
+Peter Dayan and Laurence~F Abbott.
+\newblock {\em Theoretical neuroscience: computational and mathematical
+  modeling of neural systems}.
+\newblock Computational Neuroscience Series, 2001.
+
+\bibitem{li2019sensor}
+Guoqiang Li, Chao Deng, Jun Wu, Xuebing Xu, Xinyu Shao, and Yuanhang Wang.
+\newblock Sensor data-driven bearing fault diagnosis based on deep
+  convolutional neural networks and s-transform.
+\newblock {\em Sensors}, 19(12):2750, 2019.
+
+\bibitem{dong2018rolling}
+Fei Dong, Xiao Yu, Enjie Ding, Shoupeng Wu, Chunyang Fan, and Yanqiu Huang.
+\newblock Rolling bearing fault diagnosis using modified neighborhood
+  preserving embedding and maximal overlap discrete wavelet packet transform
+  with sensitive features selection.
+\newblock {\em Shock and Vibration}, 2018, 2018.
+
+\bibitem{nagayama2007structural}
+Tomonori Nagayama and Billie~F Spencer~Jr.
+\newblock Structural health monitoring using smart sensors.
+\newblock Technical report, Newmark Structural Engineering Laboratory.
+  University of Illinois at Urban, 2007.
+
+\bibitem{wang2019deep}
+Jindong Wang, Yiqiang Chen, Shuji Hao, Xiaohui Peng, and Lisha Hu.
+\newblock Deep learning for sensor-based activity recognition: A survey.
+\newblock {\em Pattern Recognition Letters}, 119:3--11, 2019.
+
+\bibitem{kim2017hazardous}
+Yong~Chan Kim, Hyeong-Geun Yu, Jae-Hoon Lee, Dong-Jo Park, and Hyun-Woo Nam.
+\newblock Hazardous gas detection for ftir-based hyperspectral imaging system
+  using dnn and cnn.
+\newblock In {\em Electro-Optical and Infrared Systems: Technology and
+  Applications XIV}, volume 10433, page 1043317. International Society for
+  Optics and Photonics, 2017.
+
+\bibitem{lin2015neural}
+Zhouhan Lin, Matthieu Courbariaux, Roland Memisevic, and Yoshua Bengio.
+\newblock Neural networks with few multiplications.
+\newblock {\em arXiv preprint arXiv:1510.03009}, 2015.
+
+\bibitem{colangelo2018exploration}
+Philip Colangelo, Nasibeh Nasiri, Eriko Nurvitadhi, Asit Mishra, Martin
+  Margala, and Kevin Nealis.
+\newblock Exploration of low numeric precision deep learning inference using
+  intel{\textregistered} fpgas.
+\newblock In {\em 2018 IEEE 26th annual international symposium on
+  field-programmable custom computing machines (FCCM)}, pages 73--80. IEEE,
+  2018.
+
+\bibitem{faraone2019addnet}
+Julian Faraone, Martin Kumm, Martin Hardieck, Peter Zipf, Xueyuan Liu, David
+  Boland, and Philip~HW Leong.
+\newblock Addnet: Deep neural networks using fpga-optimized multipliers.
+\newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
+  Systems}, 28(1):115--128, 2019.
+
+\bibitem{nevarez2021accelerating}
+Yarib Nevarez, David Rotermund, Klaus~R Pawelzik, and Alberto Garcia-Ortiz.
+\newblock Accelerating spike-by-spike neural networks on fpga with hybrid
+  custom floating-point and logarithmic dot-product approximation.
+\newblock {\em IEEE Access}, 2021.
+
+\bibitem{yu2020taac}
+Wanli Yu, Ardalan Najafi, Yarib Nevarez, Yanqiu Huang, and Alberto
+  Garcia-Ortiz.
+\newblock Taac: Task allocation meets approximate computing for internet of
+  things.
+\newblock In {\em 2020 IEEE International Symposium on Circuits and Systems
+  (ISCAS)}, pages 1--5. IEEE, 2020.
+
+\bibitem{izhikevich2004model}
+Eugene~M Izhikevich.
+\newblock Which model to use for cortical spiking neurons?
+\newblock {\em IEEE transactions on neural networks}, 15(5):1063--1070, 2004.
+
+\bibitem{lecun1998mnist}
+Yann LeCun.
+\newblock The mnist database of handwritten digits.
+\newblock {\em http://yann. lecun. com/exdb/mnist/}, 1998.
+
+\bibitem{gu2018recent}
+Jiuxiang Gu, Zhenhua Wang, Jason Kuen, Lianyang Ma, Amir Shahroudy, Bing Shuai,
+  Ting Liu, Xingxing Wang, Gang Wang, Jianfei Cai, et~al.
+\newblock Recent advances in convolutional neural networks.
+\newblock {\em Pattern Recognition}, 77:354--377, 2018.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep learning}.
+\newblock MIT press, 2016.
+
+\bibitem{zuras2008ieee}
+Dan Zuras, Mike Cowlishaw, Alex Aiken, Matthew Applegate, David Bailey, Steve
+  Bass, Dileep Bhandarkar, Mahesh Bhat, David Bindel, Sylvie Boldo, et~al.
+\newblock Ieee standard for floating-point arithmetic.
+\newblock {\em IEEE Std}, 754(2008):1--70, 2008.
+
+\bibitem{schmidhuber2015deep}
+J{\"u}rgen Schmidhuber.
+\newblock Deep learning in neural networks: An overview.
+\newblock {\em Neural networks}, 61:85--117, 2015.
+
+\bibitem{Taigman_2014_CVPR}
+Yaniv Taigman, Ming Yang, Marc'Aurelio Ranzato, and Lior Wolf.
+\newblock Deepface: Closing the gap to human-level performance in face
+  verification.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, June 2014.
+
+\bibitem{Design_Exploration_SbS_Trans20}
+Nassim Abderrahmane, Edgar Lemaire, and Benoît Miramond.
+\newblock Design space exploration of hardware spiking neurons for embedded
+  artificial intelligence.
+\newblock {\em Neural Networks}, 121:366 -- 386, 2020.
+
+\bibitem{SNN_Survey_Trans19}
+Maxence Bouvier, Alexandre Valentian, Thomas Mesquida, Francois Rummens, Marina
+  Reyboz, Elisa Vianello, and Edith Beigne.
+\newblock Spiking neural networks hardware implementations and challenges: A
+  survey.
+\newblock {\em J. Emerg. Technol. Comput. Syst.}, 15(2), April 2019.
+
+\bibitem{amunts2019human}
+Katrin Amunts, Alois~C Knoll, Thomas Lippert, Cyriel~MA Pennartz, Philippe
+  Ryvlin, Alain Destexhe, Viktor~K Jirsa, Egidio D?Angelo, and Jan~G Bjaalie.
+\newblock The human brain project -- synergy between neuroscience, computing,
+  informatics, and brain-inspired technologies.
+\newblock {\em PLoS biology}, 17(7):e3000344, 2019.
+
+\bibitem{zhang2018survey}
+Ming ZHANG, GU~Zonghua, and PAN Gang.
+\newblock A survey of neuromorphic computing based on spiking neural networks.
+\newblock {\em Chinese Journal of Electronics}, 27(4):667--674, 2018.
+
+\bibitem{park2009dynamic}
+Jongsun Park, Jung~Hwan Choi, and Kaushik Roy.
+\newblock Dynamic bit-width adaptation in dct: An approach to trade off image
+  quality and computation energy.
+\newblock {\em IEEE transactions on very large scale integration (VLSI)
+  systems}, 18(5):787--793, 2009.
+
+\bibitem{gupta2011impact}
+Vaibhav Gupta, Debabrata Mohapatra, Sang~Phill Park, Anand Raghunathan, and
+  Kaushik Roy.
+\newblock Impact: imprecise adders for low-power approximate computing.
+\newblock In {\em IEEE/ACM International Symposium on Low Power Electronics and
+  Design}, pages 409--414. IEEE, 2011.
+
+\bibitem{mittal2016survey}
+Sparsh Mittal.
+\newblock A survey of techniques for approximate computing.
+\newblock {\em ACM Computing Surveys (CSUR)}, 48(4):1--33, 2016.
+
+\bibitem{venkataramani2015approximate}
+Swagath Venkataramani, Srimat~T Chakradhar, Kaushik Roy, and Anand Raghunathan.
+\newblock Approximate computing and the quest for computing efficiency.
+\newblock In {\em 2015 52nd ACM/EDAC/IEEE Design Automation Conference (DAC)},
+  pages 1--6. IEEE, 2015.
+
+\bibitem{moons20160}
+Bert Moons and Marian Verhelst.
+\newblock A 0.3--2.6 tops/w precision-scalable processor for real-time
+  large-scale convnets.
+\newblock In {\em 2016 IEEE Symposium on VLSI Circuits (VLSI-Circuits)}, pages
+  1--2. IEEE, 2016.
+
+\bibitem{whatmough201714}
+Paul~N Whatmough, Sae~Kyu Lee, Hyunkwang Lee, Saketh Rama, David Brooks, and
+  Gu-Yeon Wei.
+\newblock 14.3 a 28nm soc with a 1.2 ghz 568nj/prediction sparse
+  deep-neural-network engine with> 0.1 timing error rate tolerance for iot
+  applications.
+\newblock In {\em 2017 IEEE International Solid-State Circuits Conference
+  (ISSCC)}, pages 242--243. IEEE, 2017.
+
+\bibitem{sun2018xnor}
+Xiaoyu Sun, Shihui Yin, Xiaochen Peng, Rui Liu, Jae-sun Seo, and Shimeng Yu.
+\newblock Xnor-rram: A scalable and parallel resistive synaptic architecture
+  for binary neural networks.
+\newblock In {\em 2018 Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE)}, pages 1423--1428. IEEE, 2018.
+
+\bibitem{rathi2018stdp}
+Nitin Rathi, Priyadarshini Panda, and Kaushik Roy.
+\newblock Stdp-based pruning of connections and weight quantization in spiking
+  neural networks for energy-efficient recognition.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 38(4):668--677, 2018.
+
+\bibitem{sen2017approximate}
+Sanchari Sen, Swagath Venkataramani, and Anand Raghunathan.
+\newblock Approximate computing for spiking neural networks.
+\newblock In {\em Design, Automation \& Test in Europe Conference \& Exhibition
+  (DATE), 2017}, pages 193--198. IEEE, 2017.
+
+\bibitem{srivastava2014dropout}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em The journal of machine learning research}, 15(1):1929--1958,
+  2014.
+
+\bibitem{wan2013regularization}
+Li~Wan, Matthew Zeiler, Sixin Zhang, Yann Le~Cun, and Rob Fergus.
+\newblock Regularization of neural networks using dropconnect.
+\newblock In {\em International conference on machine learning}, pages
+  1058--1066, 2013.
+
+\bibitem{neftci2016stochastic}
+Emre~O Neftci, Bruno~U Pedroni, Siddharth Joshi, Maruan Al-Shedivat, and Gert
+  Cauwenberghs.
+\newblock Stochastic synapses enable efficient brain-inspired learning
+  machines.
+\newblock {\em Frontiers in neuroscience}, 10:241, 2016.
+
+\bibitem{srinivasan2016magnetic}
+Gopalakrishnan Srinivasan, Abhronil Sengupta, and Kaushik Roy.
+\newblock Magnetic tunnel junction based long-term short-term stochastic
+  synapse for a spiking neural network with on-chip stdp learning.
+\newblock {\em Scientific reports}, 6:29545, 2016.
+
+\bibitem{buesing2011neural}
+Lars Buesing, Johannes Bill, Bernhard Nessler, and Wolfgang Maass.
+\newblock Neural dynamics as sampling: a model for stochastic computation in
+  recurrent networks of spiking neurons.
+\newblock {\em PLoS Comput Biol}, 7(11):e1002211, 2011.
+
+\bibitem{bellec2017deep}
+Guillaume Bellec, David Kappel, Wolfgang Maass, and Robert Legenstein.
+\newblock Deep rewiring: Training very sparse deep networks.
+\newblock {\em arXiv preprint arXiv:1711.05136}, 2017.
+
+\bibitem{chen20184096}
+Gregory~K Chen, Raghavan Kumar, H~Ekin Sumbul, Phil~C Knag, and Ram~K
+  Krishnamurthy.
+\newblock A 4096-neuron 1m-synapse 3.8-pj/sop spiking neural network with
+  on-chip stdp learning and sparse weights in 10-nm finfet cmos.
+\newblock {\em IEEE Journal of Solid-State Circuits}, 54(4):992--1002, 2018.
+
+\bibitem{sheik2016synaptic}
+Sadique Sheik, Somnath Paul, Charles Augustine, Chinnikrishna Kothapalli,
+  Muhammad~M Khellah, Gert Cauwenberghs, and Emre Neftci.
+\newblock Synaptic sampling in hardware spiking neural networks.
+\newblock In {\em 2016 IEEE International Symposium on Circuits and Systems
+  (ISCAS)}, pages 2090--2093. IEEE, 2016.
+
+\bibitem{jerry2017ultra}
+M~Jerry, A~Parihar, B~Grisafe, A~Raychowdhury, and S~Datta.
+\newblock Ultra-low power probabilistic imt neurons for stochastic sampling
+  machines.
+\newblock In {\em 2017 Symposium on VLSI Circuits}, pages T186--T187. IEEE,
+  2017.
+
+\bibitem{kim2013energy}
+Yongtae Kim, Yong Zhang, and Peng Li.
+\newblock An energy efficient approximate adder with carry skip for error
+  resilient neuromorphic vlsi systems.
+\newblock In {\em 2013 IEEE/ACM International Conference on Computer-Aided
+  Design (ICCAD)}, pages 130--137. IEEE, 2013.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 770--778, 2016.
+
+\bibitem{russakovsky2015imagenet}
+Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma,
+  Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, et~al.
+\newblock Imagenet large scale visual recognition challenge.
+\newblock {\em International journal of computer vision}, 115(3):211--252,
+  2015.
+
+\bibitem{xilinx2015zynq}
+UG585 Xilinx.
+\newblock Zynq-7000 all programmable soc: Technical reference manual, 2015.
+
+\bibitem{hrica2012floating}
+James Hrica.
+\newblock Floating-point design with vivado hls.
+\newblock {\em Xilinx Application Note}, 2012.
+
+\bibitem{lom2016industry}
+Michal Lom, Ondrej Pribyl, and Miroslav Svitek.
+\newblock Industry 4.0 as a part of smart cities.
+\newblock In {\em 2016 Smart Cities Symposium Prague (SCSP)}, pages 1--6. IEEE,
+  2016.
+
+\bibitem{ince2016real}
+Turker Ince, Serkan Kiranyaz, Levent Eren, Murat Askar, and Moncef Gabbouj.
+\newblock Real-time motor fault detection by 1-d convolutional neural networks.
+\newblock {\em IEEE Transactions on Industrial Electronics}, 63(11):7067--7075,
+  2016.
+
+\bibitem{janssens2016convolutional}
+Olivier Janssens, Viktor Slavkovikj, Bram Vervisch, Kurt Stockman, Mia
+  Loccufier, Steven Verstockt, Rik Van~de Walle, and Sofie Van~Hoecke.
+\newblock Convolutional neural network based fault detection for rotating
+  machinery.
+\newblock {\em Journal of Sound and Vibration}, 377:331--345, 2016.
+
+\bibitem{abdeljaber2017real}
+Osama Abdeljaber, Onur Avci, Serkan Kiranyaz, Moncef Gabbouj, and Daniel~J
+  Inman.
+\newblock Real-time vibration-based structural damage detection using
+  one-dimensional convolutional neural networks.
+\newblock {\em Journal of Sound and Vibration}, 388:154--170, 2017.
+
+\bibitem{guo2016hierarchical}
+Xiaojie Guo, Liang Chen, and Changqing Shen.
+\newblock Hierarchical adaptive deep convolution neural network and its
+  application to bearing fault diagnosis.
+\newblock {\em Measurement}, 93:490--502, 2016.
+
+\bibitem{nurvitadhi2017can}
+Eriko Nurvitadhi, Ganesh Venkatesh, Jaewoong Sim, Debbie Marr, Randy Huang,
+  Jason Ong Gee~Hock, Yeong~Tat Liew, Krishnan Srivatsan, Duncan Moss, Suchit
+  Subhaschandra, et~al.
+\newblock Can fpgas beat gpus in accelerating next-generation deep neural
+  networks?
+\newblock In {\em Proceedings of the 2017 ACM/SIGDA International Symposium on
+  Field-Programmable Gate Arrays}, pages 5--14, 2017.
+
+\bibitem{wu2021low}
+Chen Wu, Mingyu Wang, Xinyuan Chu, Kun Wang, and Lei He.
+\newblock Low-precision floating-point arithmetic for high-performance
+  fpga-based cnn acceleration.
+\newblock {\em ACM Transactions on Reconfigurable Technology and Systems
+  (TRETS)}, 15(1):1--21, 2021.
+
+\bibitem{han2015learning}
+Song Han, Jeff Pool, John Tran, and William Dally.
+\newblock Learning both weights and connections for efficient neural network.
+\newblock {\em Advances in neural information processing systems}, 28, 2015.
+
+\bibitem{mei2017200mhz}
+Chunsheng Mei, Zhenyu Liu, Yue Niu, Xiangyang Ji, Wei Zhou, and Dongsheng Wang.
+\newblock A 200mhz 202.4 gflops@ 10.8 w vgg16 accelerator in xilinx vx690t.
+\newblock In {\em 2017 IEEE Global Conference on Signal and Information
+  Processing (GlobalSIP)}, pages 784--788. IEEE, 2017.
+
+\bibitem{lian2019high}
+Xiaocong Lian, Zhenyu Liu, Zhourui Song, Jiwu Dai, Wei Zhou, and Xiangyang Ji.
+\newblock High-performance fpga-based cnn accelerator with block-floating-point
+  arithmetic.
+\newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
+  Systems}, 27(8):1874--1885, 2019.
+
+\bibitem{lai2017deep}
+Liangzhen Lai, Naveen Suda, and Vikas Chandra.
+\newblock Deep convolutional neural network inference with floating-point
+  weights and fixed-point activations.
+\newblock {\em arXiv preprint arXiv:1703.03073}, 2017.
+
+\bibitem{settle2018quantizing}
+Sean~O Settle, Manasa Bollavaram, Paolo D'Alberto, Elliott Delaye, Oscar
+  Fernandez, Nicholas Fraser, Aaron Ng, Ashish Sirasao, and Michael Wu.
+\newblock Quantizing convolutional neural networks for low-power
+  high-throughput inference engines.
+\newblock {\em arXiv preprint arXiv:1805.07941}, 2018.
+
+\bibitem{meloni2019cnn}
+Paolo Meloni, Antonio Garufi, Gianfranco Deriu, Marco Carreras, and Daniela
+  Loi.
+\newblock Cnn hardware acceleration on a low-power and low-cost apsoc.
+\newblock In {\em 2019 Conference on Design and Architectures for Signal and
+  Image Processing (DASIP)}, pages 7--12. IEEE, 2019.
+
+\bibitem{gao2020edgedrnn}
+Chang Gao, Antonio Rios-Navarro, Xi~Chen, Shih-Chii Liu, and Tobi Delbruck.
+\newblock Edgedrnn: Recurrent neural network accelerator for edge inference.
+\newblock {\em IEEE Journal on Emerging and Selected Topics in Circuits and
+  Systems}, 10(4):419--432, 2020.
+
+\bibitem{hannwindowsine}
+Shirsendu Sikdar, Sauvik Banerjee, and G.~Ashish.
+\newblock Ultrasonic guided wave propagation and disbond identification in a
+  honeycomb composite sandwich structure using bonded piezoelectric wafer
+  transducers.
+\newblock {\em Journal of Intelligent Material Systems and Structures}, 27, 10
+  2015.
+
+\bibitem{stft_lit}
+U.~Kiencke, M.~Schwarz, and T.~Weickert.
+\newblock {\em Signalverarbeitung: Zeit-Frequenz-Analysen und
+  Schätzverfahren}.
+\newblock Oldenbourh, 2008.
+
+\bibitem{blackman_window}
+R.~B. Blackman and J.~W. Tukey.
+\newblock The measurement of power spectra from the point of view of
+  communications engineering - part i.
+\newblock {\em Bell System Technical Journal}, 37(1):185--282, 1958.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{springenberg2014striving}
+Jost~Tobias Springenberg, Alexey Dosovitskiy, Thomas Brox, and Martin
+  Riedmiller.
+\newblock Striving for simplicity: The all convolutional net.
+\newblock {\em arXiv preprint arXiv:1412.6806}, 2014.
+
+\end{thebibliography}

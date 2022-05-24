@@ -1,0 +1,4 @@
+run
+cmd
+cd Documents\0_research\thesis
+makeindex -s Thesis_Top.ist -o Thesis_Top.gls Thesis_Top.glo
