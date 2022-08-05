@@ -51,7 +51,7 @@ From a practical point of view, \gls{sbs} provides a mechanism to obtain a spars
 
 \subsection{Basic Network Overview}
 
-\gls{sbs} network models can be constructed in sequential layered structures \cite{rotermund2019Backpropagation}. Each layer consists of many \gls{ip_sbs}s (represented by $\vec{h}$), while the communication between them is organized by a low bandwidth signal -- the spikes.
+\gls{sbs} network models can be constructed in sequential layered structures \cite{rotermund2019Backpropagation}. Each layer consists of many \glspl{ip_sbs} (represented by $\vec{h}$), while the communication between them is organized by a low bandwidth signal -- the spikes.
 
 The \gls{sbs} layer update is summarized in Algorithm~\ref{alg:sbs}. This is an iterative algorithm, where we denote the number of spikes ($N_{Spk}$) as the number of iterations. As a generative model, each iteration updates the internal representation ($H$) based on the input spikes ($S^{in}_t$). A basic \gls{sbs} network architecture for handwritten digit classification (MNIST) is shown in \fig{fig:sbs_network} and \Tab{tab:sbs_network}. Each \gls{ip_sbs} is an independent computational entity, this allows to design specialized hardware architectures that can be massively parallelized (see \fig{fig:SbS_layer}).
 
@@ -114,7 +114,7 @@ The number of \gls{mac} operations required for inference of an \gls{sbs} layer 
 \begin{figure*}[b!]
 	\centering
 	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/SbS_layer.pdf}
-	\caption{\gls{sbs} \gls{ip_sbs}s as independent computational entities, (a) illustrates an input layer with a massive amount of \glspl{ip_sbs} operating as independent computational entities, (b) shows a hidden layer with an arbitrary amount of \gls{ip_sbs}s as independent computational entities, (c) exhibits a set of neurons grouped in an \gls{ip_sbs}.}
+	\caption{\gls{sbs} \glspl{ip_sbs} as independent computational entities, (a) illustrates an input layer with a massive amount of \glspl{ip_sbs} operating as independent computational entities, (b) shows a hidden layer with an arbitrary amount of \glspl{ip_sbs} as independent computational entities, (c) exhibits a set of neurons grouped in an \gls{ip_sbs}.}
 	\label{fig:SbS_layer}
 \end{figure*}
 

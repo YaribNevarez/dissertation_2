@@ -6,11 +6,11 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}System Design}{\reset@font\mtcSfont 25}{section.3.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Hardware Architecture}{\reset@font\mtcSSfont 25}{subsection.3.3.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Conv Processing Unit}{\reset@font\mtcSSfont 26}{subsection.3.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Configuration Mode}{\reset@font\mtcSSSfont 27}{section*.15}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Configuration Mode}{\reset@font\mtcSSSfont 26}{section*.15}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Computation Mode}{\reset@font\mtcSSSfont 27}{section*.16}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Dot-Product Hardware Module}{\reset@font\mtcSSfont 28}{subsection.3.3.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 30}{section*.18}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSSfont 30}{section*.20}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 29}{section*.18}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSSfont 31}{section*.20}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Experimental Results}{\reset@font\mtcSfont 34}{section.3.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Performance Benchmark}{\reset@font\mtcSSfont 34}{subsection.3.4.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 34}{section*.23}}

@@ -1,24 +1,22 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Preamble}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Industry 4.0}{2}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.1}Preamble}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Industry 4.0}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Internet-of-Things in Industry}{2}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Artificial Intelligence in Internet-of-Things}{2}{subsection.1.1.3}%
 \contentsline {subsection}{\numberline {1.1.4}Error Tolerance in Machine Learning Algorithms}{2}{subsection.1.1.4}%
 \contentsline {section}{\numberline {1.2}Problem Statement}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Research Objective}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Research Objective}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Working Hypothesis}{4}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Network Compression and Quantization}{4}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Approximate Computing}{4}{subsection.1.4.2}%
 \contentsline {section}{\numberline {1.5}Motivation}{5}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Spike-by-Spike Neural Networks}{5}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Convolutional Neural Networks}{6}{subsection.1.5.2}%
 \contentsline {section}{\numberline {1.6}Main Contribution}{6}{section.1.6}%
 \contentsline {subsection}{\numberline {1.6.1}Spike-by-Spike Neural Networks}{6}{subsection.1.6.1}%
 \contentsline {subsection}{\numberline {1.6.2}Convolutional Neural Networks}{7}{subsection.1.6.2}%
-\contentsline {section}{\numberline {1.7}Publications}{8}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Dissertation Outline}{9}{section.1.8}%
+\contentsline {section}{\numberline {1.7}Publications}{7}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Dissertation Outline}{8}{section.1.8}%
 \contentsline {chapter}{\numberline {2}Background}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Spike-by-Spike Neural Networks}{11}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Basic Network Overview}{12}{subsection.2.1.1}%
@@ -39,17 +37,17 @@
 \contentsline {subsubsection}{\nonumberline Computation Mode}{27}{section*.16}%
 \contentsline {subsection}{\numberline {3.3.3}Dot-Product Hardware Module}{28}{subsection.3.3.3}%
 \contentsline {subsubsection}{\nonumberline Dot-Product with Standard Floating-Point Computation}{29}{section*.18}%
-\contentsline {subsubsection}{\nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{30}{section*.20}%
-\contentsline {section}{\numberline {3.4}Experimental Results}{32}{section.3.4}%
+\contentsline {subsubsection}{\nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{31}{section*.20}%
+\contentsline {section}{\numberline {3.4}Experimental Results}{34}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Performance Benchmark}{34}{subsection.3.4.1}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Embedded CPU}{34}{section*.23}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{34}{section*.26}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Noise Tolerance Plot}{38}{section*.33}%
-\contentsline {subsection}{\numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{39}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{40}{subsection.3.4.2}%
 \contentsline {subsubsection}{\nonumberline Parameters for Numeric Representation of Synaptic Weight Matrix}{40}{section*.35}%
 \contentsline {subsubsection}{\nonumberline Design Exploration for Dot-product with Hybrid Custom Floating-Point Approximation}{40}{section*.37}%
-\contentsline {subsubsection}{\nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{41}{section*.42}%
-\contentsline {subsection}{\numberline {3.4.3}Results and Discussion}{44}{subsection.3.4.3}%
+\contentsline {subsubsection}{\nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{43}{section*.42}%
+\contentsline {subsection}{\numberline {3.4.3}Results and Discussion}{45}{subsection.3.4.3}%
 \contentsline {section}{\numberline {3.5}Conclusions}{47}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Accelerating Convolutional Neural Networks}{49}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction}{49}{section.4.1}%
