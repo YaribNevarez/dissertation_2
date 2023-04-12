@@ -71,10 +71,10 @@ This thesis contributes to hardware design methodologies for custom floating-poi
 
 \subsection{Spike-by-Spike Neural Networks}
 \begin{enumerate}
-	\item We develop a hardware component for \gls{fp} vector dot-product approximation. This design increases the performance of computation by performing element-wise multiplication with a quality configurable design based on bit truncation and denormalized accumulation.
-	\item We address a design exploration with the proposed dot-product approximation using synaptic weight vectors with custom \gls{fp} and logarithmic representation. We evaluate inference latency, accuracy degradation, resource utilization and power dissipation. Experimental results demonstrate $20.5\times$ latency enhancement versus embedded \gls{cpu} (ARM Cortex-A9 at $666$MHz), and less than $0.5\%$ of accuracy degradation on a handwritten digit recognition task (MNIST).
-	\item We propose a noise tolerance plot as quality monitor, which serves as an intuitive visual model to provide insights into the accuracy degradation of \gls{sbs} networks under approximate processing effects.
-	\item Our proposed design for \gls{fp} dot-product approximation is adaptable as a building block for other error resilient applications (e.g., image/video processing).
+	\item It is presented a hardware component for \gls{fp} vector dot-product approximation. This design increases the performance of computation by performing element-wise multiplication with a quality configurable design based on bit truncation and denormalized accumulation.
+	\item It is presented a design exploration with the proposed dot-product approximation using synaptic weight vectors with custom \gls{fp} and logarithmic representation. The run-time, accuracy degradation, resource utilization, and power dissipation are evaluated. Experimental results demonstrate $20.5\times$ latency enhancement versus embedded \gls{cpu} (ARM Cortex-A9 at $666$MHz), and less than $0.5\%$ of accuracy degradation on a handwritten digit recognition task (MNIST).
+	\item It is proposed a noise tolerance plot as quality monitor, which serves as an intuitive visual model to provide insights into the accuracy degradation of \gls{sbs} networks under approximate processing effects.
+	\item The presented design for \gls{fp} dot-product approximation is adaptable as a building block for other error resilient applications (e.g., image/video processing).
 \end{enumerate}
 
 
@@ -82,15 +82,17 @@ This thesis contributes to hardware design methodologies for custom floating-poi
 \begin{enumerate}
 	\item
 	
-	We present the \gls{hf6} quantization and its dedicated hardware design. We propose an optimized hardware \gls{mac} by reducing the mantissa multiplication to a multiplexer-adder operation. We exploit the intrinsic error tolerance of \gls{ann} to further reduce the hardware design with approximation. To preserve model accuracy, we present a quantization-aware training method, which in some cases improves accuracy.
+	It is proposed the \gls{hf6} quantization and its dedicated hardware architecture. This design features an optimized hardware \gls{mac} by reducing the mantissa multiplication to a multiplexer-adder operation. This approach exploits the intrinsic error tolerance of \gls{ann} to further reduce the hardware design with approximation. To preserve model accuracy, it is presented a quantization-aware training method, which in some cases improves accuracy based on the regularization effect.
 	
-	\item We develop a custom hardware/software co-design framework for sensor analytics applications on low-power embedded \glspl{fpga}. This architecture integrates TensorFlow Lite.
-	\item We present a customizable tensor processor as a dedicated hardware for \gls{hf6}. This design computes \emph{Conv2D} tensor operations employing a pipelined vector dot-product with parametrized on-chip memory utilization.
-	\item We demonstrate the potential of our approach with a \gls{cnn}-regression model for anomaly localization in structural health monitoring based on acoustic emissions. We address a hardware design exploration evaluating accuracy, compute performance, hardware resource utilization, and energy consumption.
+	\item It is developed a custom hardware/software co-design framework for \gls{cnn} sensor analytics applications on low-power and resource-constrained embedded \glspl{fpga}. This architecture integrates TensorFlow Lite.
+	
+	\item It is presented a customizable tensor processor as a dedicated hardware for \gls{hf6}. This design computes \emph{Conv2D} tensor operations employing a pipelined vector dot-product with approximate computing and parametrized on-chip memory utilization.
+	
+	\item The potential of this approach is demonstrated with a \gls{cnn}-regression model for anomaly localization in structural health monitoring based on acoustic emissions. A hardware design exploration is addressed evaluating accuracy, compute performance, hardware resource utilization, and energy consumption.
 \end{enumerate}
 
 \section{Publications}
-The outcome of the research of this dissertation, including the collaborative works with our research partners is a list of publications including \cite{nevarez2020accelerator, nevarez2021accelerating, yn2022cnnsensor}. In the following, a complete list of the related publications are itemized.
+The outcome of this dissertation, including the collaborative works with our research partners is a list of publications including \cite{nevarez2020accelerator, nevarez2021accelerating, yn2022cnnsensor}. In the following, a complete list of the related publications are itemized.
 
 \begin{enumerate}
 	

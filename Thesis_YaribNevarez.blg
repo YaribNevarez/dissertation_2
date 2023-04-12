@@ -213,45 +213,45 @@ Repeated entry---line 4196 of file ./bibliography/mybib.bib
  :                                            ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in gillani2020exploiting
-You've used 110 entries,
+You've used 104 entries,
             1791 wiz_defined-function locations,
-            1062 strings with 28293 characters,
-and the built_in function-call counts, 30589 in all, are:
-= -- 2650
-> -- 1717
-< -- 34
-+ -- 612
-- -- 502
-* -- 2182
-:= -- 4813
-add.period$ -- 354
-call.type$ -- 110
-change.case$ -- 107
+            1039 strings with 27331 characters,
+and the built_in function-call counts, 29077 in all, are:
+= -- 2518
+> -- 1634
+< -- 32
++ -- 582
+- -- 478
+* -- 2083
+:= -- 4574
+add.period$ -- 334
+call.type$ -- 104
+change.case$ -- 102
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 1330
-empty$ -- 2752
-format.name$ -- 502
-if$ -- 6854
+cite$ -- 105
+duplicate$ -- 1259
+empty$ -- 2611
+format.name$ -- 478
+if$ -- 6512
 int.to.chr$ -- 0
-int.to.str$ -- 110
-missing$ -- 112
-newline$ -- 552
-num.names$ -- 110
-pop$ -- 354
+int.to.str$ -- 104
+missing$ -- 105
+newline$ -- 522
+num.names$ -- 104
+pop$ -- 328
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 672
+skip$ -- 642
 stack$ -- 0
-substring$ -- 1995
-swap$ -- 408
-text.length$ -- 34
+substring$ -- 1920
+swap$ -- 388
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 288
-width$ -- 113
-write$ -- 1209
+while$ -- 273
+width$ -- 107
+write$ -- 1144
 (There were 50 error messages)

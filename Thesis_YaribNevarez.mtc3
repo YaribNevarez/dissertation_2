@@ -1,24 +1,24 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction}{\reset@font\mtcSfont 19}{section.3.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Related Work}{\reset@font\mtcSfont 23}{section.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Network Compression}{\reset@font\mtcSSfont 23}{subsection.3.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Classical Approximate Computing}{\reset@font\mtcSSfont 24}{subsection.3.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Spike-by-Spike Neural Networks Accelerators}{\reset@font\mtcSSfont 24}{subsection.3.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}System Design}{\reset@font\mtcSfont 25}{section.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Hardware Architecture}{\reset@font\mtcSSfont 25}{subsection.3.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Conv Processing Unit}{\reset@font\mtcSSfont 26}{subsection.3.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Configuration Mode}{\reset@font\mtcSSSfont 26}{section*.15}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Computation Mode}{\reset@font\mtcSSSfont 27}{section*.16}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Dot-Product Hardware Module}{\reset@font\mtcSSfont 28}{subsection.3.3.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 29}{section*.18}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSSfont 31}{section*.20}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Experimental Results}{\reset@font\mtcSfont 34}{section.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Performance Benchmark}{\reset@font\mtcSSfont 34}{subsection.3.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 34}{section*.23}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 34}{section*.26}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Noise Tolerance Plot}{\reset@font\mtcSSSfont 38}{section*.33}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSfont 40}{subsection.3.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Parameters for Numeric Representation of Synaptic Weight Matrix}{\reset@font\mtcSSSfont 40}{section*.35}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Design Exploration for Dot-product with Hybrid Custom Floating-Point Approximation}{\reset@font\mtcSSSfont 40}{section*.37}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{\reset@font\mtcSSSfont 43}{section*.42}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Results and Discussion}{\reset@font\mtcSSfont 45}{subsection.3.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Conclusions}{\reset@font\mtcSfont 47}{section.3.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction}{\reset@font\mtcSfont 17}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Related Work}{\reset@font\mtcSfont 21}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Network Compression}{\reset@font\mtcSSfont 21}{subsection.3.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Classical Approximate Computing}{\reset@font\mtcSSfont 22}{subsection.3.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.3}Spike-by-Spike Neural Networks Accelerators}{\reset@font\mtcSSfont 22}{subsection.3.2.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}System Design}{\reset@font\mtcSfont 23}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Hardware Architecture}{\reset@font\mtcSSfont 23}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Conv Processing Unit}{\reset@font\mtcSSfont 24}{subsection.3.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Configuration Mode}{\reset@font\mtcSSSfont 24}{section*.15}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Computation Mode}{\reset@font\mtcSSSfont 25}{section*.16}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Dot-Product Hardware Module}{\reset@font\mtcSSfont 25}{subsection.3.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 27}{section*.18}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSSfont 28}{section*.20}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Experimental Results}{\reset@font\mtcSfont 30}{section.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Performance Benchmark}{\reset@font\mtcSSfont 32}{subsection.3.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 32}{section*.23}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 32}{section*.26}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Noise Tolerance Plot}{\reset@font\mtcSSSfont 36}{section*.33}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSfont 37}{subsection.3.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Parameters for Numeric Representation of Synaptic Weight Matrix}{\reset@font\mtcSSSfont 38}{section*.35}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Design Exploration for Dot-product with Hybrid Custom Floating-Point Approximation}{\reset@font\mtcSSSfont 38}{section*.37}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{\reset@font\mtcSSSfont 39}{section*.42}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Results and Discussion}{\reset@font\mtcSSfont 42}{subsection.3.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Conclusions}{\reset@font\mtcSfont 45}{section.3.5}}
