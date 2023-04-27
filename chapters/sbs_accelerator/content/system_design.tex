@@ -1,11 +1,11 @@
 \section{System Design}
 \label{sec:system_design}
 
-	In this section, we present a hardware architecture composed of specialized heterogeneous \glspl{pu} with hybrid custom floating-point and logarithmic dot-product approximation. This approach represents an advantageous design for error resilient applications in resource-constrained devices due to the reduced computational costs and memory footprint. Furthermore, the proposed approach allows the implementation of stationary synaptic weight matrices.
+	In this section, it is presented a hardware architecture composed of specialized heterogeneous \glspl{pu} with hybrid custom floating-point and logarithmic dot-product approximation. This approach represents an advantageous design for error resilient applications in resource-constrained devices due to the reduced hardware utilization and memory footprint. Furthermore, the proposed approach allows the implementation of stationary synaptic weight matrices as internal accelerator storage based on the reduced memory footprint.
 	
 
 Regarding the software architecture, this is structured as a
-layered object-oriented application framework written in the C programming language. This offers a comprehensive high level embedded software \gls{api} that allows the construction of scalable sequential SbS networks with configurable hardware acceleration. Conceptually this design is modular, reusable, and extensible. The overall structure is depicted in \Fig{fig:sbs_sw_stack}.
+layered object-oriented application framework written in the C programming language. This offers a comprehensive high level embedded software \gls{api} that allows the construction of scalable sequential \gls{sbs} networks with configurable hardware acceleration. Conceptually this design is modular, reusable, and extensible. The overall structure is depicted in \Fig{fig:sbs_sw_stack}.
 
 \begin{figure*}[b!]
 	\centering
@@ -15,9 +15,9 @@ layered object-oriented application framework written in the C programming langu
 \end{figure*}
 
 \subsection{Hardware Architecture} \label{Hardware_architecture}
-As a hardware/software co-design, the system architecture is an embedded CPU+FPGA-based platform, where the acceleration of SbS network computation is based on asynchronous\footnote{The system is synchronous at the circuit level, but the execution is asynchronous in terms of jobs.} execution of parallel heterogeneous processing units: \emph{Spike} (input layer), \emph{Conv} (convolution), \emph{Pool} (pooling), and \emph{FC} (fully connected). \Fig{fig:hw_sbs} illustrates the system overview as a scalable structure. For hyperparameter configuration, each PU uses AXI-Lite interface. For data transfer, each \gls{pu} uses AXI-Stream interfaces via \gls{dma} allowing data movement with high transfer rate. Each \gls{pu} asserts an interrupt flag once the job or transaction is complete. This interrupt event is handled by the embedded \gls{cpu} to collect results and start a new transaction.
+As a hardware/software co-design, the system architecture is an embedded \gls{cpu}+\gls{fpga}-based platform, where the acceleration of \gls{sbs} network computation is based on asynchronous\footnote{The system is synchronous at the circuit level, but the execution is asynchronous in terms of jobs.} execution of parallel heterogeneous processing units: \emph{Spike} (input layer), \emph{Conv} (convolution), \emph{Pool} (pooling), and \emph{FC} (fully connected). \Fig{fig:hw_sbs} illustrates the system overview as a scalable structure. For hyperparameter configuration, each \gls{pu} uses AXI-Lite interface. For data transfer, each \gls{pu} uses AXI-Stream interfaces via \gls{dma} allowing data movement with high transfer rate. Each \gls{pu} asserts an interrupt flag once the job or transaction is complete. This interrupt event is handled by the embedded \gls{cpu} to collect results and start a new transaction.
 
-The hardware architecture can resize its resource utilization by changing the number of PUs instances prior to the hardware synthesis, this provides scalability with a good trade-off between area and throughput. The dedicated PUs for \emph{Conv} and \emph{FC} implement the proposed dot-product approximation as a system component. The PUs are written in C using Vivado \gls{hls}. In this research, we illustrate the integration of the approximate dot-product component on the \emph{Conv} \gls{pu}.
+The hardware architecture can resize its resource utilization by changing the number of \gls{pu} instances prior to the hardware synthesis, this provides scalability with a good trade-off between area and throughput. The dedicated \glspl{pu} for \emph{Conv} and \emph{FC} implement the proposed dot-product approximation as a system component. The \glspl{pu} are written in System C using Xilinx Vivado \gls{hls}. In this research, we illustrate the integration of the approximate dot-product component on the \emph{Conv} \gls{pu}.
 
 \begin{figure*}[b!]
 	\centering
@@ -27,7 +27,7 @@ The hardware architecture can resize its resource utilization by changing the nu
 \end{figure*}
 
 \subsection{Conv Processing Unit}
-This hardware module computes the \gls{ip_sbs} dynamics defined by \Equ{eq:sbs_update} and offers two modes of operation: \emph{configuration} and \emph{computation}.
+This hardware module computes the dynamics of the \gls{ip_sbs} defined by \Equ{eq:sbs_update} and offers two modes of operation: \emph{configuration} and \emph{computation}.
 
 \subsubsection{Configuration Mode}
 In this mode of operation, the \gls{pu} receives and stores in on-chip memory (BRAM) the hyperparameters to compute the \gls{ip_sbs} dynamics: $\epsilon$ as the epsilon, $N$ as the length of $\vec{h}_\mu\in\mathbb{R}^{N}$, $K\in\mathbb{N}$ as the size of the convolution kernel, and $H\in\mathbb{N}$ as the number of \glspl{ip_sbs} to process per transaction. $H$ is the number of \glspl{ip_sbs} forming a layer or a partition.
@@ -36,17 +36,17 @@ Additionally, the processing unit also stores in on-chip memory (BRAM) the synap
 
 \begin{itemize}
 	\item{Custom floating-point representation}.
-	In this case, $W$ is deployed with a reduced floating-point representation using the user defined bit-width for the exponent and for the mantissa. For example, 4-bit exponent, 1-bit mantissa; as a result: 5-bit custom floating-point. The proposed method to determine the required bit-width is described in Section~{\ref{sec:dot-product_hardware_module}}.
+	In this case, $W$ is deployed with a reduced floating-point representation using the designer defined bit-width for the exponent and for the mantissa. For example, 4-bit exponent, 1-bit mantissa; as a result: 5-bit custom floating-point. The proposed method to determine the required bit-width is described in Section~{\ref{sec:dot-product_hardware_module}}.
 	\item{Logarithmic representation}.
-	In this case, the synaptic weight matrix is $W\in\mathbb{N}^{K\times K\times M\times N}$ with positive natural numbers. Since $0\le W(s_t|j)\le1$ and $\sum_{s_t=0}^{M-1}W(s_t|j)=1$, $W$ has only negative values in the logarithmic domain. Hence, the sign bit is omitted, and the values are represented in its positive form. Therefore, $W$ is deployed with a representation using the necessary bit-width for the exponent according to the given application. For example, 4-bit exponent. The method to determine the required bit-width is described in Section~{\ref{sec:dot-product_hardware_module}}.
+	In this case, the synaptic weight matrix is $W\in\mathbb{N}^{K\times K\times M\times N}$ with positive natural numbers. Since $0\le W(s_t|j)\le1$ and $\sum_{s_t=0}^{M-1}W(s_t|j)=1$, $W$ has only negative values in the logarithmic domain. Hence, the sign bit is omitted, and the values are represented as natural numbers. Therefore, $W$ is deployed with a representation using the necessary bit-width for the exponent according to the given application. For example, 4-bit exponent. The method to determine the required bit-width is described in Section~{\ref{sec:dot-product_hardware_module}}.
 \end{itemize}
 
-In order to deploy different SbS models, the \emph{Conv} processing units can load different hyperparameters and synaptic weight matrices as required through the embedded software.
+In order to deploy different \gls{sbs} models, the \emph{Conv} processing units can load different hyperparameters and synaptic weight matrices as required via the embedded software.
 
 \subsubsection{Computation Mode}
-In this mode of operation, the \gls{pu} executes a transaction to process a group of \glspl{ip_sbs} using the previously given hyperparameters and synaptic weight matrix. This process operates in six stages as shown in \fig{fig:hw_conv}. In the first two stages, the \gls{pu} receives $\vec{h}_\mu\in\mathbb{R}^{N}$, then the \gls{pu} calculates the emitted spike and stores it in $S^{new}\in\mathbb{N}^{H}$ (output spike vector). From the third to the fifth stage, the \gls{pu} receives $S_t\in\mathbb{N}^{K\times K}$ (input spike matrix), then it computes the update dynamics, and then it dispatches $\vec{h}_\mu^{new}\in\mathbb{R}^{N}$ (updated \gls{ip_sbs}). This process repeats for $H$ number of loops (for each \gls{ip_sbs} of the layer or partition). Finally, the $S^{new}$ is dispatched.
+In this mode of operation, the \gls{pu} executes a transaction to process a group of \glspl{ip_sbs} using the previously given hyperparameters and synaptic weight matrix. This process operates in six stages as shown in \fig{fig:hw_conv}. In the first two stages, the \gls{pu} receives $\vec{h}_\mu\in\mathbb{R}^{N}$, then the \gls{pu} calculates the emitted spike and stores it in $S^{new}\in\mathbb{N}^{H}$ (output spike vector). From the third to the fifth stage, the \gls{pu} receives $S_t\in\mathbb{N}^{K\times K}$ (input spike matrix), then it computes the update dynamics, and then it dispatches $\vec{h}_\mu^{new}\in\mathbb{R}^{N}$ (updated \gls{ip_sbs}). This process repeats for $H$ number of loops (for each \gls{ip_sbs} of the layer or partition). Finally, $S^{new}$ is dispatched.
 
-The computation of the update dynamics (see \fig{fig:hw_conv}(d)) operates in two modular stages: \emph{dot-product} and \emph{neuron update}. First, the \emph{dot-product} module calculates the sum of pairwise products of $\vec{h}_{\mu}$ and $\vec{W}(s_t)$, each pairwise product is stored as intermediate results. Subsequently, the \emph{neuron update} module calculates \equ{eq:sbs_update} reusing parameters and previous results.
+The computation of the update dynamics (see \fig{fig:hw_conv}(d)) operates in two stages or hardware modules: \emph{dot-product} and \emph{neuron update}. First, the \emph{dot-product} module calculates the sum of pairwise products of $\vec{h}_{\mu}$ and $\vec{W}(s_t)$, each pairwise product is stored as intermediate results. Subsequently, the \emph{neuron update} module calculates \equ{eq:sbs_update} reusing parameters and previous intermediate results.
 
 
 The calculation of the dot-product of \equ{eq:sbs_update} represents a considerable computational cost using standard floating-point in non-quantized network models. Fortunately, the pair product of $h_{\mu}(j)$ and $W(s_t|j)$ was defined by us as an approximable factor in the dot-product of \equ{eq:sbs_update}. In the following section, we focus on an optimized dot-product hardware design based on approximate computing.
@@ -61,7 +61,7 @@ The calculation of the dot-product of \equ{eq:sbs_update} represents a considera
 
 \subsection{Dot-Product Hardware Module}
 \label{sec:dot-product_hardware_module}
-This dot-product hardware module is part of an application-specific architecture optimized to approximate the dot-product of arbitrary length vectors, see \equ{eq:dot_product}. For quality configurability, we parameterized the mantissa bit-width of $\vec{W}(s_t)$, which provides a tunable trade-off between resource utilization and \gls{qor}. Since the lower-order bits have smaller significance than the higher-order bits, removing them may have only a minor impact on \gls{qor}. We designate this as hybrid custom floating-point approximation (see {\fig{fig:dot_product_unit}}(b)).
+The dot-product hardware module is part of an application-specific architecture optimized to approximate the dot-product of arbitrary length vectors, see \equ{eq:dot_product}. For quality configurability, we parameterized the mantissa bit-width of $\vec{W}(s_t)$, which provides a tunable trade-off between resource utilization and \gls{qor}. Since the lower-order bits have smaller significance than the higher-order bits, removing them may have only a minor impact on \gls{qor}. We designate this as hybrid custom floating-point approximation (see {\fig{fig:dot_product_unit}}(b)).
 
 \begin{eqnarray} \label{eq:dot_product}
 r_{\mu}\left(s_t\right)=\sum_{j=0}^{N-1}h_{\mu}(j)W(s_t|j)
@@ -84,17 +84,17 @@ N_W=N_E + N_M
 \end{eqnarray}
 
 
-The \equ{eq:exp_max} obtains the exponent of the minimum entry value in the synaptic weight matrix. Since $0\le W(s_t|j)\le1$ and $\sum_{s_t=0}^{M-1}W(s_t|j)=1$, $W$ has only negative values in the logarithmic domain; hence, by searching for the smallest value, we obtain the biggest negative exponent ($E_{\min}$). Then, the {\equ{eq:bits_exp}} obtains the necessary bit-width to represent the exponent ($N_E$). Finally, we obtain the total bit-width by incorporating both exponent and mantissa bit-widths in {\equ{eq:bits_bitwidth}}. $N_M$ denotes the mantissa bit-width, this is a knob parameter that is tuned by the designer to trade-off between resource utilization and \gls{qor}. The bit-width concept is illustrated in {\fig{fig:dot_product_unit}}.
+The \equ{eq:exp_max} obtains the exponent of the minimum entry value in the synaptic weight matrix. Since $0\le W(s_t|j)\le1$ and $\sum_{s_t=0}^{M-1}W(s_t|j)=1$, $W$ has only negative values in the logarithmic domain; the smallest value is expressed by the biggest negative exponent ($E_{\min}$). Then, the {\equ{eq:bits_exp}} obtains the necessary bit-width to represent the exponent ($N_E$). Finally, we obtain the total bit-width by incorporating both exponent and mantissa bit-widths in {\equ{eq:bits_bitwidth}}. $N_M$ denotes the mantissa bit-width, this is a knob parameter that is tuned by the designer to trade-off between resource utilization and \gls{qor}. The bit-width concept is illustrated in {\fig{fig:dot_product_unit}}.
 
 In this section, we will present three pipelined hardware modules with standard floating-point (IEEE 754) computation, hybrid custom floating-point approximation, and hybrid logarithmic approximation.
 
 \subsubsection{Dot-Product with Standard Floating-Point Computation}
- The hardware module to calculate the dot-product with standard floating-point computation is shown in \Fig{fig:dot_product_float}. This diagram presents the hardware blocks and their clock cycle schedule. This module loads both $h_\mu(j)$ and $W(s|j)$ from BRAM, then the \gls{pu} executes the pairwise product (\Fig{fig:dot_product_float}(c)) and accumulation (\Fig{fig:dot_product_float}(d)). The intermediate results of $h_\mu(j) W(s_t|j)$ are stored in BRAM for reuse in the neuron update. The latency in clock cycles of this hardware module is defined by \Equ{eq:dot_standard_float_latency}, where $N$ is the vector length of the dot-product. This equation is obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\Fig{fig:dot_product_float}(a)), and $IL$ is the iteration latency (\Fig{fig:dot_product_float}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis analysis. The equation for the latency with standard 32-bit floating-point is:
+ The hardware module to calculate the dot-product with standard floating-point computation is shown in \Fig{fig:dot_product_float}. This diagram presents the hardware blocks and their clock cycle schedule. This module loads both $h_\mu(j)$ and $W(s|j)$ from BRAM, then the \gls{pu} executes the pairwise product (\Fig{fig:dot_product_float}(c)) and accumulation (\Fig{fig:dot_product_float}(d)). Intermediate results of $h_\mu(j) W(s_t|j)$ are stored in BRAM for reuse in the neuron update stage. The latency in clock cycles of this hardware module is defined by \Equ{eq:dot_standard_float_latency}, where $N$ is the vector length of the dot-product. This equation is obtained from the general pipelined hardware latency formula: $L=\left(N-1\right)II+IL$, where $II$ is the initiation interval (\Fig{fig:dot_product_float}(a)), and $IL$ is the iteration latency (\Fig{fig:dot_product_float}(b)). Both $II$ and $IL$ are obtained from the high-level synthesis analysis. The equation for the latency with standard 32-bit floating-point is:
  \begin{eqnarray} \label{eq:dot_standard_float_latency}
  L_{f32}=10N+9
  \end{eqnarray}
  
-In this design, the high-level synthesis tool infers computational blocks with considerable latency cost for standard floating-point. In the case of floating-point multiplication (\Fig{fig:dot_product_float}(c)), the synthesis infers a hardware block with a latency cost of 5 clock cycles. Theoretically, this block would handle exponents addition, mantissas multiplication, and mantissa correction if needed. Moreover, in the case of floating-point addition (\ref{fig:dot_product_float}(d)), the synthesis infers a hardware block with a latency cost of 9 clock cycles. Seemingly, this block would handle mantissas alignment, addition, and correction if needed. Therefore, the use of standard floating-point in high-level synthesis results in high computational cost, which represents unnecessary overhead in error tolerant applications.
+In this design, the high-level synthesis tool infers computational blocks with considerable latency cost for standard floating-point. In the case of floating-point multiplication (\Fig{fig:dot_product_float}(c)), the synthesis infers a hardware block with a latency cost of 5 clock cycles. This block executes addition of exponents, multiplication of mantissas, and mantissa correction (when needed). Moreover, in the case of floating-point addition (\ref{fig:dot_product_float}(d)), the synthesis infers a hardware block with a latency cost of 9 clock cycles. Seemingly, this block executes alignment of mantissas, addition, and correction (when needed). Therefore, the use of standard floating-point results in high computational cost, this represents unnecessary overhead in error tolerant applications.
 
 
 \begin{figure*}[b!]
@@ -107,22 +107,36 @@ In this design, the high-level synthesis tool infers computational blocks with c
 \subsubsection{Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}
  The hardware module to calculate dot-product with hybrid custom floating-point approximation is shown in \Fig{fig:dot_product_custom}. In this design, $h_\mu(j)$ uses standard 32-bit floating-point number representation, and $W(s|j)$ uses a positive reduced custom floating-point number representation, where the mantissa bit width is the quality configurability knob. This parameter is tuned by the designer to trade-off between QoR and resource utilization, thus, energy consumption.
  
- As the most efficient setup and yet the worst-case quality configuration, by completely truncating the mantissa of $W(s|j)$ leads to a slightly different hardware architecture using only adders and shifters, which computes the dot-product with hybrid logarithmic approximation. This is shown in \Fig{fig:dot_product_log}.
+ \begin{figure*}
+ 	\centering
+ 	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/dot_product.pdf}
+ 	\caption{Dot-product hardware module with hybrid custom floating-point approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 13 clock cycles, (c) shows the pairwise product blocks in dark-gray, and (d) illustrates the accumulation blocks in light-gray.}
+ 	\label{fig:dot_product_custom}
+ \end{figure*}
  
-Additionally, the exponent bit-width of $W(s|j)$ is a design parameter for efficient resource utilization and it is defined based on the application or deployment needs.
+ As the most efficient setup, by completely truncating the mantissa of $W(s|j)$ leads to a slightly different hardware architecture using only adders and shifters, which computes the dot-product with hybrid logarithmic approximation. This is shown in \Fig{fig:dot_product_log}.
+ 
+  \begin{figure*}
+ 	\centering
+ 	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/dot_product_log.pdf}
+ 	\caption{Dot-product hardware module with hybrid logarithmic approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 9 clock cycles, (c) shows the pairwise product block in dark-gray, and (d) illustrates the accumulation blocks in light-gray.}
+ 	\label{fig:dot_product_log}
+ \end{figure*}
+ 
+Additionally, the exponent bit-width of $W(s|j)$ is a design parameter for efficient resource utilization and it is defined based on the application and deployment needs.
  
  The hybrid custom floating-point and logarithmic approximation designs work in three phases: \emph{Computation}, \emph{Threshold-test}, and \emph{Result normalization}.
  
  \begin{itemize}
  	\item{Phase I, \emph{Computation}}: 
- 	\\This phase approximates the magnitude of the dot-product in a denormalized representation. This is calculated in two iterative steps over each vector element: \emph{pairwise product} and \emph{accumulation}, where \emph{pairwise product} is executed either in hybrid custom floating-point or hybrid logarithmic approximation described below.
+ 	\\This phase approximates the magnitude of the dot-product in a denormalized representation. This is calculated in two iterative steps over each vector element: \emph{pairwise product} and \emph{accumulation}. \emph{Pairwise product} is executed either in hybrid custom floating-point or hybrid logarithmic approximation described below.
  	 \begin{itemize}[label={--}]
  	 	\item{Pairwise product}.
  	 	\begin{itemize} [label={--}]
 	 		\item{Hybrid custom floating-point approximation}.
-	 	 	As shown in \Fig{fig:dot_product_custom}(c) in dark-gray, the pairwise product is approximated by adding exponents and multiplying mantissas of both $W(s|i)$ and $h_\mu(i)$. If the mantissa multiplication results in an overflow, then it is corrected by increasing the  exponent and shifting the resulting mantissa by one position to the right. Then we get $h_\mu(j) W(s_t|j)$ as an intermediate result which is stored for future reuse in the neuron update calculation. In this design the pairwise product has a latency of 5 clock cycles.
+	 	 	As shown in \Fig{fig:dot_product_custom}(c) in dark-gray, the pairwise product is approximated by adding exponents and multiplying mantissas of $W(s|i)$ and $h_\mu(i)$. If the mantissa multiplication results in an overflow, then it is corrected by increasing the  exponent and shifting the resulting mantissa by one position to the right. Then, as intermediate result, $h_\mu(j) W(s_t|j)$ is stored for future reuse in the neuron update calculation. In this design, the pairwise product has a latency of 5 clock cycles.
 	 	 	\item{Hybrid logarithmic approximation}.
-	 	 	As shown in \Fig{fig:dot_product_log}(c) in dark-gray, the pairwise product is approximated by adding $W(s|i)$ to the exponent of $h_\mu(i)$, since $W(s|j)$ values are represented in the logarithmic domain and $h_\mu(j)$ in standard floating-point. In this design the pairwise product has a latency of one clock cycle.
+	 	 	As shown in \Fig{fig:dot_product_log}(c) in dark-gray, the pairwise product is approximated by adding $W(s|i)$ to the exponent of $h_\mu(i)$, since the values of $W(s|j)$ are represented in the logarithmic domain and $h_\mu(j)$ in standard floating-point. In this design, the pairwise product has a latency of one clock cycle.
  	 	\end{itemize}
  		\item{Accumulation}. As shown in both \Fig{fig:dot_product_custom}(d) and \Fig{fig:dot_product_log}(d) in light-gray, first, it is obtained the denormalized representation of $h_\mu(j) W(s_t|j)$ by shifting its mantissa using its exponent as shifting parameter (barrel shifter). Then, this denormalized representation is accumulated to obtain the approximated magnitude of the dot-product.
  	 \end{itemize}
@@ -145,19 +159,5 @@ Additionally, the exponent bit-width of $W(s|j)$ is a design parameter for effic
 The total latency of the hardware module with hybrid custom floating-point and hybrid logarithmic approximation is the accumulated latency of the three phases.
 
 The proposed architectures with approximation approach exceeds the performance of the design with standard floating-point. This performance enhancement is achieved by decomposing the floating-point computation into an advantageous handling of exponent and mantissa using intermediate accumulation in a denormalized representation and only one final normalization.
-
-\begin{figure*}[h!]
-	\centering
-	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/dot_product.pdf}
-	\caption{Dot-product hardware module with hybrid custom floating-point approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 13 clock cycles, (c) shows the pairwise product blocks in dark-gray, and (d) illustrates the accumulation blocks in light-gray.}
-	\label{fig:dot_product_custom}
-\end{figure*}
-
-\begin{figure*}[h!]
-	\centering
-	\includegraphics[width=0.5\columnwidth]{./chapters/sbs_accelerator/figures/dot_product_log.pdf}
-	\caption{Dot-product hardware module with hybrid logarithmic approximation, (a) exhibits the initiation interval of 2 clock cycles, (b) presents the iteration latency of 9 clock cycles, (c) shows the pairwise product block in dark-gray, and (d) illustrates the accumulation blocks in light-gray.}
-	\label{fig:dot_product_log}
-\end{figure*}
 
 

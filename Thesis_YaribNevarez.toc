@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.3.3}Dot-Product Hardware Module}{25}{subsection.3.3.3}%
 \contentsline {subsubsection}{\nonumberline Dot-Product with Standard Floating-Point Computation}{27}{section*.18}%
 \contentsline {subsubsection}{\nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{28}{section*.20}%
-\contentsline {section}{\numberline {3.4}Experimental Results}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Experimental Results}{31}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Performance Benchmark}{32}{subsection.3.4.1}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Embedded CPU}{32}{section*.23}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{32}{section*.26}%

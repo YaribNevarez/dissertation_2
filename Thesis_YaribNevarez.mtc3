@@ -11,7 +11,7 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Dot-Product Hardware Module}{\reset@font\mtcSSfont 25}{subsection.3.3.3}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 27}{section*.18}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Custom Floating-Point and Logarithmic Approximation}{\reset@font\mtcSSSfont 28}{section*.20}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Experimental Results}{\reset@font\mtcSfont 30}{section.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Experimental Results}{\reset@font\mtcSfont 31}{section.3.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Performance Benchmark}{\reset@font\mtcSSfont 32}{subsection.3.4.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 32}{section*.23}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{\reset@font\mtcSSSfont 32}{section*.26}}
