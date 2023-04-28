@@ -1,18 +1,18 @@
 \section{Experimental Results}
 \label{sec:experimental_results}
-The proposed architecture is demonstrated on a Xilinx Zynq-7020. This device integrates a dual ARM Cortex-A9 based \gls{ps} and \gls{pl} equivalent to Xilinx Artix-7 (FPGA) in a single chip \cite{xilinx2015zynq}. The Zynq-7020 architecture conveniently maps the custom logic and software in the PL and PS respectively as an embedded system.
+The proposed architecture is demonstrated on a Xilinx Zynq-7020. This device integrates a dual ARM Cortex-A9 based \gls{ps} and \gls{pl} equivalent to Xilinx Artix-7 (\gls{fpga}) in a single chip \cite{xilinx2015zynq}. The Zynq-7020 architecture conveniently maps the custom logic and software in the \gls{pl} and \gls{ps} respectively as an embedded system.
 
-In this platform, we implement the proposed hardware architecture to deploy the SbS network structure shown in \ref{fig:sbs_network} for handwritten digit classification task using MNIST data set. The SbS model is trained in Matlab without any quantization method, using standard floating-point. The resulting synaptic weight matrices are deployed on the embedded system. There, the SbS network is built as a sequential model using the API from the SbS embedded software framework \cite{nevarez2020accelerator}. This API allows to configure the computational workload of the neural network, which can be distributed among the hardware processing units and the embedded CPU.
+In this platform, the proposed hardware architecture is implemented to deploy the \gls{sbs} network structure shown in \ref{fig:sbs_network} for handwritten digit classification task for MNIST data set. The \gls{sbs} model is trained using standard floating-point. Matlab software is used for this \gls{sbs} network implementation. The resulting synaptic weight matrices are deployed on the embedded system as binary files stored in a micro SD memory card. In the embedded software, the \gls{sbs} network is built as a sequential model using the \gls{api} from the \gls{sbs} embedded software framework \cite{nevarez2020accelerator}. This \gls{api} allows to configure the computational workload of the neural network, this can be distributed among the hardware processing units and the embedded \gls{cpu}.
 
-For the evaluation of our approach, we address a design exploration by reviewing the computational latency, inference accuracy, resource utilization, and power dissipation. First, we benchmark the performance of SbS network simulation on the embedded CPU, and then repeat the measurements on hardware processing units with standard floating-point computation. Afterwards, we evaluate our dot-product architecture, addressing a design exploration with hybrid custom floating-point approximation, as well as the hybrid logarithmic approximation. Finally, we present a discussion of the presented results.
+For the evaluation of this approach, it is presented a design exploration by reviewing the computational latency, inference accuracy, resource utilization, and power dissipation. First, the performance of the embedded \gls{cpu} is taken as benchmark, and then repeat the measurements on hardware processing units with standard floating-point computation. Afterwards, the dot-product architecture is evaluated addressing a design exploration with hybrid custom floating-point approximation, as well as the hybrid logarithmic approximation. Finally, a discussion of results is presented.
 
 
 \subsection{Performance Benchmark}
 \subsubsection{Benchmark on Embedded CPU}
 
-We examine the performance of the CPU for SbS network simulation with no hardware coprocessing. In this case, the embedded software builds the SbS network as a sequential model mapping the entire computation to the CPU (ARM Cortex-A9) at 666 MHz and a power dissipation of $1.658 W$.
+The performance of the \gls{cpu} for \gls{sbs} network inference is examined. In this case, the embedded software builds the \gls{sbs} network as a sequential model mapping the entire computation to the \gls{cpu} (ARM Cortex-A9) at \unit[666]{MHz} and a power dissipation of \unit[1.658]{W}.
 
-The SbS network computation on the CPU achieves a latency of $34.28 ms$ per spike with an accuracy of 99.3\% correct classification on the $10,000$ image test set with $1000$ spikes. The latency and schedule of the SbS network computation are displayed in \ref{tab:latency_sw} and \ref{fig:latency_sw} respectively.
+The \gls{sbs} network computation on the \gls{cpu} reaches a latency of \unit[34.28]{ms} per spike with accuracy of \unit[99.3]{\%} correct classification on the $10,000$ image test set with $1000$ spikes. The latency and schedule of the \gls{sbs} network computation are displayed in \Tab{tab:latency_sw} and \Fig{fig:latency_sw}, respectively.
 
 \begin{table}[!t]\centering
 	\caption{Computation on embedded CPU.}\label{tab:latency_sw}
@@ -40,7 +40,7 @@ The SbS network computation on the CPU achieves a latency of $34.28 ms$ per spik
 \end{figure*}
 
 \subsubsection{Benchmark on Processing Units with Standard Floating-Point Computation}
-To benchmark the computation on hardware PUs with standard floating-point, we implement the system architecture shown in \ref{fig:hw_sbs_8_pu}. In this case, the embedded software builds the SbS network as a sequential model mapping the network computation to the hardware processing units at 200 MHz as clock frequency.
+The system architecture shown in \Fig{fig:hw_sbs_8_pu} is implemented to benchmark the computation on hardware \glspl{pu} with standard floating-point. The embedded software builds the \gls{sbs} network as a sequential model and delegates the network computation to the hardware processing units at \unit[200]{MHz} as clock frequency.
 
 \begin{figure*}[b!]
 	\centering
@@ -49,7 +49,7 @@ To benchmark the computation on hardware PUs with standard floating-point, we im
 	\label{fig:hw_sbs_8_pu}
 \end{figure*}
 
-The layers of the neural network with the most neurons are partitioned for asynchronous parallel processing. Since \emph{H2\_POOL} and \emph{H3\_CONV} are the layers with the most neurons, the computational workload is distributed between two PUs for each one of these layers. The output layer \emph{HY\_OUT} is fully processed by the CPU, since it is the layer with fewest neurons. The hardware mapping and the computation schedule of this deployment are displayed in \ref{tab:latency_fp} and \ref{fig:latency_pu_fp}.
+The layers of the neural network with the most neurons are partitioned for asynchronous parallel processing. Since \emph{H2\_POOL} and \emph{H3\_CONV} are the layers with the most neurons, the computational workload is distributed between two \glspl{pu} for each one of these layers. The output layer \emph{HY\_OUT} is fully processed by the \gls{cpu}, since it is the layer with fewest neurons. The hardware mapping and the computation schedule of this deployment are displayed in \Tab{tab:latency_fp} and \Fig{fig:latency_pu_fp}, respectively.
 
 \begin{table}[!t]\centering
 	\caption{Performance of processing units with standard floating-point (IEEE 754) computation.}\label{tab:latency_fp}
@@ -79,9 +79,9 @@ The layers of the neural network with the most neurons are partitioned for async
 	\label{fig:latency_pu_fp}
 \end{figure*}
 
-In the computation schedule, the following terms are defined as follows: $t_s(n)$ as the start time for the processing of the neural network layer (as a compute node) $n\in L$ where $L$ represents the set of layers; $t_{CPU}(n)$ as the CPU preprocessing time; $t_{PU}(n)$ as the PU latency; and $t_f(n)$ as the finish time. For data preparation, the $t_{CPU}(n)$ is the duration in which the CPU writes a DRAM buffer with $\vec{h}_\mu$ (vector of neuron latent variables) of the current processing layer and $S_t$ (input spike matrix) from its preceding layer. This buffer is streamed to the PU via DMA.
+In the computation schedule, the following terms are defined as follows: $t_s(n)$ as the start time for the processing of the neural network layer (as a compute node) $n\in L$ where $L$ represents the set of layers; $t_{CPU}(n)$ as the \gls{cpu} preprocessing time; $t_{PU}(n)$ as the \gls{pu} latency; and $t_f(n)$ as the finish time. For data preparation, $t_{CPU}(n)$ is the duration in which the \gls{cpu} writes a DRAM buffer with $\vec{h}_\mu$ (vector of neuron latent variables) of the current processing layer and $S_t$ (input spike matrix) from its preceding layer. This buffer is streamed to the \gls{pu} via \gls{dma}.
 
-The total execution time of the CPU is defined by \ref{eq:time_cpu}. In a cyclic spiking inference, the execution time of the network computation is the longest path among the processing units including the CPU. This is denoted as the latency of an spike cycle and it is defined by \ref{eq:time_spike}. The total execution time of the network computation is the last finish time ($t_f$) in the schedule defined by \ref{eq:time_finish}.
+The total execution time of the \gls{cpu} is defined by \Equ{eq:time_cpu}. In a cyclic spiking inference, the execution time of the network computation is the longest path among the processing units including the \gls{cpu}. This is denoted as the latency of an spike cycle and it is defined by \Equ{eq:time_spike}. The total execution time of the network computation is the last finish time ($t_f$) in the schedule defined by \Equ{eq:time_finish}.
 
 \begin{figure*}[b!]
 	\centering
@@ -110,13 +110,11 @@ T_{CPU}, & \text{otherwise}
 T_{f} = \max_{n\in L}(t_{f}(n))
 \end{eqnarray}
 
-Using standard floating-point requires a high computational cost. As the largest layer, the computational workload of \emph{H3\_CONV} is evenly partitioned among two PUs: \emph{Conv2} and \emph{Conv3}. However, in the cyclic schedule, \emph{Conv2} causes the performance bottleneck as shown in \ref{fig:latency_pu_fp_cycle}. In this case, the CPU has to await for \emph{Conv2} to finish the computation of the previous cycle in order to start the current computation cycle. In contrast, as the smallest layer, the computational workload of \emph{HY\_OUT} is fully processed by the CPU. \ref{tab:latency_fp} and \ref{fig:latency_pu_fp} show $4\mu s$ as the processing latency of \emph{HY\_OUT}. This latency is negligible compared to the overall performance assessment. Accelerating \emph{HY\_OUT} would yield a negligible gain. Moreover, assigning a dedicated hardware PU to \emph{HY\_OUT} would add data transfer and hardware interruption handling overheads, which makes this unprofitable.
+Using standard floating-point requires a high computational cost. As the largest layer, the computational workload of \emph{H3\_CONV} is evenly partitioned among two \glspl{pu}: \emph{Conv2} and \emph{Conv3}. However, in the cyclic schedule, \emph{Conv2} causes the performance bottleneck as shown in \Fig{fig:latency_pu_fp_cycle}. In this case, the \gls{cpu} awaits for \emph{Conv2} to finish the computation of the previous cycle in order to start the current computation cycle. In contrast, as the smallest layer, the computational workload of \emph{HY\_OUT} is fully processed by the \gls{cpu}. \Tab{tab:latency_fp} and \Fig{fig:latency_pu_fp} show \unit[4]{$\mu$s} as the processing latency of \emph{HY\_OUT}. This latency is negligible compared to the overall performance assessment. Accelerating \emph{HY\_OUT} would yield a negligible gain. Moreover, assigning a dedicated hardware \gls{pu} to \emph{HY\_OUT} would add unprofitable data transfer and hardware interruption handling overheads.
 
-Applying \ref{eq:time_spike}, we obtain a latency of $3.18 ms$ per spike cycle. This deployment achieves an accuracy of $98.98\%$ correct classification on the $10,000$ image test set with $1000$ spikes.
+Applying \Equ{eq:time_spike}, it is obtained a latency of \unit[3.18]{ms} per spike cycle. This deployment achieves an accuracy of $98.98\%$ correct classification on the $10,000$ image test set with $1000$ spikes.
 
-The post-implementation resource utilization and power dissipation are shown in \ref{tab:resource_fp}.
-%\REVIEW{The power dissipation breakdown of \emph{Conv} and \emph{FC} %are presented in {\ref{fig:power_dissipation_breakdown_float_32}}, %which exhibits data as the major component of power dissipation in %\emph{Conv}.}
-Each \emph{Conv} PU instantiates an on-chip stationary weight matrix of $52,000$ entries, wish is sufficient to store $W\in\mathbb{R}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{R}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. In order to reduce BRAM utilization, we use a custom floating-point representation composed of 4-bit exponent and 4-bit mantissa. Each 8-bit entry is promoted to its standard floating-point representation for the dot-product computation. The methodology to find the appropriate bit-width parameters for custom floating-point representation is presented in Section~\ref{sec:parameters}.
+The post-implementation resource utilization and power dissipation are shown in \Tab{tab:resource_fp}. Each \emph{Conv} \gls{pu} instantiates an on-chip stationary weight matrix of $52,000$ entries, wish is sufficient to store $W\in\mathbb{R}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{R}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. In order to reduce BRAM utilization, we use a custom floating-point representation composed of 4-bit exponent and 4-bit mantissa (bit sign is omitted). Each 8-bit entry is promoted to its standard floating-point representation for the dot-product computation. The method to find the appropriate bit-width parameters for custom floating-point representation is presented in Section~\ref{sec:parameters}.
 
 \begin{table}[!h]\centering
 	\caption{Resource utilization and power dissipation of processing units with standard floating-point (IEEE 754) computation.}\label{tab:resource_fp}
@@ -138,7 +136,7 @@ Each \emph{Conv} PU instantiates an on-chip stationary weight matrix of $52,000$
 %	\label{fig:power_dissipation_breakdown_float_32}
 %\end{figure}
 
-The implementation of dot-product with standard floating-point arithmetic (IEEE 754) utilizes proprietary multiplier and adder floating-point operator cores. Vivado HLS accomplishes floating-point arithmetic operations by mapping them onto Xilinx LogiCORE IP cores, these floating-point operator cores are instantiated in the resultant RTL\cite{hrica2012floating}. In this case, the implementation of the dot-product with the standard floating-point computation reuses the multiplier and adder cores already instantiated and used in other computation sections of {\emph{Conv}} and {\emph{FC}} processing units. The post-implementation resource utilization and power dissipation of the floating-point operator cores are shown in {\ref{tab:LogiCORE}}.
+The implementation of dot-product with standard floating-point arithmetic (IEEE 754) utilizes proprietary Xilinx multiplier and adder floating-point operator cores. Vivado \gls{hls} implements floating-point arithmetic operations by mapping them onto Xilinx LogiCORE IP cores, these floating-point operator cores are instantiated in the resultant \gls{rtl}\cite{hrica2012floating}. In this case, the implementation of the dot-product with the standard floating-point computation reuses the multiplier and adder cores already instantiated and used in other computation sections of {\emph{Conv}} and {\emph{FC}} processing units. The post-implementation resource utilization and power dissipation of the floating-point operator cores are shown in {\Tab{tab:LogiCORE}}.
 
 \begin{table}[!h]\centering
 	\caption{Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.}\label{tab:LogiCORE}
