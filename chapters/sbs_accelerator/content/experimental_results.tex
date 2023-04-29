@@ -150,11 +150,11 @@ The implementation of dot-product with standard floating-point arithmetic (IEEE 
 \end{table}
 
 \subsubsection{Benchmark on Noise Tolerance Plot}
-The noise tolerance plot serves as an intuitive visual model used to provide insights into accuracy degradation under approximate processing effects. This plot reveals inherent error resilience, and hence, approximation resilience. As an application-specific quality metric, this plot offers an effective method to estimate the overall quality degradation of the SbS network under different approximate processing effects, since both approximations and noise have qualitatively the same effect\cite{venkataramani2015approximate}.
+The purpose of the proposed noise tolerance plot is to serve as an intuitive visual model used to provide insights into accuracy degradation under approximate processing effects. This plot reveals inherent error resilience, and hence, approximation resilience. As an application-specific quality metric, this plot offers an effective method to estimate the overall quality degradation of the \gls{sbs} network under different approximate processing effects, since both approximations and noise have qualitatively the same effect~\cite{venkataramani2015approximate}.
 
-In order to experimentally obtain the noise tolerance plot, we measure the inference accuracy of the neural network with increasing number of spikes. Then we repeat the measurements with uniformly distributed noise applied on the input images. We gradually ascend the levels of the noise amplitude, until accuracy degradation is detected. \ref{fig:accuracy_vs_noise_pu_fp} demonstrates this method using 100 sample images.
+In order to experimentally obtain the noise tolerance plot, the inference accuracy of the neural network with increasing number of spikes is measured. The measurements are retaken with uniformly distributed noise applied on the input. The levels of the noise amplitude are gradually ascended until accuracy degradation is detected. \Fig{fig:accuracy_vs_noise_pu_fp} demonstrates this method using 100 input samples.
 
-As benchmark, the tolerance plot in \ref{fig:accuracy_vs_noise_pu_fp} revels accuracy degradation having $50\%$ noise and convergence with $400$ spikes. In this case, the particular SbS network with precise processing demonstrates a remarkable inherent error resilience, hence, a great opportunity for approximate processing.
+As benchmark, the tolerance plot in \Fig{fig:accuracy_vs_noise_pu_fp} revels accuracy degradation having $50\%$ noise and convergence with $400$ spikes. In this case, the given \gls{sbs} network with precise processing demonstrates its inherent error resilience, hence, the resilience for approximate processing.
 
 
 \begin{figure*}[b!]
@@ -166,15 +166,15 @@ As benchmark, the tolerance plot in \ref{fig:accuracy_vs_noise_pu_fp} revels acc
 
 \subsection{Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}
 
-In this section, we address a design exploration to evaluate our approach for SbS neural network simulation using hybrid custom floating-point and logarithmic approximation. First, we examine the synaptic weight matrix of each SbS network layer in order to determine the minimum requirements for numeric representation and memory storage. Second, we implement the proposed dot-product architecture using the minimal floating-point and logarithmic representation as design parameters. Finally, we evaluate the overall performance, the inference accuracy, the resource utilization, and the power dissipation.
+In this section, it is presented a design exploration to evaluate the proposed approach for \gls{sbs} neural network inference using hybrid custom floating-point and logarithmic approximation. First, the synaptic weight matrix of each layer is examined in order to determine the minimum requirements for numeric representation and memory storage. Second, the proposed dot-product architecture is implemented using the minimal floating-point and logarithmic representation as design parameters. Finally, it is presented an evaluation of the overall performance, inference accuracy, resource utilization, and power dissipation.
 
 \subsubsection{Parameters for Numeric Representation of Synaptic Weight Matrix}
 \label{sec:parameters}
 
-	We obtain information for the numerical representation of the synaptic weight matrices from their $\log_2$-histograms presented in {\ref{fig:log2histogram}}. These histograms show the distribution of synaptic weight values in each matrix. We observe that the minimum integer exponent value is $-13$. Hence, applying {\ref{eq:exp_max}} and {\ref{eq:bits_exp}} to the given SbS network, we obtain $E_{\min}=-13$ and $N_E=4$, respectively. Therefore, 4-bits are required for the absolute binary representation of the exponents.
+	The parameters for numerical representation of the synaptic weight matrices is obtained from their $\log_2$-histograms presented in {\Fig{fig:log2histogram}}. These histograms show the distribution of synaptic weight values in each matrix. The histograms show that the minimum integer exponent value is $-13$. Hence, applying {\Equ{eq:exp_max}} and {\Equ{eq:bits_exp}} to the given \gls{sbs} network, results $E_{\min}=-13$ and $N_E=4$, respectively. Therefore, 4-bits are used for the absolute binary representation of the exponents.
 
 
-For quality configurability, the mantissa bit-width is a knob parameter that is tuned by the designer. This procedure leverages the builtin error-tolerance of neural networks and performs a trade-off between resource utilization and QoR. In the following subsection, we present a case study with 1-bit mantissa corresponding to the custom floating-point approximation.
+For quality configurability, the mantissa bit-width is a knob parameter that is tuned by the designer. This procedure leverages the builtin error-tolerance of neural networks and performs a trade-off between resource utilization and \gls{qor}. In the following subsection, a case study is presented with 1-bit mantissa. This corresponds to the custom floating-point approximation.
 
 \begin{figure*}[b!]
 	\centering
@@ -183,17 +183,13 @@ For quality configurability, the mantissa bit-width is a knob parameter that is 
 \end{figure*}
 
 \subsubsection{Design Exploration for Dot-product with Hybrid Custom Floating-Point Approximation}
-For this design exploration, we use a custom floating-point representation composed of 4-bit exponent and 1-bit mantissa. This format is used for the synaptic weight vector on the proposed dot-product architecture. Each \emph{Conv} PU instantiates an on-chip stationary weight matrix for $52,000$ entries of 5-bit. The available memory size is large enough to store $W\in\mathbb{R}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{R}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. The same dot-product architecture is implemented in the processing unit of the fully connected layer (\emph{FC}). However, due to lack of BRAM resources, this PU can not instantiate on-chip stationary synaptic weight matrix. Instead, \emph{FC} receives the $\vec{W}(s_t)$ (weight vectors) during operation as well as $\vec{h}_\mu$ and $S_t$. The hardware mapping and the computation schedule of this implementation are displayed in \ref{tab:latency_cfp} and \ref{fig:latency_pu_cfp_cycle}.
+For this design exploration, a custom floating-point representation is composed of 4-bit exponent and 1-bit mantissa. This format is used for the synaptic weight vector on the proposed dot-product architecture. Each \emph{Conv} \gls{pu} instantiates an on-chip stationary weight matrix for $52,000$ entries of 5-bit. The available memory size is large enough to store $W\in\mathbb{R}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{R}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. The same dot-product architecture is implemented in the processing unit of the fully connected layer (\emph{FC}). However, due to lack of BRAM resources, this \gls{pu} can not instantiate on-chip stationary synaptic weight matrix. Instead, \emph{FC} receives the $\vec{W}(s_t)$ (weight vectors) during operation as well as $\vec{h}_\mu$ and $S_t$. The hardware mapping and the computation schedule of this implementation are displayed in \Tab{tab:latency_cfp} and \Fig{fig:latency_pu_cfp_cycle}.
 
-As shown in the computation schedule in \ref{tab:latency_cfp} and \ref{fig:latency_pu_cfp_cycle}, this implementation achieves a maximum hardware PU latency of $1.30 ms$ according to \ref{eq:time_pu}, and a CPU latency of $1.67 ms$. Therefore, applying \ref{eq:time_spike}, we obtain a latency of $1.67 ms$ per spike cycle as shown in \ref{fig:latency_pu_cfp_cycle}. In this case, the cyclic bottleneck is in the performance of the CPU.
+As shown in the computation schedule in \Tab{tab:latency_cfp} and \Fig{fig:latency_pu_cfp_cycle}, this implementation presents a maximum hardware \gls{pu} latency of \unit[1.30]{ms} according to \Equ{eq:time_pu}, and \gls{cpu} latency of \unit[1.67]{ms}. Therefore, applying \Equ{eq:time_spike}, the total latency is \unit[1.67]{ms} per spike cycle as shown in \Fig{fig:latency_pu_cfp_cycle}. In this case, the cyclic bottleneck in each \gls{sbs} spike is in the \gls{cpu} performance.
 
-This configuration achieves an accuracy of $98.97\%$ correct classification on the $10,000$ image test set with $1000$ spikes. This indicates an accuracy degradation of $0.33\%$. For output quality monitoring, the noise tolerance plot in \ref{fig:accuracy_vs_noise_pu_cfp} revels accuracy degradation for noise higher than $50\%$ on the input images, and convergence of inference with $400$ spikes. Thus, the particular SbS network implementation under approximate processing effects demonstrates a minimal impact on the overall accuracy. This proves an inherent error resilience, and hence, remaining approximation budget.
+This configuration achieves an accuracy of $98.97\%$ correct classification on the $10,000$ image test set with $1000$ spikes. This indicates an accuracy degradation of $0.33\%$. To monitoring output quality, the noise tolerance plot in \Fig{fig:accuracy_vs_noise_pu_cfp} revels accuracy degradation for noise higher than $50\%$ on the input images, and convergence of inference with $400$ spikes. Thus, the particular \gls{sbs} network implementation under approximate processing effects demonstrates a minimal impact on the overall accuracy. This reveals an inherent error resilience, and hence, remaining approximation budget.
 
-The post-implementation resource utilization and power dissipation
-%\REVIEW{breakdown}
-are shown in \ref{tab:resource_cfp}
-%\REVIEW{and {\ref{fig:power_dissipation_breakdown_float_5}}, respectively}
-.
+The post-implementation resource utilization and power dissipation of this design are shown in \Tab{tab:resource_cfp}.
 
 \begin{table}[h!]\centering
 	\caption{Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.}\label{tab:resource_cfp}
@@ -205,13 +201,6 @@ are shown in \ref{tab:resource_cfp}
 		\bottomrule
 	\end{tabular}
 \end{table}
-
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=1\columnwidth]{../figures/power_dissipation_breakdown_float-5.pdf}
-%	\caption{Power dissipation breakdown of processing units with hybrid custom floating-point approximation, (a) \emph{Conv}, and (b) \emph{FC}.}
-%	\label{fig:power_dissipation_breakdown_float_5}
-%\end{figure}
 
 
 \begin{table}[t!]\centering
@@ -248,17 +237,13 @@ are shown in \ref{tab:resource_cfp}
 \end{figure*}
 
 \subsubsection{Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}
-As the most efficient setup and yet the worst-case quality configuration, we use a 4-bit integer exponent for logarithmic representation of the synaptic weight matrix. Each \emph{Conv} processing unit implements the proposed dot-product architecture including an on-chip stationary weight matrix for $52,000$ entries of 4-bit integer each one to store $W\in\mathbb{N}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{N}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. The same dot-product architecture is implemented in the \emph{FC} processing unit without stationary synaptic weight matrix. The hardware mapping and the computation schedule of this implementation are displayed in \ref{tab:latency_log} and \ref{fig:latency_pu_log_cycle}.
+For this design, 4-bit integer exponent are used for logarithmic representation of the synaptic weight matrix. Each \emph{Conv} processing unit implements the proposed dot-product architecture including an on-chip stationary weight matrix for $52,000$ entries of 4-bit integer each one to store $W\in\mathbb{N}^{5\times 5\times 2\times 32}$ and $W\in\mathbb{N}^{5\times 5\times 32\times 64}$ for \emph{H1\_CONV} and \emph{H3\_CONV}, respectively. The same dot-product architecture is implemented in the \emph{FC} processing unit without stationary synaptic weight matrix. The hardware assignment and the computation schedule of this implementation are displayed in \Tab{tab:latency_log} and \Fig{fig:latency_pu_log_cycle}.
 
-As shown in the computation schedule in \ref{tab:latency_log} and \ref{fig:latency_pu_log_cycle}, this implementation achieves a maximum hardware PU latency of $1.27 ms$ according to \ref{eq:time_pu}, and a CPU latency of $1.67 ms$. Therefore, applying \ref{eq:time_spike}, we obtain a latency of $1.67 ms$ per spike cycle as shown in \ref{fig:latency_pu_log_cycle}. In this case, the cyclic bottleneck is in the CPU performance.
+As shown in the computation schedule in \Tab{tab:latency_log} and \Fig{fig:latency_pu_log_cycle}, this implementation presents a maximum hardware \gls{pu} latency of \unit[1.27]{ms} (according to \Equ{eq:time_pu}), and \gls{cpu} latency of \unit[1.67]{ms}. Therefore, applying \Equ{eq:time_spike}, gives \unit[1.67]{ms} as latency per spike cycle as shown in \Fig{fig:latency_pu_log_cycle}. In this case, the cyclic bottleneck is in the \gls{cpu} performance.
 
-This quality configuration achieves an accuracy of $98.84\%$ correct classification on the $10,000$ image test set with $1000$ spikes. This indicates an accuracy degradation of $0.46\%$. For output quality monitoring, the noise tolerance plot in \ref{fig:accuracy_vs_noise_pu_log} revels accuracy degradation having $40\%$ noise on the input images, and convergence of inference with $600$ spikes. The particular SbS network implementation under approximate processing demonstrates a minor impact on the overall accuracy. This exhibits remaining budget for further approximate processing approaches.
+This quality configuration achieves an accuracy of $98.84\%$ correct classification on the $10,000$ image test set with $1000$ spikes. This indicates an accuracy degradation of $0.46\%$. To monitor output quality, the noise tolerance plot in \Fig{fig:accuracy_vs_noise_pu_log} revels accuracy degradation having $40\%$ noise on the input images, and convergence of inference with $600$ spikes. The particular \gls{sbs} network implementation under approximate processing demonstrates a minor impact on the overall accuracy. As the most efficient setup and yet the worst-case quality configuration, this exhibits remaining budget for further approximate processing approaches.
 
-The post-implementation resource utilization and power dissipation
-%\REVIEW{breakdown}
-are shown in \ref{tab:resource_log}
-%\REVIEW{and {\ref{fig:power_dissipation_breakdown_log_4}}, respectively}
-.
+The post-implementation resource utilization and power dissipation are shown in \Tab{tab:resource_log}.
 
 \begin{table}[t!]\centering
 	\caption{Performance of hardware processing units with hybrid logarithmic approximation.}\label{tab:latency_log}
@@ -315,11 +300,11 @@ are shown in \ref{tab:resource_log}
 
 
 \subsection{Results and Discussion}
-As a reference, the SbS network simulation on embedded CPU using standard 32-bit floating-point achieves an accuracy of $99.3\%$ with a latency of $T_{SC} = 34.28ms$. As a second reference point, the network simulation on hardware processing units with standard floating-point achieves an accuracy of $98.98\%$ with a latency $T_{SC}=3.18ms$. As result we get a $10.7\times$ latency enhancement and an accuracy degradation of $0.32\%$. The tolerance plot in \ref{fig:accuracy_vs_noise_pu_fp} reveals accuracy degradation having $50\%$ noise on the input images, and convergence of inference with $400$ spikes. In this case, the SbS network deployment with precise computing proves extraordinary inherent error resilience, and hence, this represents a great potential for approximate processing.
+As benchmark, the \gls{sbs} network inference on embedded \gls{cpu} using standard 32-bit floating-point achieves an accuracy of $99.3\%$ with a latency of $T_{SC} = 34.28 ms$. As a second reference point, the network simulation on hardware processing units with standard floating-point achieves an accuracy of $98.98\%$ with a latency $T_{SC}=3.18 ms$. As result, this design get $10.7\times$ latency enhancement and an accuracy degradation of $0.32\%$. The tolerance plot in \Fig{fig:accuracy_vs_noise_pu_fp} reveals accuracy degradation having $50\%$ noise on the input images, and convergence of inference with $400$ spikes. In this case, the \gls{sbs} network deployment with precise computing proves extraordinary inherent error resilience, and hence, this represents a great potential for approximate processing.
 
-As a demonstration of the proposed dot-product architecture, the SbS network simulation on hardware PUs with synaptic representation using 5-bit custom floating-point (4-bit exponent, 1-bit mantissa) and 4-bit logarithmic (4-bit exponent) achieve $20.5\times$ latency enhancement and accuracy of $98.97\%$ and $98.84\%$, respectively. This results in an accuracy degradation of $0.33\%$ and $0.46\%$, respectively. For output quality monitoring, the noise tolerance plot in \ref{fig:accuracy_vs_noise_pu_cfp} and \ref{fig:accuracy_vs_noise_pu_log} reveal accuracy degradation when having $50\%$ and $40\%$ noise on the input images, and convergence of inference with $400$ and $600$ spikes, respectively. Therefore, the design exploration under the proposed approximate computing approach indicates sufficient inherent error resilience for further and more aggressive approximate processing approaches.
+As a demonstration of the proposed dot-product architecture, the \gls{sbs} network inference on hardware \glspl{pu} with synaptic representation using 5-bit custom floating-point (4-bit exponent, 1-bit mantissa) and 4-bit logarithmic (4-bit exponent) achieve $20.5\times$ latency enhancement and accuracy of $98.97\%$ and $98.84\%$, respectively. This results in accuracy degradation of $0.33\%$ and $0.46\%$, respectively. To monitor output quality, the noise tolerance plot in \Fig{fig:accuracy_vs_noise_pu_cfp} and \Fig{fig:accuracy_vs_noise_pu_log} reveal accuracy degradation when having $50\%$ and $40\%$ noise on the input images, and convergence of inference with $400$ and $600$ spikes, respectively. Therefore, the design exploration under the proposed approximate computing approach indicates sufficient inherent error resilience for further or more aggressive approximation approaches.
 
-Regarding resource utilization and power dissipation with the proposed approach, the \emph{Conv} processing units have a $43.24\%$ reduction of BRAM, and a $12.35\%$ of improvement in energy efficiency over the standard floating-point implementation. However, the proposed approach does not reuse the available floating-point operator cores instantiated from other computational sections (see {\ref{tab:LogiCORE}}). Therefore, the logic required for the dot-product must be implemented, which is reflected as additional utilization of LUT and FF resources. The experimental results of the design exploration are summarized in \ref{tab:results}. The platform implementations are summarized in \ref{tab:platform_comparison}, and their power dissipation breakdowns are presented in {\ref{fig:platform_power_dissipation_breakdown}}.
+Regarding resource utilization and power dissipation with the proposed approach, \emph{Conv} processing units have a $43.24\%$ reduction of BRAM, and $12.35\%$ of improvement in energy efficiency over the standard floating-point implementation. However, the proposed approach does not reuse the available floating-point operator cores instantiated from other computational sections (see {\Tab{tab:LogiCORE}}). Therefore, the logic required for the dot-product must be implemented, which is reflected as additional utilization of LUT and FF resources. The experimental results of the design exploration are summarized in \Tab{tab:results}. The platform implementations are summarized in \Tab{tab:platform_comparison}, and their power dissipation breakdowns are presented in \Fig{fig:platform_power_dissipation_breakdown}.
 
 \begin{table*}[!t]
 	\begin{threeparttable}

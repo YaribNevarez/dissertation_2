@@ -43,12 +43,12 @@
 \contentsline {subsubsection}{\nonumberline Benchmark on Embedded CPU}{32}{section*.23}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Processing Units with Standard Floating-Point Computation}{32}{section*.26}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Noise Tolerance Plot}{36}{section*.33}%
-\contentsline {subsection}{\numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{38}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2}Design Exploration with Hybrid Custom Floating-Point and Logarithmic Approximation}{37}{subsection.3.4.2}%
 \contentsline {subsubsection}{\nonumberline Parameters for Numeric Representation of Synaptic Weight Matrix}{38}{section*.35}%
 \contentsline {subsubsection}{\nonumberline Design Exploration for Dot-product with Hybrid Custom Floating-Point Approximation}{38}{section*.37}%
-\contentsline {subsubsection}{\nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{41}{section*.42}%
+\contentsline {subsubsection}{\nonumberline Design Exploration for Dot-Product whit Hybrid Logarithmic Approximation}{40}{section*.42}%
 \contentsline {subsection}{\numberline {3.4.3}Results and Discussion}{43}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Conclusions}{45}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Conclusions}{44}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Accelerating Convolutional Neural Networks}{47}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Related Work}{50}{section.4.2}%

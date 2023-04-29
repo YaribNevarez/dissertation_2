@@ -10,10 +10,10 @@
 \contentsline {table}{\numberline {3.2}{\ignorespaces Performance of processing units with standard floating-point (IEEE 754) computation.\relax }}{34}{table.caption.28}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Resource utilization and power dissipation of processing units with standard floating-point (IEEE 754) computation.\relax }}{36}{table.caption.31}%
 \contentsline {table}{\numberline {3.4}{\ignorespaces Resource utilization and power dissipation of multiplier and adder floating-point (IEEE 754) operator cores.\relax }}{36}{table.caption.32}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.\relax }}{40}{table.caption.38}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid custom floating-point approximation.\relax }}{39}{table.caption.38}%
 \contentsline {table}{\numberline {3.6}{\ignorespaces Performance of hardware processing units with hybrid custom floating-point approximation.\relax }}{40}{table.caption.39}%
 \contentsline {table}{\numberline {3.7}{\ignorespaces Performance of hardware processing units with hybrid logarithmic approximation.\relax }}{42}{table.caption.43}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid logarithmic approximation.\relax }}{43}{table.caption.45}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Resource utilization and power dissipation of processing units with hybrid logarithmic approximation.\relax }}{42}{table.caption.45}%
 \contentsline {table}{\numberline {3.9}{\ignorespaces Experimental results.\relax }}{44}{table.caption.48}%
 \contentsline {table}{\numberline {3.10}{\ignorespaces Platform implementations.\relax }}{45}{table.caption.50}%
 \addvspace {10\p@ }
