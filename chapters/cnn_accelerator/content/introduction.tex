@@ -27,13 +27,13 @@ The main contributions presented in this chapter are as follows:
 \begin{enumerate}
 	\item
 	
-	The Hybrid-Float6 quantization and its dedicated hardware design. We propose an optimized hardware MAC by reducing the mantissa multiplication to a multiplexer-adder operation. We exploit the intrinsic error tolerance of ANN to further reduce the hardware design with approximation. To preserve model accuracy, we present a quantization-aware training method, which provides regularization effects.
+	The Hybrid-Float6 quantization and its dedicated hardware design. It is proposed an optimized hardware \gls{mac} by reducing the mantissa multiplication to a multiplexer-adder operation. The intrinsic error tolerance of \gls{ann} is exploited to further reduce the hardware design with approximation. To preserve model accuracy, it is presented a quantization-aware training method, which provides regularization effects.
 	
-	\item We develop a custom hardware/software co-design framework for low-power analytics on resource-constrained embedded FPGAs. TensorFlow Lite micro is integrated in this framework.
-	\item We present a customizable tensor processor as a dedicated hardware for HF6. This design computes \emph{Conv2D} tensor operations employing a pipelined vector dot-product with parametrized on-chip memory utilization. For exploration purposes, the compute engine can be synthesized with the proposed HF6 hardware or with Xilinx LogiCORE IPs (for standard floating-point).
-	\item We demonstrate the potential of our approach with a CNN-regression model for anomaly localization in SHM based on AE. We address a hardware design exploration. We evaluate inference accuracy, compute performance, hardware resource utilization, and energy consumption.
+	\item A custom hardware/software co-design framework for low-power analytics on resource-constrained embedded \gls{fpga}. TensorFlow Lite micro is integrated in this framework.
+	\item A customizable tensor processor as a dedicated hardware for HF6. This design computes \emph{Conv2D} tensor operations employing a pipelined vector dot-product with parametrized on-chip memory utilization. For exploration purposes, the compute engine can be synthesized with the proposed HF6 hardware or with Xilinx LogiCORE IPs (for standard floating-point).
+	\item The potential of this approach is demonstrated with a \gls{cnn}-regression model for anomaly localization in \gls{shm} based on \gls{ae}. A hardware design exploration is presented evaluating inference accuracy, compute performance, hardware resource utilization, and energy consumption.
 \end{enumerate}
 
-The rest of the paper is organized as follows. Section~\ref{sec:related_work} covers the related work; Section~\ref{sec:background} introduces the background for \emph{Conv2D} tensor operation and floating-point number representation; Section~\ref{sec:system_design} describes the system design of the hardware/software architecture and the quantized aware training method; Section~\ref{sec:experimental_results} presents the experimental results thorough a design exploration flow; Section~\ref{sec:conclusions} concludes the paper.
+This work is available to the community as an open-source project at
 
-This work is available to the community as an open-source project at https://github.com/YaribNevarez/tensorflow-lite-fpga-delegate.git.
+https://github.com/YaribNevarez/tensorflow-lite-fpga-delegate.git.

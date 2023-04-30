@@ -43,12 +43,12 @@
 \contentsline {figure}{\numberline {4.12}{\ignorespaces CNN-regression model for sensor analytics.\relax }}{65}{figure.caption.75}%
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Training results.\relax }}{66}{figure.caption.77}%
 \contentsline {figure}{\numberline {4.14}{\ignorespaces Performance of the model with different data representations.\relax }}{67}{figure.caption.78}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.\relax }}{71}{figure.caption.87}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit [666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit [200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit [200]{MHz}$.\relax }}{73}{figure.caption.90}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.\relax }}{70}{figure.caption.87}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit [666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit [200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit [200]{MHz}$.\relax }}{72}{figure.caption.90}%
 \contentsline {figure}{\numberline {4.17}{\ignorespaces 2D error distribution of three CNN-regression models.\relax }}{74}{figure.caption.92}%
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.\relax }}{74}{figure.caption.94}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit [666]{MHz}$ and PL at $\unit [200]{MHz}$.\relax }}{75}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit [666]{MHz}$ and PL at $\unit [200]{MHz}$.\relax }}{74}{figure.caption.95}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion and Outlook}{79}{chapter.5}%
+\contentsline {xchapter}{Conclusion and Outlook}{77}{chapter.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Appendix}{81}{appendix.A}%
+\contentsline {xchapter}{Appendix}{79}{appendix.A}%

@@ -53,22 +53,22 @@
 \contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Related work}{50}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Hybrid Custom Floating-Point}{50}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Low-Precision Floating-Point}{51}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.2}Low-Precision Floating-Point}{50}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Low-Power}{51}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}System Design}{51}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Base embedded system architecture}{51}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Tensor processor}{52}{subsection.4.3.2}%
-\contentsline {subsubsection}{\nonumberline \textbf {Modes of operation}}{53}{section*.55}%
+\contentsline {subsubsection}{\nonumberline \textbf {Modes of operation}}{52}{section*.55}%
 \contentsline {subsubsection}{\nonumberline \textbf {Dot-product with hybrid floating-point}}{53}{section*.56}%
-\contentsline {subsubsection}{\nonumberline \textbf {Multiply-Accumulate}}{55}{section*.59}%
+\contentsline {subsubsection}{\nonumberline \textbf {Multiply-Accumulate}}{53}{section*.59}%
 \contentsline {subsubsection}{\nonumberline \textbf {On-chip memory utilization}}{56}{section*.61}%
 \contentsline {subsection}{\numberline {4.3.3}Training Method}{57}{subsection.4.3.3}%
 \contentsline {subsubsection}{\nonumberline Training with Iterative Early Stop}{57}{section*.63}%
 \contentsline {subsubsection}{\nonumberline Quantization-Aware Training}{58}{section*.64}%
-\contentsline {subsection}{\numberline {4.3.4}Embedded software architecture}{59}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.4}Embedded software architecture}{58}{subsection.4.3.4}%
 \contentsline {section}{\numberline {4.4}Experimental Results}{60}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sensor Analytics Application}{61}{subsection.4.4.1}%
-\contentsline {subsubsection}{\nonumberline Experimental Setup}{62}{section*.70}%
+\contentsline {subsection}{\numberline {4.4.1}Sensor Analytics Application}{60}{subsection.4.4.1}%
+\contentsline {subsubsection}{\nonumberline Experimental Setup}{61}{section*.70}%
 \contentsline {subsubsection}{\nonumberline Data Sets}{62}{section*.71}%
 \contentsline {subsubsection}{\nonumberline CNN-Regression Model}{64}{section*.74}%
 \contentsline {subsection}{\numberline {4.4.2}Training}{65}{subsection.4.4.2}%
@@ -81,14 +81,14 @@
 \contentsline {subsubsection}{\nonumberline Benchmark on Embedded CPU}{69}{section*.83}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Tensor Processor Synthesized with Xilinx LogiCORE IP for Floating-Point Computation}{69}{section*.84}%
 \contentsline {subsubsection}{\nonumberline Tensor Processor Synthesized with Hybrid-Float6 Hardware Architecture}{70}{section*.89}%
-\contentsline {subsection}{\numberline {4.4.4}Discussion}{72}{subsection.4.4.4}%
-\contentsline {subsubsection}{\nonumberline Training and Quantization}{72}{section*.91}%
-\contentsline {subsubsection}{\nonumberline Implementation and Performance}{72}{section*.93}%
+\contentsline {subsection}{\numberline {4.4.4}Discussion}{73}{subsection.4.4.4}%
+\contentsline {subsubsection}{\nonumberline Training and Quantization}{73}{section*.91}%
+\contentsline {subsubsection}{\nonumberline Implementation and Performance}{73}{section*.93}%
 \contentsline {subsubsection}{\nonumberline SoC Design and Compatibility}{75}{section*.96}%
 \contentsline {subsubsection}{\nonumberline Limitations and Directions for Future Work}{75}{section*.97}%
 \contentsline {section}{\numberline {4.5}Conclusions}{76}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusion and Outlook}{79}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Summary of Contributions}{80}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Future Works}{80}{section.5.2}%
-\contentsline {chapter}{\numberline {A}Appendix}{81}{appendix.A}%
-\contentsline {section}{\numberline {A.1}SbS algorithm}{81}{section.A.1}%
+\contentsline {chapter}{\numberline {5}Conclusion and Outlook}{77}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Summary of Contributions}{78}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Future Works}{78}{section.5.2}%
+\contentsline {chapter}{\numberline {A}Appendix}{79}{appendix.A}%
+\contentsline {section}{\numberline {A.1}SbS algorithm}{79}{section.A.1}%
