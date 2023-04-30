@@ -1,36 +1,37 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Introduction}{\reset@font\mtcSfont 47}{section.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Related Work}{\reset@font\mtcSfont 50}{section.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Related work}{\reset@font\mtcSfont 50}{section.4.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Hybrid Custom Floating-Point}{\reset@font\mtcSSfont 50}{subsection.4.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Low-Precision Floating-Point}{\reset@font\mtcSSfont 51}{subsection.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Low-Power Hardware Architectures}{\reset@font\mtcSSfont 51}{subsection.4.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Low-Power}{\reset@font\mtcSSfont 51}{subsection.4.2.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}System Design}{\reset@font\mtcSfont 51}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Base Embedded System Architecture}{\reset@font\mtcSSfont 51}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Tensor Processor}{\reset@font\mtcSSfont 52}{subsection.4.3.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Modes of Operation}{\reset@font\mtcSSSfont 52}{section*.55}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Dot-Product with Hybrid Floating-Point Computation}{\reset@font\mtcSSSfont 53}{section*.56}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Multiply-Accumulate}{\reset@font\mtcSSSfont 53}{section*.59}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline On-Chip Memory Utilization}{\reset@font\mtcSSSfont 56}{section*.61}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Base embedded system architecture}{\reset@font\mtcSSfont 51}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Tensor processor}{\reset@font\mtcSSfont 52}{subsection.4.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Modes of operation}}{\reset@font\mtcSSSfont 53}{section*.55}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Dot-product with hybrid floating-point}}{\reset@font\mtcSSSfont 53}{section*.56}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Multiply-Accumulate}}{\reset@font\mtcSSSfont 55}{section*.59}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {On-chip memory utilization}}{\reset@font\mtcSSSfont 56}{section*.61}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Training Method}{\reset@font\mtcSSfont 57}{subsection.4.3.3}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Training with Iterative Early Stop}{\reset@font\mtcSSSfont 57}{section*.63}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization Aware Training}{\reset@font\mtcSSSfont 58}{section*.64}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training}{\reset@font\mtcSSSfont 58}{section*.64}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Embedded software architecture}{\reset@font\mtcSSfont 59}{subsection.4.3.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Experimental Results}{\reset@font\mtcSfont 61}{section.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Experimental Results}{\reset@font\mtcSfont 60}{section.4.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Sensor Analytics Application}{\reset@font\mtcSSfont 61}{subsection.4.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Experimental Setup}{\reset@font\mtcSSSfont 61}{section*.69}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Data Sets}{\reset@font\mtcSSSfont 61}{section*.70}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline CNN-Regression Model}{\reset@font\mtcSSSfont 64}{section*.73}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Training}{\reset@font\mtcSSfont 64}{subsection.4.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Base Model}{\reset@font\mtcSSSfont 64}{section*.75}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline TensorFlow Lite 8-bit Quantization}{\reset@font\mtcSSSfont 65}{section*.78}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization Aware Training for Hybrid-Float6}{\reset@font\mtcSSSfont 66}{section*.79}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization Aware Training for Hybrid-Logarithmic 6-bit}{\reset@font\mtcSSSfont 68}{section*.80}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Hardware Design Exploration}{\reset@font\mtcSSfont 68}{subsection.4.4.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 68}{section*.81}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Tensor Processor with Standard Floating-Point Hardware using Xilinx LogiCORE IP}{\reset@font\mtcSSSfont 69}{section*.82}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Tensor Processor with Hybrid-Float6 Hardware}{\reset@font\mtcSSSfont 70}{section*.87}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.4}Discussion}{\reset@font\mtcSSfont 71}{subsection.4.4.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Training and Quantization}{\reset@font\mtcSSSfont 71}{section*.89}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Implementation and Performance}{\reset@font\mtcSSSfont 73}{section*.91}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline SoC Design and Compatibility}{\reset@font\mtcSSSfont 74}{section*.94}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Future Work}{\reset@font\mtcSSSfont 74}{section*.95}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Conclusions}{\reset@font\mtcSfont 75}{section.4.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Experimental Setup}{\reset@font\mtcSSSfont 62}{section*.70}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Data Sets}{\reset@font\mtcSSSfont 62}{section*.71}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline CNN-Regression Model}{\reset@font\mtcSSSfont 64}{section*.74}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Training}{\reset@font\mtcSSfont 65}{subsection.4.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Base Model}{\reset@font\mtcSSSfont 65}{section*.76}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline TensorFlow Lite 8-bit Quantization}{\reset@font\mtcSSSfont 66}{section*.79}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Inference of non-quantized models on HF6 hardware}{\reset@font\mtcSSSfont 68}{section*.80}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training for HF6 hardware}{\reset@font\mtcSSSfont 68}{section*.81}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training for Hybrid-Logarithmic 6-bit}{\reset@font\mtcSSSfont 68}{section*.82}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Hardware Design Exploration}{\reset@font\mtcSSfont 69}{subsection.4.4.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 69}{section*.83}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Tensor Processor Synthesized with Xilinx LogiCORE IP for Floating-Point Computation}{\reset@font\mtcSSSfont 69}{section*.84}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Tensor Processor Synthesized with Hybrid-Float6 Hardware Architecture}{\reset@font\mtcSSSfont 70}{section*.89}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.4}Discussion}{\reset@font\mtcSSfont 72}{subsection.4.4.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Training and Quantization}{\reset@font\mtcSSSfont 72}{section*.91}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Implementation and Performance}{\reset@font\mtcSSSfont 72}{section*.93}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline SoC Design and Compatibility}{\reset@font\mtcSSSfont 75}{section*.96}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Limitations and Directions for Future Work}{\reset@font\mtcSSSfont 75}{section*.97}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Conclusions}{\reset@font\mtcSfont 76}{section.4.5}}

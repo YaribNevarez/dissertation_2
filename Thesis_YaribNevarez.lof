@@ -31,23 +31,24 @@
 \contentsline {xchapter}{Accelerating Convolutional Neural Networks}{47}{chapter.4}%
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The workflow of our approach on embedded FPGAs.\relax }}{49}{figure.caption.52}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Base embedded system architecture.\relax }}{52}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Hardware architecture of the proposed tensor processor.\relax }}{52}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces High level hardware architecture of the proposed tensor processor.\relax }}{52}{figure.caption.54}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Dot-product hardware module with (a) standard floating-point and (b) Hybrid-Float6.\relax }}{54}{figure.caption.57}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces (a) Dot-product hardware module with Hybrid-Float6 MAC, (b) bias accumulation, (c) activation and normalization.\relax }}{54}{figure.caption.58}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces (a) Dot-product hardware module with Hybrid-Float6 MAC, (b) bias accumulation, (c) activation and normalization to IEEE754.\relax }}{54}{figure.caption.58}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Hybrid-Float6 multiply-accumulate hardware design.\relax }}{55}{figure.caption.60}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Design parameters for on-chip memory buffers on the TP.\relax }}{56}{figure.caption.62}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Base embedded software architecture.\relax }}{59}{figure.caption.68}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Experimental setup for sensor analytics on structural health monitoring, all lengths are in meters (m).\relax }}{62}{figure.caption.71}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$ m, $y = 0.109$ m with noise disturbance.\relax }}{64}{figure.caption.72}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces CNN-regression model for sensor analytics.\relax }}{65}{figure.caption.74}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Training results.\relax }}{66}{figure.caption.76}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Performance of the model with different data representations.\relax }}{67}{figure.caption.77}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.\relax }}{70}{figure.caption.85}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit [666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit [200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit [200]{MHz}$.\relax }}{72}{figure.caption.88}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces 2D error distribution of three CNN-regression models.\relax }}{73}{figure.caption.90}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.\relax }}{73}{figure.caption.92}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit [666]{MHz}$ and PL at $\unit [200]{MHz}$.\relax }}{74}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces High level embedded software architecture.\relax }}{58}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Software flowchart.\relax }}{59}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Experimental setup for sensor analytics on structural health monitoring, all lengths are in meters (m).\relax }}{63}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Spectrograms of sensors $S_1, S_2$ converted to grayscale for pulses at $x =0.105$ m, $y = 0.109$ m with noise disturbance.\relax }}{64}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces CNN-regression model for sensor analytics.\relax }}{65}{figure.caption.75}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Training results.\relax }}{66}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Performance of the model with different data representations.\relax }}{67}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Inference acceleration and power reduction on the TP with floating-point and HF6 vs. CPU on the Zynq-7007S SoC.\relax }}{71}{figure.caption.87}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Run-time inference of TensorFlow Lite on the Zynq-7007S SoC. (a) CPU ARM Cortex-A9 at $\unit [666]{MHz}$, (b) cooperative CPU + TP with floating-point Xilinx LogiCORE IP at $\unit [200]{MHz}$, and (c) cooperative CPU + TP with Hybrid-Float6 at $\unit [200]{MHz}$.\relax }}{73}{figure.caption.90}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces 2D error distribution of three CNN-regression models.\relax }}{74}{figure.caption.92}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Hardware resource utilization on the Zynq-7007S SoC.\relax }}{74}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Estimated power dissipation on the Zynq-7007S SoC with PS at $\unit [666]{MHz}$ and PL at $\unit [200]{MHz}$.\relax }}{75}{figure.caption.95}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusion and Outlook}{77}{chapter.5}%
+\contentsline {xchapter}{Conclusion and Outlook}{79}{chapter.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Appendix}{79}{appendix.A}%
+\contentsline {xchapter}{Appendix}{81}{appendix.A}%
