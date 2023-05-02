@@ -57,7 +57,7 @@
 \contentsline {subsection}{\numberline {4.2.3}Low-Power}{51}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}System Design}{51}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Base embedded system architecture}{51}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Tensor processor}{52}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Tensor processor}{51}{subsection.4.3.2}%
 \contentsline {subsubsection}{\nonumberline \textbf {Modes of operation}}{52}{section*.55}%
 \contentsline {subsubsection}{\nonumberline \textbf {Dot-product with hybrid floating-point}}{53}{section*.56}%
 \contentsline {subsubsection}{\nonumberline \textbf {Multiply-Accumulate}}{53}{section*.59}%
@@ -65,9 +65,9 @@
 \contentsline {subsection}{\numberline {4.3.3}Training Method}{57}{subsection.4.3.3}%
 \contentsline {subsubsection}{\nonumberline Training with Iterative Early Stop}{57}{section*.63}%
 \contentsline {subsubsection}{\nonumberline Quantization-Aware Training}{58}{section*.64}%
-\contentsline {subsection}{\numberline {4.3.4}Embedded software architecture}{58}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Experimental Results}{60}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sensor Analytics Application}{60}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.3.4}Embedded software architecture}{60}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}Experimental Results}{61}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Sensor Analytics Application}{61}{subsection.4.4.1}%
 \contentsline {subsubsection}{\nonumberline Experimental Setup}{61}{section*.70}%
 \contentsline {subsubsection}{\nonumberline Data Sets}{62}{section*.71}%
 \contentsline {subsubsection}{\nonumberline CNN-Regression Model}{64}{section*.74}%

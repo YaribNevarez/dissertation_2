@@ -5,7 +5,7 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Low-Power}{\reset@font\mtcSSfont 51}{subsection.4.2.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}System Design}{\reset@font\mtcSfont 51}{section.4.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Base embedded system architecture}{\reset@font\mtcSSfont 51}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Tensor processor}{\reset@font\mtcSSfont 52}{subsection.4.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Tensor processor}{\reset@font\mtcSSfont 51}{subsection.4.3.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Modes of operation}}{\reset@font\mtcSSSfont 52}{section*.55}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Dot-product with hybrid floating-point}}{\reset@font\mtcSSSfont 53}{section*.56}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline \textbf {Multiply-Accumulate}}{\reset@font\mtcSSSfont 53}{section*.59}}
@@ -13,9 +13,9 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Training Method}{\reset@font\mtcSSfont 57}{subsection.4.3.3}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Training with Iterative Early Stop}{\reset@font\mtcSSSfont 57}{section*.63}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training}{\reset@font\mtcSSSfont 58}{section*.64}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Embedded software architecture}{\reset@font\mtcSSfont 58}{subsection.4.3.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Experimental Results}{\reset@font\mtcSfont 60}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Sensor Analytics Application}{\reset@font\mtcSSfont 60}{subsection.4.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Embedded software architecture}{\reset@font\mtcSSfont 60}{subsection.4.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Experimental Results}{\reset@font\mtcSfont 61}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Sensor Analytics Application}{\reset@font\mtcSSfont 61}{subsection.4.4.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Experimental Setup}{\reset@font\mtcSSSfont 61}{section*.70}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Data Sets}{\reset@font\mtcSSSfont 62}{section*.71}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline CNN-Regression Model}{\reset@font\mtcSSSfont 64}{section*.74}}
