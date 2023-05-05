@@ -25,7 +25,7 @@
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Inference of non-quantized models on HF6 hardware}{\reset@font\mtcSSSfont 68}{section*.80}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training for HF6 hardware}{\reset@font\mtcSSSfont 68}{section*.81}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Quantization-Aware Training for Hybrid-Logarithmic 6-bit}{\reset@font\mtcSSSfont 68}{section*.82}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Hardware Design Exploration}{\reset@font\mtcSSfont 69}{subsection.4.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Hardware Design Exploration}{\reset@font\mtcSSfont 68}{subsection.4.4.3}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Embedded CPU}{\reset@font\mtcSSSfont 69}{section*.83}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Benchmark on Tensor Processor Synthesized with Xilinx LogiCORE IP for Floating-Point Computation}{\reset@font\mtcSSSfont 69}{section*.84}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \nonumberline Tensor Processor Synthesized with Hybrid-Float6 Hardware Architecture}{\reset@font\mtcSSSfont 70}{section*.89}}

@@ -77,7 +77,7 @@
 \contentsline {subsubsection}{\nonumberline Inference of non-quantized models on HF6 hardware}{68}{section*.80}%
 \contentsline {subsubsection}{\nonumberline Quantization-Aware Training for HF6 hardware}{68}{section*.81}%
 \contentsline {subsubsection}{\nonumberline Quantization-Aware Training for Hybrid-Logarithmic 6-bit}{68}{section*.82}%
-\contentsline {subsection}{\numberline {4.4.3}Hardware Design Exploration}{69}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.3}Hardware Design Exploration}{68}{subsection.4.4.3}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Embedded CPU}{69}{section*.83}%
 \contentsline {subsubsection}{\nonumberline Benchmark on Tensor Processor Synthesized with Xilinx LogiCORE IP for Floating-Point Computation}{69}{section*.84}%
 \contentsline {subsubsection}{\nonumberline Tensor Processor Synthesized with Hybrid-Float6 Hardware Architecture}{70}{section*.89}%
