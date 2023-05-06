@@ -209,15 +209,15 @@ The implementation of the dot-product with standard \gls{fp} engine (IEEE 754 ar
 
 
 \subsubsection{Tensor Processor Synthesized with Hybrid-Float6 Hardware Architecture}
-To demonstrate the proposed design, the TP with HF6 hardware reuses the standard FP design parameters with the following variation for the 6-bit representation in filter and bias: $BitSize_F=BitSize_B=6$.
+To demonstrate the proposed design, the \gls{tp} with \gls{hf6} hardware reuses the standard \gls{fp} design parameters with the following variation for the 6-bit representation in filter and bias: $BitSize_F=BitSize_B=6$.
 
 Using equations from Section \ref{sec:memory_utilization}, the on-chip memory requirements for the hardware accelerator are $Input_M=\unit[84,480]{b}$, $Filter_M=\unit[178,200]{b}$, $Bias_M=\unit[360]{b}$. Hence, the required on-chip memory buffer size is $TP_B=\unit[263,040]{b}$.
 
-The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(b). The complete hardware platform utilizes 30\% of BRAM, this includes the on-chip memory requirements of the TP, DMA, and AXI interconnects. The estimated power dissipation of the TP is $\unit[84]{mW}$ at $\unit[200]{MHz}$ (this estimation is provided by Xilinx Vivado).
+The post-implementation resource utilization and power dissipation are presented in \Tab{tab:resource_utilization}(b). The complete hardware platform utilizes 30\% of BRAM, this includes the on-chip memory requirements of the \gls{tp}, \gls{dma}, and AXI interconnects. The estimated power dissipation of the \gls{tp} is $\unit[84]{mW}$ at $\unit[200]{MHz}$ (this estimation is provided by Xilinx Vivado).
 
-The compute performance and inference schedule of the model on this hardware implementation are shown in \Tab{tab:performance}(c) and \fig{fig:runtime}(c), respectively. \Fig{fig:acceleration} presents a comparison of the acceleration and the reduction of power dissipation between standard FP and HF6 hardware implementations.
+The compute performance and inference schedule of the model on this hardware implementation are shown in \Tab{tab:performance}(c) and \fig{fig:runtime}(c), respectively. \Fig{fig:acceleration} presents a comparison of the acceleration and the reduction of power dissipation between standard \gls{fp} and \gls{hf6} hardware implementations.
 
-This deployment does not require model treatment for hardware compatibility. For backward compatibility, the 6-bit FP representation is wrapped into the standard FP. The dedicated hardware design extracts the 6-bit format automatically to perform computation.
+This deployment does not require model treatment for hardware compatibility. For backward compatibility, the 6-bit \gls{fp} representation is wrapped into the standard \gls{fp}. The dedicated hardware design extracts the 6-bit format automatically to perform computation.
 
 \begin{figure}[t!]
 	\centering
@@ -230,11 +230,11 @@ This deployment does not require model treatment for hardware compatibility. For
 \subsubsection{Training and Quantization}
 The training with iterative early stop obtains a model with enhanced accuracy than standard early stop. This method iteratively resets the moving averages of Adam's optimizer, which helps to iteratively search for better local minima. This iterative search is suitable for models with low computational cost.
 
-The TensorFlow Lite 8-bit quantization preserves the overall model accuracy. In some cases, the associated regularization effect can improve the accuracy. However, the error distribution in CNN linear regressions gets slightly degraded. In particular, 8-bit quantized output layers incur in discrete-degradation patterns, \fig{fig:2d_error_distribtion}(b) shows this effect on three different models. Vertical and horizontal patterns appear in the error distribution of 8-bit fixed-point quantization. We attribute this effect to the 8-bit resolution in the activation maps. In the case of HF6 quantization, the activation maps are represented by floating-point preventing this degradation.
+The TensorFlow Lite 8-bit quantization preserves the overall model accuracy. In some cases, the associated regularization effect can improve the accuracy. However, the error distribution in \gls{cnn} linear regressions gets slightly degraded. In particular, 8-bit quantized output layers incur in discrete-degradation patterns, \fig{fig:2d_error_distribtion}(b) shows this effect on three different models. Vertical and horizontal patterns appear in the error distribution of 8-bit fixed-point quantization. We attribute this effect to the 8-bit resolution in the activation maps. In the case of \gls{hf6} quantization, the activation maps are represented by floating-point preventing this degradation.
 
-The proposed 6-bit FP representation (E4M1) improves latency, hardware area, and power dissipation, while preserving model accuracy. For comparison, in our application, this number format produces better results than the 6-bit logarithmic representation (E5M0). This is demonstrated in \Fig{fig:model_evaluation}(d) and \Fig{fig:model_evaluation}(e).
+The proposed 6-bit \gls{fp} representation (E4M1) improves latency, hardware area, and power dissipation, while preserving model accuracy. For comparison, in our application, this number format produces better results than the 6-bit logarithmic representation (E5M0). This is demonstrated in \Fig{fig:model_evaluation}(d) and \Fig{fig:model_evaluation}(e).
 
-In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent and X-bit mantissa preserves accuracy on SqueezeNet, AlexNet, GoogLeNet, and VGG-16. To contribute on this, we investigate 4-bit exponent and 1-bit mantissa to ALL-CNN-C \cite{springenberg2014striving}, this produces an accuracy degradation of 1.39\% and 0.11\% with QAT. While applying 6-bit logarithmic produces a degradation of 11.18\% and 7.22\% with QAT.
+In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent and X-bit mantissa preserves accuracy on SqueezeNet, AlexNet, GoogLeNet, and VGG-16. To contribute on this, I investigated 4-bit exponent and 1-bit mantissa to ALL-CNN-C~\cite{springenberg2014striving}, this produces an accuracy degradation of 1.39\% and 0.11\% with \gls{qat}. While applying 6-bit logarithmic produces a degradation of 11.18\% and 7.22\% with \gls{qat}.
 
 \begin{figure}[t!]
 	\centering
@@ -244,12 +244,12 @@ In \cite{lai2017deep}, Lai et al. demonstrated that 4-bit exponent and X-bit man
 \end{figure}
 
 \subsubsection{Implementation and Performance}
-The proposed HF6 implementation reduces on-chip memory and DSP utilization while slightly increasing FF and LUT compared to the standard FP implementation. See \Tab{tab:resource_utilization} and \Fig{fig:resource_utilization}. We attribute this to the HF6 logic implementation using FF and LUT, while the FP logic implementation uses Xilinx LogiCORE IPs mainly with DSPs.
+The proposed \gls{hf6} implementation reduces on-chip memory and \gls{dsp} utilization while slightly increasing \glspl{ff} and \glspl{lut} compared to the standard \gls{fp} implementation. See \Tab{tab:resource_utilization} and \Fig{fig:resource_utilization}. This is attributed to the \gls{hf6} logic implementation using \gls{ff} and \gls{lut}, while the \gls{fp} logic implementation uses Xilinx LogiCORE IPs mainly with \glspl{dsp}.
 
-The compute performance of the CPU and TP on each convolution layer is presented in \Tab{tab:performance} and \fig{fig:acceleration}. 
-The peak acceleration and power efficiency of the TP with standard FP (Xilinx LogiCORE IP) is $13\times$ and $1,558.13$ MFLOPS/s/W, respectively. While the peak acceleration and power efficiency of the TP with HF6 is $48.3\times$ and $5,743.29$ MFLOPS/s/W, respectively. The HF6 hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard FP hardware. See \Fig{fig:acceleration}.
+The compute performance of the \gls{cpu} and \gls{tp} on each convolution layer is presented in \Tab{tab:performance} and \fig{fig:acceleration}. 
+The peak acceleration and power efficiency of the \gls{tp} with standard \gls{fp} (Xilinx LogiCORE IP) is $13\times$ and \unit[1,558.13]{MFLOPS/s/W}, respectively. While the peak acceleration and power efficiency of the \gls{tp} with \gls{hf6} is $48.3\times$ and \unit[5,743.29]{MFLOPS/s/W}, respectively. The \gls{hf6} hardware demonstrates an improvement of $3.7\times$ in acceleration and power efficiency with respect to the standard \gls{fp} hardware. See \Fig{fig:acceleration}.
 
-The estimated power dissipation on the SoC is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the reduced latency in HF6 hardware. A comparison of related work is presented in \Tab{tab:comparison}.
+The estimated power dissipation on the \gls{soc} is presented in \fig{fig:power}. This shows a very similar breakdown of power dissipation in both implementations. However, the energy efficiency is increased due to the reduced latency in \gls{hf6} hardware. A comparison of related work is presented in \Tab{tab:comparison}.
 
 \begin{figure}[h!]
 	\centering
@@ -265,23 +265,23 @@ The estimated power dissipation on the SoC is presented in \fig{fig:power}. This
 	\label{fig:power}
 \end{figure}
 
-The run-time inference of TensorFlow Lite on the SoC is illustrated in \Fig{fig:runtime}. This shows the convolution layers as the compute-bound operations. The proposed embedded platform is a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM CPU obtains a latency of $\unit[387]{ms}$ ($\unit[2.58]{FPS}$). The platform with standard FP hardware obtains a latency of $\unit[48]{ms}$ ($\unit[20.8]{FPS}$), while the implementation with HF6 obtains a latency of $\unit[27.9]{ms}$ ($\unit[35.84]{FPS}$). These represent an overall acceleration of $8\times$ and $13.87\times$ over the CPU, respectively.
+The run-time inference of TensorFlow Lite on the \gls{soc} is illustrated in \Fig{fig:runtime}. This shows the convolution layers as the compute-bound operations. The proposed embedded platform is a cooperative system where the convolution operations are delegated to the dedicated hardware accelerator. The ARM \gls{cpu} obtains a latency of $\unit[387]{ms}$ ($\unit[2.58]{FPS}$). The platform with standard \gls{fp} hardware obtains a latency of $\unit[48]{ms}$ ($\unit[20.8]{FPS}$), while the implementation with \gls{hf6} obtains a latency of $\unit[27.9]{ms}$ ($\unit[35.84]{FPS}$). These represent an overall acceleration of $8\times$ and $13.87\times$ over the \gls{cpu}, respectively.
 
-This design facilitates ML compatibility/portability as the 6-bit FP is wrapped in the standard FP representation. The dedicated hardware design extracts the 6-bit format automatically and performs computation.
+This design facilitates \gls{ml} compatibility/portability as the 6-bit \gls{fp} is wrapped in the standard \gls{fp} representation. The dedicated hardware design extracts the 6-bit format automatically and performs computation.
 
 \subsubsection{SoC Design and Compatibility}
 The proposed design is an alternative for high accuracy and low-power floating-point inference. The system runs as a cooperative hardware/software mechanism. This architecture delegates compute-bound tensor operations to a hardware accelerator.
 
-The hybrid 32-bit FP and 6-bit FP quantization enables high quality of results and backward ML compatibility. Backwards ML compatibility gives portability from training to inference. This enables to run inference of HF6 quantized models on standard FP hardware and vise versa. The proposed HF6 architecture allows to compute inference of non-quantized floating-point ML models for rapid deployment; however, this will incur in accuracy degradation depending on the resilience of the model, see \Fig{fig:model_evaluation}(c).
+The hybrid 32-bit \gls{fp} and 6-bit \gls{fp} quantization enables high quality of results and backward \gls{ml} compatibility. Backwards \gls{ml} compatibility gives portability from training to inference. This enables to run inference of \gls{hf6} quantized models on standard \gls{fp} hardware and vise versa. The proposed \gls{hf6} architecture allows to compute inference of non-quantized floating-point \gls{ml} models for rapid deployment; however, this will incur in accuracy degradation depending on the resilience of the model, see \Fig{fig:model_evaluation}(c).
 
 \subsubsection{Limitations and Directions for Future Work}
 In this research, we foresee three lines of future work:
 \begin{itemize}
-\item \textbf{To reduce energy consumption.} The proposed architecture consists of a hybrid floating-point quantization using 32-bit activation maps. These can be represented using lower-bit formats; for example, Bfloat16 and 8-bit or lower custom floating-point. This would reduce hardware resource utilization, memory footprint and data transfer, while preserving backward compatibility and accuracy (based on the dynamic value range of custom floating-point formats).
+\item \textbf{To reduce energy consumption.} The proposed architecture consists of a hybrid floating-point quantization using 32-bit activation maps. These can be represented using lower-bit formats; for example, Bfloat16 and 8-bit or lower custom floating-point. This would reduce hardware resource utilization, memory footprint and data transfer, while preserving backward compatibility and accuracy. (Floating-point formats present better \gls{qor} than fixed-pint representations based on the dynamic value range.)
 
 \item \textbf{To increase performance.} This implementation requires matching higher computational throughput with memory bandwidth. This would replace the light-weight pipeline hardware design with a parallelized structure. This will increase hardware area and energy consumption. This can be achieved by using wider memory channels and systolic arrays to increase throughput.
 
-\item \textbf{To use in computer vision applications.} This implementation is designed for sensor analytics workloads. For computer vision applications, the hardware design would require increased on-chip memory capacity for larger bias and filter vectors (using equations from Section \ref{sec:memory_utilization}), and higher computational throughput in a larger FPGA SoC.
+\item \textbf{To use in computer vision applications.} This implementation is designed for sensor analytics workloads. For computer vision applications, the hardware design would require increased on-chip memory capacity for larger bias and filter vectors (using equations from Section \ref{sec:memory_utilization}), and higher computational throughput in a larger/costlier \gls{fpga} \gls{soc}.
 \end{itemize}
 
 \begin{table*}[!t]\centering
